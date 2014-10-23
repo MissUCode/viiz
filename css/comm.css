@@ -1,11 +1,463 @@
+/**/
+*{
+    padding: 0px;
+    margin:0px;
+    font-family: "微软雅黑";
+}
+body{
+    background: #eee;
+}
+img{
+    border:none;
+}
+.header-nav{
+    height: 35px;
+    background: #fff;
+}
 .header{
     height: 70px;
+    position: relative;
+    border-bottom: #eee 1px solid;
+}
+.website-name{
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    left: 75px;
+    top: -15px;
+    font-size: 18px;
+    color: #666;
 }
 .logo{
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
+    width: 55px;
+    height: 55px;
+    margin-top: 8px;
     border: none;
     float: left;
+}
+.chat{
+    display: inline-block;
+    width: 40px;
+    height: 27px;
+    border: none;
+    position: absolute;
+    top: 35px;
+    left: 65px;
+}
+.go-back,.add-new{
+    display: block;
+    width: 60px;
+    height: 35px;
+    background: url(../images/back.png) left center no-repeat;
+    float: left;
+}
+.add-new{
+    background: url(../images/add.png) right center no-repeat;
+    float: right;
+}
+.header-title{
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px;
+    text-indent: 30px;
+    color: #666;
+    float: left;
+}
+label{
+    font-weight: normal;
+}
+.tj{
+    font-size: 12px;
+    color: #666;
+    display: block;
+    width: auto;
+    height: 27px;
+    line-height: 27px;
+    position: absolute;
+    top: 35px;
+    left: 100px;
+    overflow: hidden;
+}
+.action{
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    position: absolute;
+    top: -5px;
+    right: 15px;
+}
+.action img{
+    display: block;
+    width: 90px;
+    height: 60px;
+    border: none;
+    float: left;
+}
+.hot-title{
+    height: 35px;
+}
+.hot-title img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+.hot-title label{
+    line-height: 38px;
+    font-weight: bold;
+    color: #b75607;
+}
+.hot-clude{
+    display: block;
+    height:95px;
+
+}
+.hot-c4{
+    display: block;
+    height: 75px;
+    width: 20%;
+    margin-right:12px ;
+    float: left;
+}
+.hot-c4 img{
+    display: block;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    float: left;
+}
+.hot-c4 label{
+    font-size: 10px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #b75607;
+    float: left;
+}
+.content{
+    width: 94%;
+    box-shadow: 1px 1px 3px rgba(208,208,208,0.5);
+    -webkit-box-shadow: 1px 1px 3px rgba(208,208,208,0.5);
+    -moz-box-shadow: 1px 1px 3px rgba(208,208,208,0.5);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 15px;
+    clear: both;
+    padding: 15px 15px 0px 15px;
+}
+.content-d{
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-top: #eee 1px solid;
+    float: left;
+}
+.content-user{
+    height: 34px;
+    position: relative;
+}
+.user-pic{
+    position: absolute;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    top:0px;
+    left: 0px;
+}
+
+.infos{
+    display: block;
+    position: absolute;
+    display: inline-block;
+    height: 34px;
+    top:0px;
+    left: 50px;
+}
+.infos label{
+    color: #666;
+    display: block;
+    width: 100%;
+    height: 17px;
+    line-height: 17px;
+    float: left;
+}
+.infos label img{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
+.content-content{
+    padding: 0px;
+    margin:0px;
+}
+.hot-best-top{
+    display: block;
+    width: 60px;
+    height: 36px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+.action-list{
+    height: 25px;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 15px;
+}
+.action-list label{
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    float: right;
+    margin-right: 5px;
+}
+.action-list label a{
+    color: #9c9c9c;
+    display: inline-block;
+    min-width: 24px;
+    height: 25px;
+    margin-left: 15px;
+    float: left;
+}
+.action-list label a:hover{
+    text-decoration: none;
+}
+.zan{
+    text-indent: 32px;
+    background: url(../images/zan.png) left center no-repeat;
+}
+.share{
+    background: url(../images/shareto.png) left center no-repeat;
+}
+.comment{
+    text-indent: 32px;
+    background: url(../images/comment.png) left center no-repeat;
+}
+.content-comment{
+    width: 100%;
+}
+.content-comment h2{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    border-bottom: #eee 1px solid;
+    color: #666;
+}
+.content-comment h2 b{
+    display: block;
+    width: auto;
+    height: 35px;
+    float: left;
+    border-bottom: #42ab35 1px solid;
+}
+
+.the-comment{
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 35px;
+    float: left;
+}
+.no-comment{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ccc;
+    float: left;
+}
+.the-left{
+    display: block;
+    width: 12%;
+    min-height: 30px;
+    float: left;
+}
+.user-pic2{
+    display:inline-block;
+    width: 26px;
+    height: 26px;
+    float: left;
+}
+.the-right{
+    font-size: 12px;
+    color: #666;
+    display: block;
+    width: 88%;
+    min-height: 20px;
+    float: left;
+}
+.c-action{
+    display: block;
+    width: 100%;
+    height: 20px;
+    float: left;
+}
+.c-action label{
+    display: block;
+    width: 120px;
+    height: 20px;
+    float: right;
+}
+.c-action label a{
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    width: 55px;
+    height: 30px;
+    float: left;
+}
+.c-action label a:hover{
+    text-decoration: none;
+}
+.comment-in-comment{
+    color: #666;
+    font-size: 11px;
+    position: relative;
+    display: block;
+    width: 88%;
+    min-height: 30px;
+    background: #eee;
+    padding: 10px;
+    float: right;
+}
+.san{
+    display: block;
+    position: absolute;
+    width:0px;
+    height:0px;
+    border-left:8px solid transparent;  /* left arrow slant */
+    border-right:5px solid transparent; /* right arrow slant */
+    border-bottom:10px solid #eee; /* bottom, add background color here */
+    font-size:0px;
+    line-height:0px;
+    top: -10px;
+    right: 55px;
+}
+.rep{
+    display: block;
+    width: 100%;
+}
+.user-pic1{
+    position: absolute;
+    display:inline-block;
+    width: 24px;
+    height: 24px;
+    left: 0px;
+    top: 15px;
+}
+.content-cont{
+    position: absolute;
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    left: 50px;
+    top: 0px;
+}
+
+.banner{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 0px;
+    background: #fff;
+    border-top:#eee 1px solid;
+}
+.banner span{
+    display: block;
+    height: 35px;
+    margin-top: 5px;
+    float: left;
+}
+.banner span a:hover{
+    text-decoration: none;
+}
+.banner-left,.banner-right{
+    width: 15%;
+    border-right:#eee 1px solid;
+}
+.banner-left a,.banner-right a{
+    font-size: 20px;
+    font-weight: bold;
+    color: #42ab35;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height:  35px;
+    float: left;
+}
+.banner-right{
+    width: 15%;
+    border-left:#eee 1px solid;
+    border-right:none;
+}
+.banner-center{
+    width: 70%;
+}
+.banner-center a{
+    display: block;
+    color: #42ab35;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    margin:0 auto;
+    background: url(../images/write.png) left center no-repeat;
+    text-indent: 37px;
+}
+.detail-header{
+    background: #fff;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 50px;
+    float: left;
+}
+.detail-header h2{
+    font-weight: normal;
+    color: #666;
+    font-size: 18px;
+    width: auto;
+    height: 35px;
+    float: left;
+}
+.detail-header h2 a{
+    display: block;
+    width: 100%;
+    color: #666;
+
+}
+.detail-header h2 a:hover{
+    color: #666;
+    text-decoration: none;
+}
+.ii{
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height:  35px;
+    top: 15px;
+    right: -10px;
+    font-style: normal;
+    z-index: 10;
 }
