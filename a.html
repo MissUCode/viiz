@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>微商助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/model.css">
+    <link rel="icon" href="images/logo.png"  type="image/x-icon" />
+</head>
+<body>
+<!--<div class="blue"></div>-->
+<!--<div class="model">-->
+    <!--<div class="model-header">-->
+        <!--<h2 class="model-title">温馨提示<b class="model-close">X</b></h2>-->
+    <!--</div>-->
+    <!--<div class="model-center">-->
+        <!--<img src="images/sure.gif" class="model-img">-->
+        <!--<label class="model-content">您确定要删除评论吗？</label>-->
+    <!--</div>-->
+    <!--<div class="model-bottom">-->
+        <!--<button class="model-cancel">取消</button><button class="model-ok">确定</button>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/model.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      model('消息提示','我只是测试一下而已','question','确定','取消');
+      $('.model-ok').click(function(){
+         out();
+      })
+    })
+</script>
+</body>
+</html>
