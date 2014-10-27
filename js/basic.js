@@ -16,4 +16,21 @@ $(function(){
         }, 500 );
         $(this).fadeOut(500);
     })
+    $('.banner-center').click(function(){
+        Height= $(document).height();
+        $('.bu').css('height',Height);
+        $('.bu').fadeIn(500);
+        $('.add-content').animate({
+            'bottom':'0%'
+        },500);
+    })
+    $('.cancel').click(function(){
+        $('.bu').fadeOut(500);
+        $('.add-content').animate({
+            'bottom':'-100%'
+        },500);
+    })
+    $('.add-pic').click(function(){
+        $('.up-img').click();
+    })
 })
