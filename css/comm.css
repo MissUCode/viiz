@@ -703,8 +703,9 @@ label{
 }
 .profile-form label input.tt{
     border: #eee 1px solid;
-    height: 25px;
+    height: 30px;
     width: 200px;
+    text-indent: 8px;
 }
 .saved{
     border: none;
@@ -712,3 +713,66 @@ label{
     background: #42ab35;
     width: 200px;
 }
+/*----*/
+.u-notice{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+    clear: both;
+}
+
+.an-notice{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+.an-notice{
+    font-size: 14px;
+    color: #666;
+    display: block;
+}
+.notice-time{
+    padding: 0px;
+    margin: 0px;
+    width:95%;
+    height: 30px;
+    line-height: 30px;
+    margin-left:5% ;
+    border-left:#999 1px solid ;
+    text-indent: 8px;
+    float: left;
+}
+.notice-content{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    min-height:80px ;
+    background: #fff;
+    padding: 6%;
+    float: left;
+}
+
+.notice-from{
+    font-weight: bold;
+    width: 100%;
+    min-height: 40px;
+    line-height: 30px;
+    padding: 5px 15px 5px 15px;
+    border: #eee 1px solid;
+    border-radius: 20px;
+    float: left;
+}
+.notice-from a{
+    color: #666;
+}
+
+
+
+
+
+
+
+
