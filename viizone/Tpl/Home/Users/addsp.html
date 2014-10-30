@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加推广</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="Mosaddek" name="author" />
+    <link href="__PUBLIC__/css/metro-bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/css.css">
+    <link rel="icon" href="__PUBLIC__/images/favicon.png"  type="image/x-icon" />
+    <link href="__PUBLIC__/css/pikaday.css" rel="stylesheet" />
+    <style type="text/css">
+        *{
+            padding: 0px;
+            margin:0px;
+        }
+        .content{
+            width: 600px;
+            height: 450px;
+            background: #fff;
+            float: left;
+        }
+        .label-nomal{
+            width: 20%;
+            line-height: 36px;
+            text-align: right;
+            float: left;
+        }
+        .span-10{
+            width: 70%;
+            margin-left: 10px;
+            float: left;
+        }
+        .form-group{
+            width: 100%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="content" >
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#home" role="tab" data-toggle="tab">添加我的推广</a></li>
+    <li><a href="#profile" role="tab" data-toggle="tab">关于竞价推广</a></li>
+</ul>
+    <div class="tab-content">
+
+           <div class="tab-pane active" id="home" style="padding-top: 50px;">
+            <form action="__ROOT__/Home/Users/addsp_act" method="post" id="addsp">
+                <div class="form-group">
+                    <label class="label-nomal">推广类型：</label>
+                    <span class="span-10">
+                        <select class="form-control" name="cid">
+                            <volist name="cates" id="cates">
+                                <option value="{$cates.cat_id}" >
+                                <php>echo str_repeat("&nbsp;",$cates['count']);</php>
+                                <if condition="$cates['pid'] eq 0">
+                                    <else />
+                                    ∟
+                                </if>
+                                {$cates.name}
+                                </option>
+                            </volist>
+                        </select>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="label-nomal">推广投入积分：</label>
+                    <span class="span-10">
+                       <input class="form-control" type="text" placeholder="推广投入积分" name="score" id="score">
+                        <input type="hidden" name="id" value="{$id}">
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="label-nomal">单次点击出价：</label>
+                    <span class="span-10">
+                       <input class="form-control" type="text" placeholder="最低10积分" name="price" id="price">
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="label-nomal">开始时间：</label>
+                    <span class="span-10">
+                       <input class="form-control" type="text" placeholder="开始时间" name="start" id="start">
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="label-nomal">结束时间：</label>
+                    <span class="span-10">
+                       <input class="form-control" type="text" placeholder="结束时间" name="end" id="end">
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="label-nomal"></label>
+                    <span class="span-10">
+                       <button type="submit" class="btn btn-success">提交数据</button>
+                       <button type="reset" class="btn btn-primary">重置数据</button>
+                    </span>
+                </div>
+           </form>
+        </div>
+
+        <div class="tab-pane" id="profile">
+            <div class="widget-body" style="margin-top: 20px;">
+                 <h2 style="font-size: 16px;">竞价推广特别说明：</h2>
+                <p style="padding-left: 32px;">
+                    1、竞价推广有多种推广类型，一个微信账户只能选择一种推广类型。<br>
+                    2、每种类型的推广微信账户，将根据推广单次点击价格积分高低进行排序显示，价格越高排行越靠前显示。<br>
+                    3、每个推广的账号，我们会保证用户首次点击才扣取积分，同一个用户，同一个ip多次点击只扣一次点击积分。<br>
+                    4、每次点击积分价格最低10个积分，多则不限。<br>
+                    5、积分不够或者推广到期，系统将自动下架您的推广，在此期间，你的账户将不参与竞价推广，也不会被扣除积分。<br>
+                    6、删除推广，你的剩余积分将会自动回流到您的会员积分里。<br>
+                    7、详情请登录个人中心“关于推广”进行具体了解。<br><br>
+                    <label style="display:inline-block;width:100%;text-align: right;">微搜网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    2014-09-02&nbsp;&nbsp;<br><br></label>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/vendor/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/pikaday.js"></script>
+<script type="text/javascript">
+    var picker = new Pikaday(
+            {
+                field: document.getElementById('start'),
+                firstDay: 1,
+                minDate: new Date('2010-01-01'),
+                maxDate: new Date('2020-12-31'),
+                yearRange: [2000,2020]
+            });
+    var picker = new Pikaday(
+            {
+                field: document.getElementById('end'),
+                firstDay: 1,
+                minDate: new Date('2010-01-01'),
+                maxDate: new Date('2020-12-31'),
+                yearRange: [2000,2020]
+            });
+    $(function(){
+        $('#addsp').submit(function(){
+            var score=$('#score').val();
+            var price=$('#price').val();
+            var start=$('#start').val();
+            var end=$('#end').val();
+            if(score=='' || price=='' || start=='' || end==''){
+              return false;
+            }
+        })
+    })
+</script>
+</body>
+</html>

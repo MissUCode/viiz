@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   <meta charset="utf-8" />
+   <title>微搜-用户中心</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link href="__PUBLIC__/css/metro-bootstrap.css" rel="stylesheet" />
+   <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css">
+   <link rel="stylesheet" href="__PUBLIC__/css/css.css">
+   <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
+    <link rel="icon" href="__PUBLIC__/images/favicon.png"  type="image/x-icon" />
+   <style type="text/css">
+       body{
+           font-family: '微软雅黑';
+       }
+   </style>
+</head>
+<body>
+<include file="Public/header" />
+<div class="content" >
+    <div class="maylike" style="margin-top: 10px;">
+        <h2 class="lists-title" style="height: 0px;border-bottom: none;">
+            <!--<a href="#" class="tab-a-active">用户中心</a>-->
+        </h2>
+        <div class="container-content">
+          <div class="ucenter-left">
+              <include file="left" />
+          </div>
+          <div class="ucenter-right">
+              <div class="panel panel-default">
+                  <div class="panel-heading">修改信息</div>
+                  <div class="panel-body">
+                      <div class="row">
+                          <div class="col-md-6" style="border-right: #e6e6e6 1px solid;">
+                              <form class="form-horizontal" id="form1" method="post" action="__ROOT__/Home/Users/profile_action">
+                                  <label  class="col-sm-12 control-label" style="text-align: left;margin-bottom: 30px;">账户信息：</label>
+                                  <div class="form-group">
+                                      <label for="uname" class="col-sm-2 control-label font-label">账号：</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="uname" name="uname" value="{$infos.member_name}" placeholder="用户名，可登陆"  <if condition="$infos['member_name'] neq ''">readonly="true"</if> >
+                                          <input type="hidden" name="act" value="edit">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="email" class="col-sm-2 control-label font-label">邮箱：</label>
+                                      <div class="col-sm-10">
+                                          <input type="email" class="form-control" id="email" name="email" value="{$infos.email}" <if condition="$infos['email'] neq ''">readonly="true"</if> placeholder="邮箱，可登陆">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="phone" class="col-sm-2 control-label font-label">手机：</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="phone" name="phone" value="{$infos.mobile_phone}" placeholder="手机号码，可登陆">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label  class="col-sm-2 control-label font-label">公司：</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" name="company" id="company" value="{$infos.company}" placeholder="您的公司地址或你个人的联系地址">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <div class="col-sm-offset-2 col-sm-10">
+                                          <button type="submit" class="btn btn-default">修改</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="col-md-6" >
+                              <form class="form-horizontal" id="reset" method="post" action="__ROOT__/Home/Users/profile_action">
+                                  <label class="col-sm-12 control-label" style="text-align: left;margin-bottom: 30px;">密码修改：</label>
+                                  <div class="form-group">
+                                      <label for="new" class="col-sm-2 control-label font-label">新密码：</label>
+                                      <div class="col-sm-10">
+                                          <input type="password" class="form-control" name="new" id="new" >
+                                          <input type="hidden" name="act" value="reset">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="renew" class="col-sm-2 control-label font-label">确认密码：</label>
+                                      <div class="col-sm-10">
+                                          <input type="password" class="form-control" name="renew" id="renew" >
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="old" class="col-sm-2 control-label font-label">旧密码：</label>
+                                      <div class="col-sm-10">
+                                          <input type="password" class="form-control" value="" name="old" id="old">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="col-sm-offset-2 col-sm-10">
+                                          <button type="submit" class="btn btn-default">修改</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="maylike" style="width: 900px;">
+                          <h2 class="lists-title" style="border:none;">热门微信号推荐：</h2>
+                          <div class="container-content" style="border: none;">
+                              <volist name="uc_hot" id="uchot">
+                                  <div class="thumbnail tile tile-teal margin-top">
+                                      <a href="__ROOT__/Home/Index/detail/detail_id/{$uchot.weixin_id}.html?click=Ucenter_hot" >
+                                          <img src="__ROOT__/{$uchot.logo}" style="width: 150px;height: 75px;">
+                                          <h3>{$uchot.weixin_name|msubstr=0,6}</h3>
+                                          <span><label class="like">{$uchot.like}</label><label class="clicks">{$uchot.clicks}</label></span>
+                                      </a>
+                                  </div>
+                              </volist>
+                              <div class="thumbnail tile tile-add margin-top">
+                                  <a href="{:U('Users/add')}" title="提交账号" class="add-count">
+
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/comm.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+
+</html>

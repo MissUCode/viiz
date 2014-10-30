@@ -1,0 +1,29 @@
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> 首页</a>
+    <ul>
+        <li class="<if condition='$position eq index'>active</if>">
+            <a href="__ROOT__/Zoneadmin/Index/index.html"><i class="icon icon-home"></i> <span>首页</span></a>
+        </li>
+        <li class="submenu <if condition='$position eq admin'>active</if>" attr="admin" id="admin"> <a href="#"><i class="icon icon-user"></i> <span>管理员管理</span> <span class="label label-important">2</span></a>
+            <ul>
+                <li><a href="__ROOT__/Zoneadmin/Admin/add">添加管理员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Admin/lists">管理员列表</a></li>
+            </ul>
+        </li>
+        <li class="submenu " attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
+            <ul>
+                <li><a href="index2.html">会员列表</a></li>
+                <li><a href="gallery.html">添加会员</a></li>
+            </ul>
+        </li>
+        <li class="submenu"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
+            <ul>
+                <li><a href="error403.html"> 圈子管理</a></li>
+                <li><a href="error404.html"> 帖子管理</a></li>
+                <li><a href="error405.html"> 广告管理</a></li>
+                <li><a href="error500.html"> 数据统计</a></li>
+                <li><a href="error500.html"> 留言管理</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>

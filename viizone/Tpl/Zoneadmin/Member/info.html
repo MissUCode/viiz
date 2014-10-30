@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>会员详细信息</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="__PUBLIC__/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/css/admin.css" rel="stylesheet" />
+</head>
+<body style="background: #fff;">
+    <div class="container-fluid" style="width: 700px;padding-right:20px;">
+        <div style="padding-bottom: 0px;margin-top: 15px;">
+            <ul class="nav nav-tabs" role="tablist">
+                <li ><a href=""></a></li>
+                <li class="active"><a href="">会员详细信息</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th colspan="4" style="text-align: center;">基本信息</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td style="text-align: right;font-weight: bold;">用户名：</td>
+                <td>
+                    <if condition="$detail['member_name'] eq ''">(空)</if>
+                    {$detail.member_name}
+                </td>
+                <td style="text-align: right;font-weight: bold;">邮箱：</td>
+                <td>
+                    <if condition="$detail['email'] eq ''">(空)</if>
+                    {$detail.email}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;font-weight: bold;">手机号码：</td>
+                <td>
+                    <if condition="$detail['mobile_phone'] eq ''">(空)</if>
+                    {$detail.mobile_phone}
+                </td>
+                <td style="text-align: right;font-weight: bold;">公司（个人地址）：</td>
+                <td>
+                    <if condition="$detail['company'] eq ''">(空)</if>
+                    {$detail.company}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;font-weight: bold;">积分：</td>
+                <td>{$detail.score}</td>
+                <td style="text-align: right;font-weight: bold;">等级：</td>
+                <td>
+                    <if condition="$detail['lev'] eq 0">V0</if>
+                    <if condition="$detail['lev'] eq 1">V1</if>
+                    <if condition="$detail['lev'] eq 2">V2</if>
+                    <if condition="$detail['lev'] eq 3">V3</if>
+                </td>
+            </tr>
+            <tr>
+
+                <td style="text-align: right;font-weight: bold;">是否验证：</td>
+                <td><if condition="$detail['is_very'] eq 1">是 <else /> 否</if></td>
+                <td style="text-align: right;font-weight: bold;">状态：</td>
+                <td >
+                    <if condition="$detail['status'] eq 0">已禁用</if>
+                    <if condition="$detail['status'] eq 1">正常</if>
+                </td>
+            </tr>
+           <tr><th colspan="4" style="text-align: center;">关联账号</th></tr>
+            <tr><th style="text-align: center;">序号</th>
+            <th style="text-align: center;">账号名称</th>
+            <th style="text-align: center;">微信号</th>
+            <th style="text-align: center;">提交时间</th>
+            </tr>
+            <if condition="$weixin">
+                <volist name="weixin" id="weixin" key="k">
+                    <tr>
+                        <td style="text-align: center;">{$k}</td>
+                        <td style="text-align: center;">{$weixin.name}</td>
+                        <td style="text-align: center;">{$weixin.w_name}</td>
+                        <td style="text-align: center;">{$weixin.ctime|date="Y-m-d",###}</td>
+                    </tr>
+                </volist>
+                <else />
+                <tr><td colspan="4" style="text-align: center;color: #ccc;">该用户未上传任何微信账号~~！</td></tr>
+            </if>
+            </tbody>
+        </table>
+        <!--<div style="text-align: center;margin-bottom: 30px;">-->
+            <!--<button type="button" class="btn btn-primary doit" alt="no-pass" data="{$detail.id}">审核不通过</button>-->
+            <!--<button type="button" class="btn btn-success doit" alt="pass" data="{$detail.id}">通过审核</button>-->
+            <!--<button type="button" class="btn btn-danger doit" alt="off" data="{$detail.id}">禁用账号</button>-->
+        <!--</div>-->
+
+    </div>
+    <script src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script src="__PUBLIC__/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/artDialog/artDialog.js?skin=default"></script>
+    <script src="__PUBLIC__/artDialog/plugins/iframeTools.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.doit').click(function(){
+                var act=$(this).attr('alt');
+                var id=$(this).attr('data');
+                $.post(
+                        "__ROOT__/Viimanager/Weixin/review_action",
+                        {id:id,act:act},
+                        function(data){
+                            if(data==1){
+                                setTimeout(function(){
+                                    location.reload();
+                                },500)
+                            }else{
+                            }
+                        }
+                );
+            })
+        })
+    </script>
+</body>
+<!-- END BODY -->
+</html>

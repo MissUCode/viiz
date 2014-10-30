@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   <meta charset="utf-8" />
+   <title>微搜-数据统计</title>
+   <meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link href="__PUBLIC__/css/metro-bootstrap.css" rel="stylesheet" />
+   <link rel="stylesheet" href="__PUBLIC__/css/style.css">
+   <style type="text/css">
+       body{
+           font-family: '微软雅黑';
+           background: #fff;
+       }
+   </style>
+</head>
+<body>
+          <div class="ucenter-right" style="float:left;width:1170px;">
+              <div class="panel panel-default">
+                  <div class="panel-heading">数据统计</div>
+                  <div class="panel-body">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                      <li class="active"><a href="#home" role="tab" data-toggle="tab">点击量增加趋势图</a></li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                      <div class="tab-pane active" id="home" style="padding: 50px;padding-left:80px;position: relative;">
+                          <canvas id="line" height="450" width="1000"></canvas>
+                      </div>
+                      <p style="color:red;text-align:center;">温馨提示：请用高版本浏览器查看，比如谷歌、火狐浏览器，低版本IE不兼容，谢谢！
+                      </p>
+                  </div>
+                  </div>
+                  </div>
+              </div>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/Chart.js"></script>
+<script>
+    var lineChartData = {
+        labels : {$month_data},
+        datasets : [
+
+            {
+                fillColor : "rgba(151,187,205,0.5)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                data : {$click_data}
+            }
+        ]
+
+    }
+    var myLine = new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   <meta charset="utf-8" />
+   <title>微搜-登陆注册</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link href="__PUBLIC__/css/metro-bootstrap.css" rel="stylesheet" />
+   <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css">
+   <link rel="stylesheet" href="__PUBLIC__/css/css.css">
+   <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
+    <link rel="icon" href="__PUBLIC__/images/favicon.png"  type="image/x-icon" />
+   <style type="text/css">
+       body{
+           font-family: '微软雅黑';
+       }
+   </style>
+</head>
+<body>
+<include file="Public/header" />
+<div class="content">
+    <div class="user-div">
+        <span class="user-header1"></span>
+        <b class="user-line"></b>
+        <div class="user-form">
+            <h1 class="user-title">用户登录</h1>
+            <form action="__ROOT__/Home/Uenter/login_action.html" method="post" id="login_form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">用户名</span>
+                        <input class="form-control" type="text" placeholder="输入用户名/邮箱/手机" name="login_name" id="login_name" required="账号不能为空" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">密　码</span>
+                        <input class="form-control" type="password" placeholder="输入密码"name="login_password" id="login_password" required="密码不能为空"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button  class="btn btn-lg btn-block bt-vii" type="submit" id="login"> 马上登录</button>
+                </div>
+                <div style='width:100%;float:left;text-align:right;'><a href='__ROOT__/Home/Uenter/getpass.html'>忘记密码？</a></div>
+            </form>
+            <p style="line-height: 30px;padding-top: 25px;font-size: 15px;text-indent: 32px;color: #666;">
+                成为微搜会员，您可以提交您的账号、推广您的账号，还可以实时监控您的账号的动态，同时您还有机会参与微搜的抽奖活动，赶快行动吧！
+            </p>
+        </div>
+        <div class="user-form" style="float: right;">
+            <h1 class="user-title">用户注册</h1>
+                <form action="__ROOT__/Home/Uenter/reg_action.html" method="post" id="reg_form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">用 &nbsp;户&nbsp;名</span>
+                            <input class="form-control" type="text" placeholder="输入手机/邮箱" name="reg_name" id="reg_name" required=""/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">密　&nbsp;&nbsp;&nbsp;码</span>
+                            <input class="form-control" type="password" placeholder="输入密码，至少6位数" name="reg_password" id="reg_password"  required=""/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">确认密码</span>
+                            <input class="form-control" type="password" placeholder="输入确认密码" name="reg_repassword" id="reg_repassword"  required=""/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">验 &nbsp;证 &nbsp;码</span>
+                            <input class="form-control" type="text" placeholder="输入验证码" name="code" id="code" required="" style="width: 150px;float:left;"/>
+                            <img src="__ROOT__/Home/Uenter/verycode" class="code" onclick="this.src='__ROOT__/Home/Uenter/verycode/id/'+Math.random();">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn  btn-lg btn-block bt-vii" id="reg_submit" type="submit" loading-status="is_login_ing"> 1秒钟马上注册</button>
+                    </div>
+
+                </form>
+        </div>
+    </div>
+    <div class="maylike" style="margin-top: 20px;">
+        <h2 class="lists-title"><a href="#" class="tab-a-active">猜您可能喜欢</a></h2>
+        <div class="container-content">
+            <volist name="may_like" id="ml">
+                <div class="thumbnail tile tile-teal margin-top">
+                    <a href="__ROOT__/Home/Index/detail/detail_id/{$ml.weixin_id}.html?click=May_like" target="_blank">
+                        <img src="__ROOT__/{$ml.logo}" style="width: 150px;height: 75px;">
+                        <h3>{$ml.weixin_name|msubstr=0,8}</h3>
+                        <span><label class="like">{$ml.like}</label><label class="clicks">{$ml.clicks}</label></span>
+                    </a>
+                </div>
+            </volist>
+            <div class="thumbnail tile tile-add margin-top">
+                <a href="{:U('Home/Users/add')}" title="提交账号" class="add-count">
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/comm.js"></script>
+<script type="text/javascript">
+   var checkURL="__ROOT__/Home/Uenter/check_user";
+</script>
+</body>
+
+</html>

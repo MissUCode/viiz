@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>91im-提示信息</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/mybox.css"/>
+<script type='text/javascript' src='__PUBLIC__/js/jquery-1.7.1.min.js' ></script>
+<script src='__PUBLIC__/js/mybox.js' type='text/javascript'></script>
+</head>
+<body style='background:#fff;'>
+  <script type='text/javascript'>
+   var url='__ROOT__/Public/';
+	var purl="__PUBLIC__";
+	<present name="message">
+       ss('<?php echo($message); ?>');
+	<else/>
+	err('<?php echo($error); ?>');
+	</present>
+</script>
+<p class="jump">
+<a id="href" href="<?php echo($jumpUrl); ?>"></a><b id="wait" style='color:#d4d4d4;'></b>
+</p>
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+	var time = --wait.innerHTML;
+	if(time <= 0) {
+		location.href = href;
+		clearInterval(interval);
+	};
+}, 1000);
+})();
+</script>
+</body>
+</html>

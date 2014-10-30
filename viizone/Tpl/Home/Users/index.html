@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   <meta charset="utf-8" />
+   <title>微搜-用户中心</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link href="__PUBLIC__/css/metro-bootstrap.css" rel="stylesheet" />
+   <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css">
+   <link rel="stylesheet" href="__PUBLIC__/css/css.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
+   <link rel="icon" href="__PUBLIC__/images/favicon.png"  type="image/x-icon" />
+   <style type="text/css">
+       body{
+           font-family: '微软雅黑';
+       }
+   </style>
+</head>
+<body>
+<include file="Public/header" />
+<div class="content" >
+    <div class="maylike" style="margin-top: 10px;">
+        <h2 class="lists-title" style="height: 0px;border-bottom: none;">
+            <!--<a href="#" class="tab-a-active">用户中心</a>-->
+        </h2>
+        <div class="container-content">
+          <div class="ucenter-left">
+              <!--<ul>-->
+                  <!--<li><a href="#">中心首页</a></li>-->
+                  <!--<li><a href="#">修改信息</a></li>-->
+                  <!--<li><a href="#">我的账号</a></li>-->
+                  <!--<li><a href="#">我的推广</a></li>-->
+                  <!--<li><a href="#">我的积分</a></li>-->
+              <!--</ul>-->
+              <include file="left" />
+          </div>
+          <div class="ucenter-right">
+              <div class="panel panel-default">
+                  <div class="panel-heading">个人中心首页</div>
+                  <div class="panel-body">
+                      <!--<p class="text-center">欢迎登陆微搜个人中心管理系统，请您自觉遵守相关法律，合法上传提交您的微信账号。</p>-->
+                      <div class="jumbotron" style="background: #f5f5f5;">
+                          <h1 style="font-size: 30px;">{$Think.session.member_name},</h1>
+                          <p>欢迎登陆微搜个人中心管理系统，请您自觉遵守相关法律，合法上传提交您的微信账号。</p>
+                          <p><a class="btn-info btn-lg" role="button" href="{:U('Users/add')}">提交账号</a></p>
+                      </div>
+                      <div class="maylike" style="width: 900px;">
+                          <h2 class="lists-title" style="border:none;">热门微信号推荐：</h2>
+                          <div class="container-content" style="border: none;">
+                              <volist name="uc_hot" id="uchot">
+                                  <div class="thumbnail tile tile-teal margin-top">
+                                      <a href="__ROOT__/Home/Index/detail/detail_id/{$uchot.weixin_id}.html?click=Ucenter_hot" >
+                                          <img src="__ROOT__/{$uchot.logo}" style="width: 150px;height: 75px;">
+                                          <h3>{$uchot.weixin_name|msubstr=0,6}</h3>
+                                          <span><label class="like">{$uchot.like}</label><label class="clicks">{$uchot.clicks}</label></span>
+                                      </a>
+                                  </div>
+                              </volist>
+                              <div class="thumbnail tile tile-add margin-top">
+                                  <a href="{:U('Users/add')}" title="提交账号" class="add-count">
+
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/comm.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+
+</html>

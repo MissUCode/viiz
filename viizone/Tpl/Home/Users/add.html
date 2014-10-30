@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   <meta charset="utf-8" />
+   <title>微搜-提交账户</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link rel="icon" href="__PUBLIC__/images/favicon.png"  type="image/x-icon" />
+   <link href="__PUBLIC__/css/metro-bootstrap.css" rel="stylesheet" />
+   <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css">
+   <link rel="stylesheet" href="__PUBLIC__/css/css.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
+   <link href="__PUBLIC__/css/bootstrap-fileupload.css" rel="stylesheet" />
+   <style type="text/css">
+       body{
+           font-family: '微软雅黑';
+       }
+   </style>
+    <script type="text/javascript">
+        var curl="__ROOT__/Home/Users/add_action";
+    </script>
+</head>
+<body>
+<include file="Public/header" />
+<div class="content" >
+    <div class="maylike" style="margin-top: 10px;">
+        <h2 class="lists-title" style="height: 0px;border-bottom: none;">
+            <!--<a href="#" class="tab-a-active">用户中心</a>-->
+        </h2>
+        <div class="container-content">
+          <div class="ucenter-left">
+              <include file="left" />
+          </div>
+          <div class="ucenter-right">
+              <div class="panel panel-default">
+                  <div class="panel-heading">提交微信账号</div>
+                  <div class="panel-body">
+                      <div class="row">
+                          <div class="col-md-8">
+                              <form class="form-horizontal" role="form" id="add_form" method="post" action="{:U('Users/add_action')}" enctype="multipart/form-data">
+                                  <div class="form-group">
+                                      <label for="name" class="col-sm-2 control-label font-label">账号名称 :</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="name" name="name" placeholder="如：微搜官方账号，*必填">
+                                          <input type="hidden" name="act" value="add">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="vnum" class="col-sm-2 control-label font-label">微信号：</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="wx_name" name="wx_name" placeholder="如：viisou，*必填">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="keys" class="col-sm-2 control-label font-label">关键词：</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="keysword" name="keysword" placeholder="关键字有助于用户对微信账户的搜索">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="cate" class="col-sm-2 control-label font-label">所属分类：</label>
+                                      <div class="col-sm-10">
+                                           <select class="form-control input-sm" id="cate" name="cat_id">
+                                               <volist name="cates" id="cates">
+                                                   <option value="{$cates.cat_id}"<if condition="$cates['cat_id'] eq $cate['pid']"> selected='selected'</if> >
+                                                   <php>echo str_repeat("&nbsp;",$cates['count']);</php>
+                                                   <if condition="$cates['pid'] eq 0">
+                                                       <else />
+                                                       ∟
+                                                   </if>
+                                                   {$cates.cat_name}
+                                                   </option>
+                                               </volist>
+                                           </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-group ">
+                                      <label class="col-sm-2 control-label font-label">LOGO图片:</label>
+                                      <div class="controls col-sm-8" style="padding-left: 15px;">
+                                          <div data-provides="fileupload" class="fileupload fileupload-new">
+                                              <div style="width: 200px; height: 150px;" class="fileupload-new thumbnail">
+                                                  <img alt="" src="__PUBLIC__/images/no-image.gif">
+                                              </div>
+                                              <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="fileupload-preview fileupload-exists thumbnail"></div>
+                                              <div>
+                                               <span class="btn btn-success btn-file"><span class="fileupload-new">选择图像</span>
+                                               <span class="fileupload-exists">修改</span>
+                                               <input type="file" class="default" name="logo_pic"></span>
+                                                  <a data-dismiss="fileupload" class="btn btn-success fileupload-exists">移除</a>
+                                              </div>
+                                          </div>
+                                          <span class="label label-important">提醒：</span>
+                                         <span>
+                                         尺寸：150*75,或者长宽比为2:1，文件不大于1M
+                                         </span>
+                                      </div>
+                                  </div>
+                                  <div class="form-group ">
+                                      <label class="col-sm-2 control-label font-label">二维码图片:</label>
+                                      <div class="controls col-sm-8" style="padding-left: 15px;">
+                                          <div data-provides="fileupload" class="fileupload fileupload-new">
+                                              <div style="width: 200px; height: 150px;" class="fileupload-new thumbnail">
+                                                  <img alt="" src="__PUBLIC__/images/no-image.gif">
+                                              </div>
+                                              <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="fileupload-preview fileupload-exists thumbnail"></div>
+                                              <div>
+                                               <span class="btn btn-success btn-file"><span class="fileupload-new">选择图像</span>
+                                               <span class="fileupload-exists">修改</span>
+                                               <input type="file" class="default" name="code_pic"></span>
+                                                  <a data-dismiss="fileupload" class="btn btn-success fileupload-exists" href="#">移除</a>
+                                              </div>
+                                          </div>
+                                          <span class="label label-important">提醒：</span>
+                                         <span>
+                                           尺寸：160*160,不大于1M
+                                         </span>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="desc" class="col-sm-2 control-label font-label">账号描述：</label>
+                                      <div class="col-sm-10">
+                                          <textarea class="" rows="5" id="desc" name="description" style="width: 800px;height: 300px;"></textarea>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="desc" class="col-sm-2 control-label font-label">备注：</label>
+                                      <div class="col-sm-10">
+                                          <textarea class="form-control" rows="5" id="remark" name="remark" placeholder="选填"></textarea>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="col-sm-offset-2 col-sm-10">
+                                          <button type="submit" class="btn btn-success">提交信息</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="maylike" style="width: 900px;">
+                          <h2 class="lists-title" style="border:none;">热门微信号推荐：</h2>
+                          <div class="container-content" style="border: none;">
+                              <volist name="uc_hot" id="uchot">
+                                  <div class="thumbnail tile tile-teal margin-top">
+                                      <a href="__ROOT__/Home/Index/detail/detail_id/{$uchot.weixin_id}.html?click=Ucenter_hot" >
+                                          <img src="__ROOT__/{$uchot.logo}" style="width: 150px;height: 75px;">
+                                          <h3>{$uchot.weixin_name|msubstr=0,6}</h3>
+                                          <span><label class="like">{$uchot.like}</label><label class="clicks">{$uchot.clicks}</label></span>
+                                      </a>
+                                  </div>
+                              </volist>
+                              <div class="thumbnail tile tile-add margin-top">
+                                  <a href="{:U('Users/add')}" title="提交账号" class="add-count">
+
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Public/footer" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ue/ueditor.config_mini.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ue/ueditor.all.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/comm.js"></script>
+<script type="text/javascript">
+    var ue = UE.getEditor('desc');
+</script>
+</body>
+
+</html>
