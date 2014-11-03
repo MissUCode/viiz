@@ -26,56 +26,30 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="-9.032258" vertical-offset="84" max-vertical-offset="10780">
+            <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="4.516129" vertical-offset="504" max-vertical-offset="10780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZoneAction.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/ZoneAction.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="29" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-24.709677" vertical-offset="46" max-vertical-offset="4368">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="add.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/add.html">
+        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="47" selection-start="4654" selection-end="4654" vertical-scroll-proportion="-55.419353" vertical-offset="1502" max-vertical-offset="3780">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminAction.class.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/AdminAction.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="13" selection-start="1488" selection-end="1692" vertical-scroll-proportion="0.55353075" vertical-offset="1250" max-vertical-offset="3976">
+            <state line="49" column="127" selection-start="1895" selection-end="1895" vertical-scroll-proportion="-4.83871" vertical-offset="1222" max-vertical-offset="5264">
               <folding>
-                <element signature="e#6#109#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lists.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="23" selection-start="3816" selection-end="3816" vertical-scroll-proportion="-15.580646" vertical-offset="1869" max-vertical-offset="6300">
-              <folding>
-                <element signature="n#style#0;n#td#1;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#7;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#8;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="67" selection-start="1653" selection-end="1653" vertical-scroll-proportion="-18.516129" vertical-offset="406" max-vertical-offset="2884">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +58,39 @@
       <file leaf-file-name="menu.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="49" selection-start="1077" selection-end="1077" vertical-scroll-proportion="-15.354838" vertical-offset="0" max-vertical-offset="952">
+            <state line="17" column="85" selection-start="1193" selection-end="1197" vertical-scroll-proportion="-15.354838" vertical-offset="0" max-vertical-offset="952">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shareLists.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/shareLists.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="217" column="34" selection-start="9238" selection-end="9238" vertical-scroll-proportion="0.075170845" vertical-offset="6010" max-vertical-offset="6888">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#td#2;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#if#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#1;n#if#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#if#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#1;n#if#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#if#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#1;n#if#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#7;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#8;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#9;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#if#0;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#if#0;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#10;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,13 +124,20 @@
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/footer.html" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Enter/login.html" />
-        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html" />
         <option value="$PROJECT_DIR$/ThinkPHP/Extend/Library/ORG/Util/Page.class.php" />
-        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/add.html" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/header.html" />
-        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/edit.html" />
         <option value="$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/AdminAction.class.php" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/add.html" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/add.html" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/edit.html" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/lists.html" />
+        <option value="$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/MemberAction.class.php" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/add.html" />
+        <option value="$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/ZoneAction.class.php" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/shareLists.html" />
       </list>
     </option>
   </component>
@@ -203,7 +215,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
+              <option name="myItemId" value="Zone" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -226,32 +238,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Zoneadmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viizone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zoneadmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,6 +365,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp\www\viiz\viizone\Lib\Action\Zoneadmin" />
+      <recent name="D:\wamp\www\viiz\viizone\Tpl\Zoneadmin\Member" />
       <recent name="D:\wamp\www\viiz\viizone\Tpl\Zoneadmin\Admin" />
       <recent name="D:\wamp\www\viiz" />
       <recent name="D:\wamp\www\viiz\images" />
@@ -411,14 +399,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16927083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -432,6 +420,26 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16927083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -452,6 +460,50 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="10780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/MemberAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="27" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="4004">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="75" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="952">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="62" selection-start="4200" selection-end="4200" vertical-scroll-proportion="0.0" vertical-offset="1291" max-vertical-offset="4312">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="47" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="3304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/lists.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="67" selection-start="2188" selection-end="2188" vertical-scroll-proportion="0.0" vertical-offset="1388" max-vertical-offset="6496">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="10780">
           <folding />
         </state>
@@ -459,34 +511,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="201" selection-start="1137" selection-end="1336" vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="3556">
-          <folding />
-        </state>
+        <state line="115" column="47" selection-start="4654" selection-end="4654" vertical-scroll-proportion="0.0" vertical-offset="1502" max-vertical-offset="3780" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/AdminAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="37" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="3248">
-          <folding>
-            <element signature="e#6#109#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="62" column="13" selection-start="1488" selection-end="1692" vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="3976" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="330" column="85" selection-start="18854" selection-end="18854" vertical-scroll-proportion="0.0" vertical-offset="8557" max-vertical-offset="10052">
-          <folding>
-            <element signature="n#style#0;n#td#1;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#3;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#7;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#8;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="84" column="23" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.0" vertical-offset="1869" max-vertical-offset="6300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="67" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="2884" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="49" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="952">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="10780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="201" selection-start="1137" selection-end="1336" vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="3556" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/AdminAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="37" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="3248" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="330" column="85" selection-start="18854" selection-end="18854" vertical-scroll-proportion="0.0" vertical-offset="8557" max-vertical-offset="10052" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/thinking.text">
@@ -509,128 +578,153 @@
         <state line="2" column="6" selection-start="104" selection-end="104" vertical-scroll-proportion="0.06378132" vertical-offset="0" max-vertical-offset="878" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/customer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="1304" selection-end="1336" vertical-scroll-proportion="0.4145786" vertical-offset="336" max-vertical-offset="6048" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Home/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="3" selection-start="452" selection-end="527" vertical-scroll-proportion="0.28701594" vertical-offset="0" max-vertical-offset="9800" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/lists.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7560" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Enter/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="172" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-0.9032258" vertical-offset="504" max-vertical-offset="1736">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/MemberAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="32" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.6150289" vertical-offset="756" max-vertical-offset="5320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/WeixinAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="39" selection-start="1099" selection-end="1297" vertical-scroll-proportion="-9.935484" vertical-offset="756" max-vertical-offset="11816">
-          <folding />
-        </state>
+        <state line="19" column="172" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-0.9032258" vertical-offset="504" max-vertical-offset="1736" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ThinkPHP/Extend/Library/ORG/Util/Page.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="146" column="162" selection-start="6211" selection-end="6211" vertical-scroll-proportion="-15.354838" vertical-offset="3360" max-vertical-offset="8288">
-          <folding>
-            <marker date="1414641367723" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="47" selection-start="4654" selection-end="4654" vertical-scroll-proportion="-55.419353" vertical-offset="1502" max-vertical-offset="3780">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/EnterAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="60" selection-start="917" selection-end="917" vertical-scroll-proportion="-7.548387" vertical-offset="578" max-vertical-offset="1456">
-          <folding />
-        </state>
+        <state line="35" column="60" selection-start="917" selection-end="917" vertical-scroll-proportion="-7.548387" vertical-offset="578" max-vertical-offset="1456" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="60" selection-start="782" selection-end="782" vertical-scroll-proportion="0.45317918" vertical-offset="0" max-vertical-offset="1232">
+        <state line="14" column="60" selection-start="782" selection-end="782" vertical-scroll-proportion="0.45317918" vertical-offset="0" max-vertical-offset="1232" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/select2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.65625" vertical-offset="588" max-vertical-offset="2464" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="67" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="2884" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="51" selection-start="6370" selection-end="6370" vertical-scroll-proportion="-78.58064" vertical-offset="1008" max-vertical-offset="6300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/AdminAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="13" selection-start="1488" selection-end="1692" vertical-scroll-proportion="1.0205011" vertical-offset="840" max-vertical-offset="3976" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="62" selection-start="3530" selection-end="3530" vertical-scroll-proportion="0.449711" vertical-offset="1907" max-vertical-offset="3780" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="47" selection-start="1278" selection-end="1278" vertical-scroll-proportion="-3.935484" vertical-offset="718" max-vertical-offset="3304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/MemberAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="39" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.76537585" vertical-offset="84" max-vertical-offset="4004">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/lists.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="17" selection-start="1598" selection-end="1598" vertical-scroll-proportion="0.6265896" vertical-offset="578" max-vertical-offset="6608">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Member/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="60" selection-start="1713" selection-end="1749" vertical-scroll-proportion="0.6763006" vertical-offset="703" max-vertical-offset="4312">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="-9.032258" vertical-offset="84" max-vertical-offset="10780">
+        <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="4.516129" vertical-offset="504" max-vertical-offset="10780">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="1077" selection-end="1077" vertical-scroll-proportion="-15.354838" vertical-offset="0" max-vertical-offset="952">
+        <state line="17" column="85" selection-start="1193" selection-end="1197" vertical-scroll-proportion="-15.354838" vertical-offset="0" max-vertical-offset="952">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/select2.min.js">
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.65625" vertical-offset="588" max-vertical-offset="2464">
+        <state line="49" column="127" selection-start="1895" selection-end="1895" vertical-scroll-proportion="-4.83871" vertical-offset="1222" max-vertical-offset="5264">
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html">
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/WeixinAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="23" selection-start="3816" selection-end="3816" vertical-scroll-proportion="-15.580646" vertical-offset="1869" max-vertical-offset="6300">
-          <folding>
-            <element signature="n#style#0;n#td#1;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#3;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#7;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#8;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="249" column="0" selection-start="5643" selection-end="7956" vertical-scroll-proportion="-25.612904" vertical-offset="6010" max-vertical-offset="11816">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/edit.html">
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/ZoneAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="67" selection-start="1653" selection-end="1653" vertical-scroll-proportion="-18.516129" vertical-offset="406" max-vertical-offset="2884">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="36" column="29" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-24.709677" vertical-offset="46" max-vertical-offset="4368">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/AdminAction.class.php">
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/shareLists.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="13" selection-start="1488" selection-end="1692" vertical-scroll-proportion="0.55353075" vertical-offset="1250" max-vertical-offset="3976">
+        <state line="217" column="34" selection-start="9238" selection-end="9238" vertical-scroll-proportion="0.075170845" vertical-offset="6010" max-vertical-offset="6888">
           <folding>
-            <element signature="e#6#109#0" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#2;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#if#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#if#0;n#td#4;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#if#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#if#0;n#td#5;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#if#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#if#0;n#td#6;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#7;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#8;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#9;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#if#0;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#if#0;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#10;n#tr#0;n#volist#0;n#form#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

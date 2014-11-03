@@ -19,6 +19,9 @@
 	body{
 		font-family:'微软雅黑';
 	}
+    .btn{
+        font-family:'微软雅黑';
+    }
 </style>
 </head>
 <body>
@@ -30,7 +33,7 @@
 
 <div id="content">
 <div id="content-header">
-  <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a> <a href="#" class="tip-bottom">管理员管理</a> <a href="#" class="current">添加管理员</a> </div>
+  <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a> <a href="#" class="tip-bottom">会员管理</a> <a href="#" class="current">添加会员</a> </div>
 </div>
 <div class="container-fluid">
   <hr>
@@ -38,14 +41,14 @@
     <div class="span12">
       <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-          <h5>添加管理员</h5>
+          <h5>添加会员</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="__ROOT__/Zoneadmin/Admin/add_action" method="post" class="form-horizontal">
+          <form action="__ROOT__/Zoneadmin/Member/add_action" method="post" class="form-horizontal">
             <div class="control-group">
-              <label class="control-label">用户名:</label>
+              <label class="control-label">昵称:</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="用户名" name="admin_name" />
+                <input type="text" class="span11" placeholder="用户名" name="nick_name" />
               </div>
             </div>
 
@@ -70,18 +73,34 @@
               <div class="control-group">
                   <label class="control-label">联系电话 :</label>
                   <div class="controls">
-                      <input type="text" class="span11" placeholder="联系电话"  name="phone"  />
+                      <input type="text" class="span11" placeholder="手机号码"  name="phone"  />
                   </div>
               </div>
               <div class="control-group">
-                  <label class="control-label">管理权限：</label>
+                  <label class="control-label">会员积分 :</label>
+                  <div class="controls">
+                      <input type="text" class="span11" placeholder="会员积分"  name="score"  />
+                  </div>
+              </div>
+              <div class="control-group">
+                  <label class="control-label">会员等级：</label>
                   <div class="controls">
                       <label>
-                          <input type="radio" name="lev" checked="checked" value="1" />
-                          超级管理员</label>
+                          <input type="radio" name="lev" checked="checked" value="0" />
+                          普通会员
+                      </label>
                       <label>
-                          <input type="radio" name="lev" value="0" />
-                          普通管理员</label>
+                          <input type="radio" name="lev" value="1" />
+                          二级会员
+                      </label>
+                      <label>
+                          <input type="radio" name="lev" value="2" />
+                          三级会员
+                      </label>
+                      <label>
+                          <input type="radio" name="lev" value="3" />
+                          四级会员
+                      </label>
                   </div>
               </div>
             <div class="control-group">
@@ -117,10 +136,10 @@
 <script src="__PUBLIC__/js/jquery.peity.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        var attr=$('#admin').attr('attr');
+        var attr=$('#member').attr('attr');
         var p='{$position}';
         if(attr==p){
-            $('#admin').children('ul').css('display','block');
+            $('#member').children('ul').css('display','block');
         }
     })
 </script>

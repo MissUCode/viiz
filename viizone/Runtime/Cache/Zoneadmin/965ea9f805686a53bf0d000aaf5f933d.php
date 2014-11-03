@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 <title>管理员列表</title>
@@ -23,9 +23,75 @@
 </style>
 </head>
 <body>
-<include file="Public/header" />
+<!--Header-part-->
+<div id="header">
+    <h1><a href="dashboard.html">青椒的故事</a></h1>
+</div>
+<!--close-Header-part-->
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+    <ul class="nav">
+        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">欢迎 管理员</span><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="icon-user"></i> 我的设置</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="icon-check"></i> 我的日志</a></li>
+                <li class="divider"></li>
+                <li><a href="__ROOT__/Zoneadmin/Enter/logout"><i class="icon-key"></i> 退出</a></li>
+            </ul>
+        </li>
+        <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">我的信息</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> 新消息</a></li>
+                <li class="divider"></li>
+                <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i> 收信箱</a></li>
+                <li class="divider"></li>
+                <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i> 发信箱</a></li>
+                <li class="divider"></li>
+                <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> 回收站</a></li>
+            </ul>
+        </li>
+        <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
+        <li class=""><a title="" href="__ROOT__/Zoneadmin/Enter/logout"><i class="icon icon-share-alt"></i> <span class="text">退出系统</span></a></li>
+    </ul>
+</div>
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+<div id="search">
+    <input type="text" placeholder="搜索..."/>
+    <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+</div>
+<!--close-top-serch-->
 <!--sidebar-menu-->
-<include file="Public/menu" />
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> 首页</a>
+    <ul>
+        <li class="<?php if($position == index): ?>active<?php endif; ?>">
+            <a href="__ROOT__/Zoneadmin/Index/index.html"><i class="icon icon-home"></i> <span>首页</span></a>
+        </li>
+        <li class="submenu <?php if($position == admin): ?>active<?php endif; ?>" attr="admin" id="admin"> <a href="#"><i class="icon icon-user"></i> <span>管理员管理</span> <span class="label label-important">2</span></a>
+            <ul>
+                <li><a href="__ROOT__/Zoneadmin/Admin/add">添加管理员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Admin/lists">管理员列表</a></li>
+            </ul>
+        </li>
+        <li class="submenu <?php if($position == member): ?>active<?php endif; ?>" attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
+            <ul>
+                <li><a href="__ROOT__/Zoneadmin/Member/add">添加会员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Member/lists">会员列表</a></li>
+            </ul>
+        </li>
+        <li class="submenu <?php if($position == zone): ?>active<?php endif; ?>"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
+            <ul>
+                <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist"> 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
 <!--sidebar-menu-->
 <div id="content">
   <div id="content-header">
@@ -35,6 +101,10 @@
     <hr>
     <div class="row-fluid">
       <div class="span12">
+          <form method="post" action="__ROOT__/Zoneadmin/Member/lists">
+          选择条件：<input type="text"  class="span2" placeholder="输入昵称" name="where"  style="margin-top: 9px;" />
+          <button type="submit" class="btn" >搜索</button>
+          </form>
         <div class="widget-box">
           <div class="widget-title"> <span class="icon">
             <input type="checkbox" id="title-checkbox" name="title-checkbox" />
@@ -46,44 +116,43 @@
               <thead>
                 <tr>
                   <th><i class="icon-resize-vertical"></i></th>
-                  <th>用户名</th>
+                  <th>昵称</th>
                   <th>联系电话</th>
                   <th>邮箱</th>
-                  <th>权限</th>
-                  <th>登录IP</th>
-                  <th>登陆时间</th>
+                  <th>会员等级</th>
+                  <th>会员积分</th>
+                  <th>注册时间</th>
                   <th>备注信息</th>
                   <th>操作</th>
                 </tr>
               </thead>
               <tbody>
-              <form method="post" action="__ROOT__/Zoneadmin/Admin/delall" id="delall">
-              <volist name="admins" id="admins">
-                <tr>
-                  <td><input type="checkbox" name="ids[]" value="{$admins.id}" class="checkbox"  /></td>
-                  <td style="text-align: center">{$admins.admin_name}</td>
-                  <td style="text-align: center">{$admins.phone}</td>
-                  <td style="text-align: center">{$admins.email}</td>
+              <form method="post" action="__ROOT__/Zoneadmin/Member/delall" id="delall">
+              <?php if(is_array($admins)): $i = 0; $__LIST__ = $admins;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$admins): $mod = ($i % 2 );++$i;?><tr>
+                  <td><input type="checkbox" name="ids[]" value="<?php echo ($admins["id"]); ?>" class="checkbox"  /></td>
+                  <td style="text-align: center"><?php echo ($admins["nickname"]); ?></td>
+                  <td style="text-align: center"><?php echo ($admins["phone"]); ?></td>
+                  <td style="text-align: center"><?php echo ($admins["email"]); ?></td>
                   <td style="text-align: center">
-                      <if condition="$admins['lev'] eq 0">普通管理员</if>
-                      <if condition="$admins['lev'] eq 1">超级管理员</if>
+                      <?php if($admins['lev'] == 0): ?>普通会员<?php endif; ?>
+                      <?php if($admins['lev'] == 1): ?>二级会员<?php endif; ?>
+                      <?php if($admins['lev'] == 2): ?>三级会员<?php endif; ?>
+                      <?php if($admins['lev'] == 3): ?>四级会员<?php endif; ?>
                   </td>
-                  <td style="text-align: center">{$admins.login_ip}</td>
-                  <td style="text-align: center">{$admins.login_time|date='Y-m-d H:i:s',###}</td>
-                  <td style="text-align: center">{$admins.remark}</td>
-                  <td class="center" style="text-align: center">
-                      <button class="btn btn-mini btn-info edit" type="button" alt="on" attr="{$admins.id}">编辑</button>
-                      <if condition="$admins['lock'] eq 1">
-                          <button class="btn btn-mini btn-success turn" type="button" alt="on" attr="{$admins.id}">开启</button>
-                      </if>
-                      <if condition="$admins['lock'] eq 0">
-                          <button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="{$admins.id}">禁用</button>
-                      </if>
+                  <td style="text-align: center"><?php echo ($admins["score"]); ?></td>
+                  <td style="text-align: center"><?php echo (date('Y-m-d H:i:s',$admins["reg_time"])); ?></td>
+                   <?php if($admins['remark']): ?><td style="text-align: center"><?php echo ($admins["remark"]); ?></td>
+                       <?php else: ?>
+                       <td style="text-align: center">无备注信息！</td><?php endif; ?>
 
-                      <button class="btn btn-mini btn-danger turn" type="button" alt="del" attr="{$admins.id}">删除</button>
+                  <td class="center" style="text-align: center">
+                      <button class="btn btn-mini btn-info edit" type="button" alt="on" attr="<?php echo ($admins["id"]); ?>">编辑</button>
+                      <?php if($admins['lock'] == 1): ?><button class="btn btn-mini btn-success turn" type="button" alt="on" attr="<?php echo ($admins["id"]); ?>">开启</button><?php endif; ?>
+                      <?php if($admins['lock'] == 0): ?><button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="<?php echo ($admins["id"]); ?>">禁用</button><?php endif; ?>
+
+                      <button class="btn btn-mini btn-danger turn" type="button" alt="del" attr="<?php echo ($admins["id"]); ?>">删除</button>
                   </td>
-                </tr>
-              </volist>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <tr><td colspan="9"><button class="btn btn-mini btn-danger delall" type="button">全部删除</button></td></tr>
               </form>
               </tbody>
@@ -107,7 +176,7 @@
                   <!--</span>-->
                   <!--<a tabindex="0" class="next fg-button ui-button ui-state-default" id="DataTables_Table_0_next">下一页</a>-->
                   <!--<a tabindex="0" class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default" id="DataTables_Table_0_last">最后一页</a></div>-->
-                  {$page}
+                  <?php echo ($page); ?>
           </div>
         </div>
       </div>
@@ -115,7 +184,9 @@
   </div>
 </div>
 <!--Footer-part-->
-<include file="Public/footer" />
+<div class="row-fluid">
+    <div id="footer" class="span12"> 2014 &copy; 小青椒网络科技版权 小青椒</a> </div>
+</div>
 <!--end-Footer-part-->
 <script src="__PUBLIC__/js/jquery.min.js"></script> 
 <script src="__PUBLIC__/js/jquery.ui.custom.js"></script> 
@@ -127,10 +198,10 @@
 <script src="__PUBLIC__/js/tip.js"></script>
 <script type="text/javascript">
     $(function(){
-        var attr=$('#admin').attr('attr');
-        var p='{$position}';
+        var attr=$('#member').attr('attr');
+        var p='<?php echo ($position); ?>';
         if(attr==p){
-            $('#admin').children('ul').css('display','block');
+            $('#member').children('ul').css('display','block');
         }
         $('.turn').click(function(){
             var act=$(this).attr('alt');
@@ -142,7 +213,7 @@
                 okValue: '确定',
                 ok: function () {
                     $.post(
-                            "__ROOT__/Zoneadmin/Admin/ajax.html",
+                            "__ROOT__/Zoneadmin/Member/ajax.html",
                             {act:act,id:id},
                             function(data){
                                 if(data==1){
@@ -162,7 +233,7 @@
             d.showModal();
             }else{
                 $.post(
-                        "__ROOT__/Zoneadmin/Admin/ajax.html",
+                        "__ROOT__/Zoneadmin/Member/ajax.html",
                         {act:act,id:id},
                         function(data){
                             if(data==1){
@@ -180,7 +251,7 @@
 
         $('.edit').click(function(){
             var id=$(this).attr('attr');
-            var spurl="__ROOT__/Zoneadmin/Admin/edit/id/"+id;
+            var spurl="__ROOT__/Zoneadmin/Member/edit/id/"+id;
             var  d=dialog({
                 id: 'open',
                 title: '编辑管理员',

@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
-<title>管理员列表</title>
+<title>论坛管理</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
@@ -74,19 +74,19 @@
                 <li><a href="__ROOT__/Zoneadmin/Admin/lists">管理员列表</a></li>
             </ul>
         </li>
-        <li class="submenu " attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
+        <li class="submenu <?php if($position == member): ?>active<?php endif; ?>" attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
             <ul>
-                <li><a href="__ROOT__/Zoneadmin/Member/add">会员列表</a></li>
-                <li><a href="__ROOT__/Zoneadmin/Member/lists">添加会员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Member/add">添加会员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Member/lists">会员列表</a></li>
             </ul>
         </li>
-        <li class="submenu"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
+        <li class="submenu <?php if($position == zone): ?>active<?php endif; ?>"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
             <ul>
-                <li><a href="error403.html"> 圈子管理</a></li>
-                <li><a href="error404.html"> 帖子管理</a></li>
-                <li><a href="error405.html"> 广告管理</a></li>
-                <li><a href="error500.html"> 数据统计</a></li>
-                <li><a href="error500.html"> 留言管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist"> 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
         </li>
 
@@ -95,12 +95,22 @@
 <!--sidebar-menu-->
 <div id="content">
   <div id="content-header">
-      <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a> <a href="#" class="tip-bottom">管理员管理</a> <a href="#" class="current">管理员列表</a> </div>
+      <div id="breadcrumb">
+          <a href="__ROOT__/Zoneadmin/Index/index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+          <a href="#" class="tip-bottom">论坛管理</a> <a href="__ROOT__/Zoneadmin/Zone/shareLists" class="current">分享圈管理</a>
+      </div>
   </div>
   <div class="container-fluid">
     <hr>
     <div class="row-fluid">
       <div class="span12">
+          <form method="post" action="__ROOT__/Zoneadmin/Zone/shareLists">
+          选择条件：<input type="text"  class="span2" placeholder="输入昵称" name="where"  style="margin-top: 9px;" />
+          <button type="submit" class="btn" >搜索</button>
+          </form>
+          <div class="span12">
+             <a class="btn  btn-success" href="__ROOT__/Zoneadmin/Zone/addshare" style="margin-right:43px;float: right;">+ 添加分享圈</a>
+          </div>
         <div class="widget-box">
           <div class="widget-title"> <span class="icon">
             <input type="checkbox" id="title-checkbox" name="title-checkbox" />
@@ -112,63 +122,66 @@
               <thead>
                 <tr>
                   <th><i class="icon-resize-vertical"></i></th>
-                  <th>用户名</th>
-                  <th>联系电话</th>
-                  <th>邮箱</th>
-                  <th>权限</th>
-                  <th>登录IP</th>
-                  <th>登陆时间</th>
+                  <th>分享圈名称</th>
+                  <th>封面图片</th>
+                  <th>圈主人ID</th>
+                  <th>是否置顶</th>
+                  <th>是否热门</th>
+                  <th>是否推荐</th>
+                  <th>会员数</th>
+                  <th>点击率</th>
+                  <th>创建时间</th>
                   <th>备注信息</th>
                   <th>操作</th>
                 </tr>
+
               </thead>
               <tbody>
-              <form method="post" action="__ROOT__/Zoneadmin/Admin/delall" id="delall">
-              <?php if(is_array($admins)): $i = 0; $__LIST__ = $admins;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$admins): $mod = ($i % 2 );++$i;?><tr>
-                  <td><input type="checkbox" name="ids[]" value="<?php echo ($admins["id"]); ?>" class="checkbox"  /></td>
-                  <td style="text-align: center"><?php echo ($admins["admin_name"]); ?></td>
-                  <td style="text-align: center"><?php echo ($admins["phone"]); ?></td>
-                  <td style="text-align: center"><?php echo ($admins["email"]); ?></td>
+              <form method="post" action="__ROOT__/Zoneadmin/Member/delall" id="delall">
+              <?php if(is_array($shares)): $i = 0; $__LIST__ = $shares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shares): $mod = ($i % 2 );++$i;?><tr>
+                  <td><input type="checkbox" name="ids[]" value="<?php echo ($shares["id"]); ?>" class="checkbox"  /></td>
+                  <td style="text-align: center"><?php echo ($shares["title"]); ?></td>
+                  <td style="text-align: center"><img src="__ROOT__/<?php echo ($shares["pic"]); ?>" style="width: 120px;height: 30px;"></td>
+                  <td style="text-align: center"><?php echo ($shares["uid"]); ?></td>
                   <td style="text-align: center">
-                      <?php if($admins['lev'] == 0): ?>普通管理员<?php endif; ?>
-                      <?php if($admins['lev'] == 1): ?>超级管理员<?php endif; ?>
+                      <?php if($shares['is_top'] == 1): ?><img src="__PUBLIC__/images/Y.png" style="width: 15px;height: 15px;">
+                      <?php else: ?>
+                      <img src="__PUBLIC__/images/N.png" style="width: 15px;height: 15px;"><?php endif; ?>
                   </td>
-                  <td style="text-align: center"><?php echo ($admins["login_ip"]); ?></td>
-                  <td style="text-align: center"><?php echo (date('Y-m-d H:i:s',$admins["login_time"])); ?></td>
-                  <td style="text-align: center"><?php echo ($admins["remark"]); ?></td>
-                  <td class="center" style="text-align: center">
-                      <button class="btn btn-mini btn-info edit" type="button" alt="on" attr="<?php echo ($admins["id"]); ?>">编辑</button>
-                      <?php if($admins['lock'] == 1): ?><button class="btn btn-mini btn-success turn" type="button" alt="on" attr="<?php echo ($admins["id"]); ?>">开启</button><?php endif; ?>
-                      <?php if($admins['lock'] == 0): ?><button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="<?php echo ($admins["id"]); ?>">禁用</button><?php endif; ?>
+                  <td style="text-align: center">
+                      <?php if($shares['is_hot'] == 1): ?><img src="__PUBLIC__/images/Y.png" style="width: 15px;height: 15px;">
+                          <?php else: ?>
+                          <img src="__PUBLIC__/images/N.png" style="width: 15px;height: 15px;"><?php endif; ?>
+                  </td>
+                    <td style="text-align: center">
+                        <?php if($shares['is_tj'] == 1): ?><img src="__PUBLIC__/images/Y.png" style="width: 15px;height: 15px;">
+                            <?php else: ?>
+                            <img src="__PUBLIC__/images/N.png" style="width: 15px;height: 15px;"><?php endif; ?>
+                    </td>
+                    <td style="text-align: center"><?php echo ($shares["member"]); ?></td>
+                    <td style="text-align: center"><?php echo ($shares["click"]); ?></td>
+                  <td style="text-align: center"><?php echo (date('Y-m-d H:i:s',$shares["ctime"])); ?></td>
+                   <?php if($admins['remark']): ?><td style="text-align: center"><?php echo ($shares["remark"]); ?></td>
+                       <?php else: ?>
+                       <td style="text-align: center">无备注信息！</td><?php endif; ?>
 
-                      <button class="btn btn-mini btn-danger turn" type="button" alt="del" attr="<?php echo ($admins["id"]); ?>">删除</button>
+                  <td class="center" style="text-align: center">
+                      <button class="btn btn-mini btn-info edit" type="button" alt="on" attr="<?php echo ($shares["id"]); ?>">编辑</button>
+                      <?php if($admins['lock'] == 1): ?><button class="btn btn-mini btn-success turn" type="button" alt="on" attr="<?php echo ($shares["id"]); ?>">开启</button><?php endif; ?>
+                      <?php if($admins['lock'] == 0): ?><button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="<?php echo ($shares["id"]); ?>">禁用</button><?php endif; ?>
+
+                      <button class="btn btn-mini btn-danger turn" type="button" alt="del" attr="<?php echo ($shares["id"]); ?>">删除</button>
                   </td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                <tr><td colspan="9"><button class="btn btn-mini btn-danger delall" type="button">全部删除</button></td></tr>
+                <tr><td colspan="12"><button class="btn btn-mini btn-danger delall" type="button">全部删除</button></td></tr>
               </form>
               </tbody>
             </table>
           </div>
           <div class="span8">
               <div class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_full_numbers" id="DataTables_Table_0_paginate">
-                  <!--<a tabindex="0" class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_first">第一页</a>-->
-                  <!--<a tabindex="0" class="previous fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_previous">上一页</a>-->
-                  <!--<span>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled">1</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">2</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">3</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">4</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">5</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">6</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">7</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">8</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">9</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">10</a>-->
-                  <!--</span>-->
-                  <!--<a tabindex="0" class="next fg-button ui-button ui-state-default" id="DataTables_Table_0_next">下一页</a>-->
-                  <!--<a tabindex="0" class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default" id="DataTables_Table_0_last">最后一页</a></div>-->
                   <?php echo ($page); ?>
-          </div>
+              </div>
         </div>
       </div>
     </div>
@@ -189,10 +202,10 @@
 <script src="__PUBLIC__/js/tip.js"></script>
 <script type="text/javascript">
     $(function(){
-        var attr=$('#admin').attr('attr');
+        var attr=$('#zone').attr('attr');
         var p='<?php echo ($position); ?>';
         if(attr==p){
-            $('#admin').children('ul').css('display','block');
+            $('#zone').children('ul').css('display','block');
         }
         $('.turn').click(function(){
             var act=$(this).attr('alt');
@@ -200,11 +213,11 @@
             if(act=='del'){
                 var d = dialog({
                 title: '信息提示',
-                content: '您确定要删除该管理员吗？！',
+                content: '您确定要删除该分享圈吗？！',
                 okValue: '确定',
                 ok: function () {
                     $.post(
-                            "__ROOT__/Zoneadmin/Admin/ajax.html",
+                            "__ROOT__/Zoneadmin/Member/ajax.html",
                             {act:act,id:id},
                             function(data){
                                 if(data==1){
@@ -224,7 +237,7 @@
             d.showModal();
             }else{
                 $.post(
-                        "__ROOT__/Zoneadmin/Admin/ajax.html",
+                        "__ROOT__/Zoneadmin/Member/ajax.html",
                         {act:act,id:id},
                         function(data){
                             if(data==1){
@@ -242,10 +255,10 @@
 
         $('.edit').click(function(){
             var id=$(this).attr('attr');
-            var spurl="__ROOT__/Zoneadmin/Admin/edit/id/"+id;
+            var spurl="__ROOT__/Zoneadmin/Member/edit/id/"+id;
             var  d=dialog({
                 id: 'open',
-                title: '编辑管理员',
+                title: '编辑分享圈',
                 url: spurl,
                 cancelValue: '关闭窗口',
                 cancel: function () {}
@@ -256,7 +269,7 @@
         $('.delall').click(function(){
             var d = dialog({
                 title: '信息提示',
-                content: '您确定要删除全部管理员吗？！',
+                content: '您确定要删除全部分享圈吗？！',
                 okValue: '确定',
                 ok: function () {
                     $('#delall').submit();

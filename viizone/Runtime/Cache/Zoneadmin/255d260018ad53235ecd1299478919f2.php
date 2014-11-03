@@ -70,19 +70,19 @@
                 <li><a href="__ROOT__/Zoneadmin/Admin/lists">管理员列表</a></li>
             </ul>
         </li>
-        <li class="submenu " attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
+        <li class="submenu <?php if($position == member): ?>active<?php endif; ?>" attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
             <ul>
-                <li><a href="index2.html">会员列表</a></li>
-                <li><a href="gallery.html">添加会员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Member/add">添加会员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Member/lists">会员列表</a></li>
             </ul>
         </li>
-        <li class="submenu"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
+        <li class="submenu <?php if($position == zone): ?>active<?php endif; ?>"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
             <ul>
-                <li><a href="error403.html"> 圈子管理</a></li>
-                <li><a href="error404.html"> 帖子管理</a></li>
-                <li><a href="error405.html"> 广告管理</a></li>
-                <li><a href="error500.html"> 数据统计</a></li>
-                <li><a href="error500.html"> 留言管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist"> 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
         </li>
 

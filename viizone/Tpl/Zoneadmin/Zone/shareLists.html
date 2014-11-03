@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>管理员列表</title>
+<title>论坛管理</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
@@ -29,12 +29,22 @@
 <!--sidebar-menu-->
 <div id="content">
   <div id="content-header">
-      <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a> <a href="#" class="tip-bottom">管理员管理</a> <a href="#" class="current">管理员列表</a> </div>
+      <div id="breadcrumb">
+          <a href="__ROOT__/Zoneadmin/Index/index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+          <a href="#" class="tip-bottom">论坛管理</a> <a href="__ROOT__/Zoneadmin/Zone/shareLists" class="current">分享圈管理</a>
+      </div>
   </div>
   <div class="container-fluid">
     <hr>
     <div class="row-fluid">
       <div class="span12">
+          <form method="post" action="__ROOT__/Zoneadmin/Zone/shareLists">
+          选择条件：<input type="text"  class="span2" placeholder="输入昵称" name="where"  style="margin-top: 9px;" />
+          <button type="submit" class="btn" >搜索</button>
+          </form>
+          <div class="span12">
+             <a class="btn  btn-success" href="__ROOT__/Zoneadmin/Zone/addshare" style="margin-right:43px;float: right;">+ 添加分享圈</a>
+          </div>
         <div class="widget-box">
           <div class="widget-title"> <span class="icon">
             <input type="checkbox" id="title-checkbox" name="title-checkbox" />
@@ -46,69 +56,80 @@
               <thead>
                 <tr>
                   <th><i class="icon-resize-vertical"></i></th>
-                  <th>用户名</th>
-                  <th>联系电话</th>
-                  <th>邮箱</th>
-                  <th>权限</th>
-                  <th>登录IP</th>
-                  <th>登陆时间</th>
+                  <th>分享圈名称</th>
+                  <th>封面图片</th>
+                  <th>圈主人ID</th>
+                  <th>是否置顶</th>
+                  <th>是否热门</th>
+                  <th>是否推荐</th>
+                  <th>会员数</th>
+                  <th>点击率</th>
+                  <th>创建时间</th>
                   <th>备注信息</th>
                   <th>操作</th>
                 </tr>
+
               </thead>
               <tbody>
-              <form method="post" action="__ROOT__/Zoneadmin/Admin/delall" id="delall">
-              <volist name="admins" id="admins">
+              <form method="post" action="__ROOT__/Zoneadmin/Member/delall" id="delall">
+              <volist name="shares" id="shares">
                 <tr>
-                  <td><input type="checkbox" name="ids[]" value="{$admins.id}" class="checkbox"  /></td>
-                  <td style="text-align: center">{$admins.admin_name}</td>
-                  <td style="text-align: center">{$admins.phone}</td>
-                  <td style="text-align: center">{$admins.email}</td>
+                  <td><input type="checkbox" name="ids[]" value="{$shares.id}" class="checkbox"  /></td>
+                  <td style="text-align: center">{$shares.title}</td>
+                  <td style="text-align: center"><img src="__ROOT__/{$shares.pic}" style="width: 120px;height: 30px;"></td>
+                  <td style="text-align: center">{$shares.uid}</td>
                   <td style="text-align: center">
-                      <if condition="$admins['lev'] eq 0">普通管理员</if>
-                      <if condition="$admins['lev'] eq 1">超级管理员</if>
+                      <if condition="$shares['is_top'] eq 1">
+                      <img src="__PUBLIC__/images/Y.png" style="width: 15px;height: 15px;">
+                      <else />
+                      <img src="__PUBLIC__/images/N.png" style="width: 15px;height: 15px;">
+                      </if>
                   </td>
-                  <td style="text-align: center">{$admins.login_ip}</td>
-                  <td style="text-align: center">{$admins.login_time|date='Y-m-d H:i:s',###}</td>
-                  <td style="text-align: center">{$admins.remark}</td>
+                  <td style="text-align: center">
+                      <if condition="$shares['is_hot'] eq 1">
+                          <img src="__PUBLIC__/images/Y.png" style="width: 15px;height: 15px;">
+                          <else/>
+                          <img src="__PUBLIC__/images/N.png" style="width: 15px;height: 15px;">
+                      </if>
+                  </td>
+                    <td style="text-align: center">
+                        <if condition="$shares['is_tj'] eq 1">
+                            <img src="__PUBLIC__/images/Y.png" style="width: 15px;height: 15px;">
+                            <else />
+                            <img src="__PUBLIC__/images/N.png" style="width: 15px;height: 15px;">
+                        </if>
+                    </td>
+                    <td style="text-align: center">{$shares.member}</td>
+                    <td style="text-align: center">{$shares.click}</td>
+                  <td style="text-align: center">{$shares.ctime|date='Y-m-d H:i:s',###}</td>
+                   <if condition="$admins['remark']">
+                       <td style="text-align: center">{$shares.remark}</td>
+                       <else />
+                       <td style="text-align: center">无备注信息！</td>
+                    </if>
+
                   <td class="center" style="text-align: center">
-                      <button class="btn btn-mini btn-info edit" type="button" alt="on" attr="{$admins.id}">编辑</button>
+                      <button class="btn btn-mini btn-info edit" type="button" alt="on" attr="{$shares.id}">编辑</button>
                       <if condition="$admins['lock'] eq 1">
-                          <button class="btn btn-mini btn-success turn" type="button" alt="on" attr="{$admins.id}">开启</button>
+                          <button class="btn btn-mini btn-success turn" type="button" alt="on" attr="{$shares.id}">开启</button>
                       </if>
                       <if condition="$admins['lock'] eq 0">
-                          <button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="{$admins.id}">禁用</button>
+                          <button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="{$shares.id}">禁用</button>
                       </if>
 
-                      <button class="btn btn-mini btn-danger turn" type="button" alt="del" attr="{$admins.id}">删除</button>
+                      <button class="btn btn-mini btn-danger turn" type="button" alt="del" attr="{$shares.id}">删除</button>
                   </td>
                 </tr>
               </volist>
-                <tr><td colspan="9"><button class="btn btn-mini btn-danger delall" type="button">全部删除</button></td></tr>
+                <tr><td colspan="12"><button class="btn btn-mini btn-danger delall" type="button">全部删除</button></td></tr>
               </form>
               </tbody>
             </table>
           </div>
           <div class="span8">
               <div class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_full_numbers" id="DataTables_Table_0_paginate">
-                  <!--<a tabindex="0" class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_first">第一页</a>-->
-                  <!--<a tabindex="0" class="previous fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_previous">上一页</a>-->
-                  <!--<span>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled">1</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">2</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">3</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">4</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">5</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">6</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">7</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">8</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">9</a>-->
-                      <!--<a tabindex="0" class="fg-button ui-button ui-state-default">10</a>-->
-                  <!--</span>-->
-                  <!--<a tabindex="0" class="next fg-button ui-button ui-state-default" id="DataTables_Table_0_next">下一页</a>-->
-                  <!--<a tabindex="0" class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default" id="DataTables_Table_0_last">最后一页</a></div>-->
                   {$page}
-          </div>
+              </div>
         </div>
       </div>
     </div>
@@ -127,10 +148,10 @@
 <script src="__PUBLIC__/js/tip.js"></script>
 <script type="text/javascript">
     $(function(){
-        var attr=$('#admin').attr('attr');
+        var attr=$('#zone').attr('attr');
         var p='{$position}';
         if(attr==p){
-            $('#admin').children('ul').css('display','block');
+            $('#zone').children('ul').css('display','block');
         }
         $('.turn').click(function(){
             var act=$(this).attr('alt');
@@ -138,11 +159,11 @@
             if(act=='del'){
                 var d = dialog({
                 title: '信息提示',
-                content: '您确定要删除该管理员吗？！',
+                content: '您确定要删除该分享圈吗？！',
                 okValue: '确定',
                 ok: function () {
                     $.post(
-                            "__ROOT__/Zoneadmin/Admin/ajax.html",
+                            "__ROOT__/Zoneadmin/Member/ajax.html",
                             {act:act,id:id},
                             function(data){
                                 if(data==1){
@@ -162,7 +183,7 @@
             d.showModal();
             }else{
                 $.post(
-                        "__ROOT__/Zoneadmin/Admin/ajax.html",
+                        "__ROOT__/Zoneadmin/Member/ajax.html",
                         {act:act,id:id},
                         function(data){
                             if(data==1){
@@ -180,10 +201,10 @@
 
         $('.edit').click(function(){
             var id=$(this).attr('attr');
-            var spurl="__ROOT__/Zoneadmin/Admin/edit/id/"+id;
+            var spurl="__ROOT__/Zoneadmin/Member/edit/id/"+id;
             var  d=dialog({
                 id: 'open',
-                title: '编辑管理员',
+                title: '编辑分享圈',
                 url: spurl,
                 cancelValue: '关闭窗口',
                 cancel: function () {}
@@ -194,7 +215,7 @@
         $('.delall').click(function(){
             var d = dialog({
                 title: '信息提示',
-                content: '您确定要删除全部管理员吗？！',
+                content: '您确定要删除全部分享圈吗？！',
                 okValue: '确定',
                 ok: function () {
                     $('#delall').submit();
