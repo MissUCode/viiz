@@ -25,13 +25,13 @@
 
 <!--Header-part-->
 <div id="header">
-    <h1><a href="dashboard.html">青椒的故事</a></h1>
+    <h1><a href="dashboard.html"><?php echo (session('admin_name')); ?></a></h1>
 </div>
 <!--close-Header-part-->
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav">
-        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">欢迎 管理员</span><b class="caret"></b></a>
+        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">欢迎 <?php echo (session('admin_name')); ?></span><b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="#"><i class="icon-user"></i> 我的设置</a></li>
                 <li class="divider"></li>
@@ -74,19 +74,19 @@
                 <li><a href="__ROOT__/Zoneadmin/Admin/lists">管理员列表</a></li>
             </ul>
         </li>
-        <li class="submenu " attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
+        <li class="submenu <?php if($position == member): ?>active<?php endif; ?>" attr="member" id="member"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">2</span></a>
             <ul>
-                <li><a href="index2.html">会员列表</a></li>
-                <li><a href="gallery.html">添加会员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Member/add">添加会员</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Member/lists">会员列表</a></li>
             </ul>
         </li>
-        <li class="submenu"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
+        <li class="submenu <?php if($position == zone): ?>active<?php endif; ?>"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span> <span class="label label-important">5</span></a>
             <ul>
-                <li><a href="error403.html"> 圈子管理</a></li>
-                <li><a href="error404.html"> 帖子管理</a></li>
-                <li><a href="error405.html"> 广告管理</a></li>
-                <li><a href="error500.html"> 数据统计</a></li>
-                <li><a href="error500.html"> 留言管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist"> 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
         </li>
 
@@ -146,7 +146,7 @@
                           <input type="radio" name="lev" checked="checked" value="1" />
                           超级管理员</label>
                       <label>
-                          <input type="radio" name="lev" lev="0" />
+                          <input type="radio" name="lev" value="0" />
                           普通管理员</label>
                   </div>
               </div>

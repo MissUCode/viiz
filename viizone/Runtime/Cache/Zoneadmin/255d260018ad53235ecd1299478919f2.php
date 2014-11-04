@@ -21,13 +21,13 @@
 <body>
 <!--Header-part-->
 <div id="header">
-    <h1><a href="dashboard.html">青椒的故事</a></h1>
+    <h1><a href="dashboard.html"><?php echo (session('admin_name')); ?></a></h1>
 </div>
 <!--close-Header-part-->
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav">
-        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">欢迎 管理员</span><b class="caret"></b></a>
+        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">欢迎 <?php echo (session('admin_name')); ?></span><b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="#"><i class="icon-user"></i> 我的设置</a></li>
                 <li class="divider"></li>
@@ -80,7 +80,7 @@
             <ul>
                 <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
-                <li><a href="__ROOT__/Zoneadmin/Zone/adlist"> 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist" > 广告管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>

@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
-<title>添加管理员</title>
+<title>论坛管理-添加帖子</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
@@ -87,7 +87,7 @@
             <ul>
                 <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
-                <li><a href="__ROOT__/Zoneadmin/Zone/adlist"> 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist" > 广告管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
@@ -99,7 +99,10 @@
 
 <div id="content">
 <div id="content-header">
-  <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a> <a href="#" class="tip-bottom">会员管理</a> <a href="#" class="current">添加会员</a> </div>
+  <div id="breadcrumb">
+      <a href="__ROOT__/Zoneadmin/Index/index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+      <a href="#" class="tip-bottom">论坛管理</a> <a href="__ROOT__/Zoneadmin/Zone/addArticle" class="current">添加帖子</a>
+  </div>
 </div>
 <div class="container-fluid">
   <hr>
@@ -107,77 +110,58 @@
     <div class="span12">
       <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-          <h5>添加会员</h5>
+          <h5>添加帖子</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="__ROOT__/Zoneadmin/Member/add_action" method="post" class="form-horizontal">
+          <form action="__ROOT__/Zoneadmin/Zone/article_action" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="control-group">
-              <label class="control-label">昵称:</label>
+              <label class="control-label">帖子标题 :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="用户名" name="nick_name" />
+                <input type="text" class="span11" placeholder="帖子标题" name="title" />
               </div>
             </div>
 
-            <div class="control-group">
-              <label class="control-label">登录密码:</label>
-              <div class="controls">
-                <input type="password"  class="span11" placeholder="登录密码"  name="password" />
-              </div>
-            </div>
+
               <div class="control-group">
-                  <label class="control-label">确认密码:</label>
+                  <label class="control-label">帖子图片 :</label>
                   <div class="controls">
-                      <input type="password"  class="span11" placeholder="确认密码" name="repassword"   />
+                      <div class="uploader" id="uniform-undefined">
+                          <input type="file" id="fileElem" multiple accept="image/*"  onchange="handleFiles(this)" size="19" style="opacity: 0;" name="pic">
+                          <span class="filename"></span><span class="action">添加图片</span>
+                      </div>
+                      <div id="fileList" style="width:100px;height:100px;">
+                        <img src="__PUBLIC__/images/logo.png">
+                      </div>
                   </div>
               </div>
               <div class="control-group">
-                  <label class="control-label">邮箱 :</label>
-                  <div class="controls">
-                      <input type="text" class="span11" placeholder="邮箱"  name="email"  />
-                  </div>
-              </div>
-              <div class="control-group">
-                  <label class="control-label">联系电话 :</label>
-                  <div class="controls">
-                      <input type="text" class="span11" placeholder="手机号码"  name="phone"  />
-                  </div>
-              </div>
-              <div class="control-group">
-                  <label class="control-label">会员积分 :</label>
-                  <div class="controls">
-                      <input type="text" class="span11" placeholder="会员积分"  name="score"  />
-                  </div>
-              </div>
-              <div class="control-group">
-                  <label class="control-label">会员等级：</label>
+                  <label class="control-label">帖子设置 ：</label>
                   <div class="controls">
                       <label>
-                          <input type="radio" name="lev" checked="checked" value="0" />
-                          普通会员
+                          <input type="checkbox" name="is_tj"  value="1" />
+                          推荐
                       </label>
                       <label>
-                          <input type="radio" name="lev" value="1" />
-                          二级会员
+                          <input type="checkbox" name="is_hot" value="1" />
+                          热门
                       </label>
                       <label>
-                          <input type="radio" name="lev" value="2" />
-                          三级会员
+                          <input type="checkbox" name="is_top" value="1" />
+                          置顶
                       </label>
-                      <label>
-                          <input type="radio" name="lev" value="3" />
-                          四级会员
-                      </label>
+
                   </div>
               </div>
             <div class="control-group">
 
             </div>
             <div class="control-group">
-              <label class="control-label">备注信息：</label>
+              <label class="control-label">帖子内容：</label>
               <div class="controls">
-                <textarea class="span11" name="remark" ></textarea>
+                <textarea class="span11" name="desc" style="min-height: 200px;" placeholder="分享圈的描述信息"></textarea>
               </div>
             </div>
+
             <div class="form-actions">
               <button type="submit" class="btn btn-success">添加</button>
               <button type="reset" class="btn btn-primary">取消</button>
@@ -193,23 +177,68 @@
 <div class="row-fluid">
     <div id="footer" class="span12"> 2014 &copy; 小青椒网络科技版权 小青椒</a> </div>
 </div>
-<!--end-Footer-part--> 
+<!--end-Footer-part-->
 <script src="__PUBLIC__/js/jquery.min.js"></script>
-<script src="__PUBLIC__/js/jquery.ui.custom.js"></script> 
+<script src="__PUBLIC__/js/jquery.ui.custom.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
-<script src="__PUBLIC__/js/masked.js"></script> 
-<script src="__PUBLIC__/js/jquery.uniform.js"></script> 
-<script src="__PUBLIC__/js/select2.min.js"></script> 
+<script src="__PUBLIC__/js/masked.js"></script>
+<script src="__PUBLIC__/js/jquery.uniform.js"></script>
+<script src="__PUBLIC__/js/select2.min.js"></script>
 <script src="__PUBLIC__/js/matrix.js"></script>
 <script src="__PUBLIC__/js/jquery.peity.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        var attr=$('#member').attr('attr');
+        var attr=$('#zone').attr('attr');
         var p='<?php echo ($position); ?>';
         if(attr==p){
-            $('#member').children('ul').css('display','block');
+            $('#zone').children('ul').css('display','block');
         }
     })
+
+    window.URL = window.URL || window.webkitURL;
+    var fileElem = document.getElementById("fileElem"),
+            fileList = document.getElementById("fileList");
+
+    function handleFiles(obj) {
+        while(fileList.hasChildNodes()) //当div下还存在子节点时 循环继续
+        {
+            fileList.removeChild(fileList.firstChild);
+        }
+        var files = obj.files,
+                img = new Image();
+        if(window.URL){
+            //File API
+            img.src = window.URL.createObjectURL(files[0]); //创建一个object URL，并不是你的本地路径
+            img.width = 100;
+            img.onload = function(e) {
+                window.URL.revokeObjectURL(this.src); //图片加载后，释放object URL
+            }
+            fileList.appendChild(img);
+        }else if(window.FileReader){
+            //opera不支持createObjectURL/revokeObjectURL方法。我们用FileReader对象来处理
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onload = function(e){
+
+                img.src = this.result;
+                img.width = 100;
+                fileList.appendChild(img);
+            }
+        }else{
+            //ie
+            obj.select();
+            obj.blur();
+            var nfile = document.selection.createRange().text;
+            document.selection.empty();
+            img.src = nfile;
+            img.width = 100;
+            img.onload=function(){
+
+            }
+            fileList.appendChild(img);
+            //fileList.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src='"+nfile+"')";
+        }
+    }
 </script>
 
 </body>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 <title>论坛管理-添加分享圈</title>
@@ -35,8 +35,8 @@
             <div class="control-group">
                 <label class="control-label">分享圈名称 :</label>
                 <div class="controls">
-                    <input type="text" class="span11" placeholder="名称" name="title" value="{$info.title}" />
-                    <input type="hidden" name="id" value="{$info.id}">
+                    <input type="text" class="span11" placeholder="名称" name="title" value="<?php echo ($info["title"]); ?>" />
+                    <input type="hidden" name="id" value="<?php echo ($info["id"]); ?>">
                 </div>
             </div>
 
@@ -49,11 +49,9 @@
                         <span class="filename"></span><span class="action">添加图片</span>
                     </div>
                     <div id="fileList" style="width:100px;height:100px;padding-top: 5px;">
-                        <if condition="$info['pic']">
-                            <img src="__ROOT__/{$info.pic}">
-                            <else />
-                            <img src="__PUBLIC__/images/logo.png">
-                        </if>
+                        <?php if($info['pic']): ?><img src="__ROOT__/<?php echo ($info["pic"]); ?>">
+                            <?php else: ?>
+                            <img src="__PUBLIC__/images/logo.png"><?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -61,15 +59,15 @@
                 <label class="control-label">分享圈设置 ：</label>
                 <div class="controls">
                     <label>
-                        <input type="checkbox" name="is_tj"  value="1" <if condition="$info['is_tj'] eq 1"> checked='checked' </if> />
+                        <input type="checkbox" name="is_tj"  value="1" <?php if($info['is_tj'] == 1): ?>checked='checked'<?php endif; ?> />
                         推荐
                     </label>
                     <label>
-                        <input type="checkbox" name="is_hot" value="1" <if condition="$info['is_hot'] eq 1"> checked='checked' </if> />
+                        <input type="checkbox" name="is_hot" value="1" <?php if($info['is_hot'] == 1): ?>checked='checked'<?php endif; ?> />
                         热门
                     </label>
                     <label>
-                        <input type="checkbox" name="is_top" value="1" <if condition="$info['is_top'] eq 1"> checked='checked' </if> />
+                        <input type="checkbox" name="is_top" value="1" <?php if($info['is_top'] == 1): ?>checked='checked'<?php endif; ?> />
                         置顶
                     </label>
 
@@ -81,13 +79,13 @@
             <div class="control-group">
                 <label class="control-label">分享圈描述：</label>
                 <div class="controls">
-                    <textarea class="span11" name="desc" style="min-height: 140px;" placeholder="分享圈的描述信息">{$info.desc}</textarea>
+                    <textarea class="span11" name="desc" style="min-height: 140px;" placeholder="分享圈的描述信息"><?php echo ($info["desc"]); ?></textarea>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">备注信息：</label>
                 <div class="controls">
-                    <textarea class="span11" name="remark" placeholder="分享圈的备注信息" style="height: 110px;">{$info.remark}</textarea>
+                    <textarea class="span11" name="remark" placeholder="分享圈的备注信息" style="height: 110px;"><?php echo ($info["remark"]); ?></textarea>
                 </div>
             </div>
             <div class="form-actions">
@@ -110,7 +108,7 @@
 <script type="text/javascript">
     $(function(){
         var attr=$('#zone').attr('attr');
-        var p='{$position}';
+        var p='<?php echo ($position); ?>';
         if(attr==p){
             $('#zone').children('ul').css('display','block');
         }

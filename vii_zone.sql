@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 11 月 03 日 08:58
+-- 生成日期: 2014 年 11 月 04 日 08:58
 -- 服务器版本: 5.5.20
 -- PHP 版本: 5.3.10
 
@@ -58,6 +58,7 @@ INSERT INTO `vii_admin` (`id`, `admin_name`, `password`, `phone`, `email`, `logi
 
 CREATE TABLE IF NOT EXISTS `vii_article` (
   `id` int(13) NOT NULL AUTO_INCREMENT,
+  `title` varchar(30) NOT NULL,
   `uid` int(13) NOT NULL,
   `sid` int(13) NOT NULL,
   `is_hot` tinyint(1) NOT NULL DEFAULT '0',
@@ -100,6 +101,8 @@ CREATE TABLE IF NOT EXISTS `vii_share` (
   `is_hot` tinyint(1) NOT NULL DEFAULT '0',
   `is_tj` tinyint(1) NOT NULL DEFAULT '0',
   `is_top` tinyint(1) NOT NULL,
+  `is_check` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `member` text NOT NULL,
   `click` int(13) NOT NULL DEFAULT '0',
   `pic` varchar(200) NOT NULL,
@@ -108,18 +111,21 @@ CREATE TABLE IF NOT EXISTS `vii_share` (
   `remark` varchar(30) NOT NULL,
   `ctime` varchar(13) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- 转存表中的数据 `vii_share`
 --
 
-INSERT INTO `vii_share` (`id`, `title`, `uid`, `is_hot`, `is_tj`, `is_top`, `member`, `click`, `pic`, `lock`, `desc`, `remark`, `ctime`) VALUES
-(1, '小青椒微商分享圈', 0, 1, 1, 0, '', 0, 'Public/Uploads/20141103/545736d3a97e6.jpg', 0, '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '1415001811'),
-(2, '微商城ddd', 0, 0, 1, 0, '', 0, 'Public/Uploads/20141103/545737ddc63e9.png', 0, '微商城，一个让你成长让你进步让你成微商城，一个让你成长让你进步让你成功的平台！微商城，一个让你成长让你进步让你成功的平台！功的平台！', '微商城ddd', '1415002077'),
-(3, '微商城', 0, 1, 0, 0, '', 0, 'Public/Uploads/20141103/545737eb5c41d.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002091'),
-(4, '微商城2222', 0, 0, 0, 1, '', 0, 'Public/Uploads/20141103/5457380c544c7.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002124'),
-(5, '自定义内容区', 0, 0, 1, 0, '', 0, 'Public/Uploads/20141103/54573866dfd15.jpg', 0, '的点点滴滴的', '的的的的的的的的的的的', '1415002214');
+INSERT INTO `vii_share` (`id`, `title`, `uid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `member`, `click`, `pic`, `lock`, `desc`, `remark`, `ctime`) VALUES
+(1, '小青椒微商分享圈', 0, 0, 1, 1, 1, 1, '1', 0, 'Public/Uploads/20141104/545832fbb61fd.jpg', 0, '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '1415066363'),
+(2, '微商城ddd', 0, 0, 0, 0, 0, 1, '', 0, 'Public/Uploads/20141103/545737ddc63e9.png', 0, '微商城，一个让你成长让你进步让你成微商城，一个让你成长让你进步让你成功的平台！微商城，一个让你成长让你进步让你成功的平台！功的平台！', '微商城ddd', '1415002077'),
+(3, '微商城', 1, 0, 0, 0, 1, 0, '1,2,3', 0, 'Public/Uploads/20141103/545737eb5c41d.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002091'),
+(4, '微商城2222', 0, 0, 0, 1, 0, 1, '', 0, 'Public/Uploads/20141103/5457380c544c7.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002124'),
+(8, '测试项目3', 0, 0, 1, 0, 1, 0, '', 0, 'Public/Uploads/20141104/54587d5c25d04.jpg', 0, '测试项目3', '测试项目3', '1415085403'),
+(6, '服务内容介绍1111', 0, 0, 1, 0, 1, 0, '', 0, 'Public/Uploads/20141104/545826bc5f816.jpg', 0, '服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111', '服务内容介绍1111服务内容介绍1111v', '1415063228'),
+(7, '小青椒微商分享圈', 0, 1, 1, 1, 1, 1, '', 0, 'Public/Uploads/20141104/5458327ce28ca.jpg', 0, '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '1415066236'),
+(13, '测试项目3', 0, 0, 0, 0, 1, 1, '', 0, 'Public/Uploads/20141104/54587dbb7e4fd.jpg', 0, '测试项目3', '测试项目3', '1415085499');
 
 -- --------------------------------------------------------
 
@@ -146,9 +152,9 @@ CREATE TABLE IF NOT EXISTS `vii_users` (
 --
 
 INSERT INTO `vii_users` (`id`, `nickname`, `password`, `phone`, `email`, `score`, `lock`, `lev`, `reg_time`, `remark`) VALUES
-(1, '的撒旦撒', 'e10adc3949ba59abbe56e057f20f883e', '13249170728', '595441550@qq.com', 0, 0, 0, '1414742223', '56445544455544545'),
+(1, '爱恨情仇', 'e10adc3949ba59abbe56e057f20f883e', '13249170728', '595441550@qq.com', 0, 0, 0, '1415071241', '56445544455544545'),
 (2, '青椒的故事', '343b1c4a3ea721b2d640fc8700db0f36', '15876513076', '451436241@qq.com', 20000, 0, 3, '1414742188', '青椒小故事！'),
-(3, 'superAAA', '980ac217c6b51e7dc41040bec1edfec8', '13249170720', '5654548@qq.com', 0, 0, 0, '1414742212', '洒大地');
+(3, 'superStar', '980ac217c6b51e7dc41040bec1edfec8', '13249170720', '5654548@qq.com', 0, 0, 0, '1415071256', '洒大地');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
