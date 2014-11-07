@@ -241,11 +241,12 @@ class ZoneAction extends CommAction {
         $this->info=$info;
         $this->display();
     }
-
+    //帖子列表
     public function  articleLists(){
         $this->postion();
-        $modle=M('share');
-        $user=M('users');
+        $modle=M('article');
+        $sh=M('share');
+        $users=M('users');
         $varcount=0;
         if(isset($_POST['title']) && $_POST['title']!=""){
             $keys=$_POST['title'];
@@ -273,17 +274,17 @@ class ZoneAction extends CommAction {
         //进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $share = $modle->where($where)->order("id DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
         foreach($share as $s){
-            $m_where['id']=$s['uid'];
-            if($s['member']){
-                $arr=explode(',',$s['member']);
-                $count=count($arr);
-                $s['member']=$count;
+            $m_where['id']=$s['sid'];
+            $u_where['id']=$s['uid'];
+            $catename=$sh->where($m_where)->getField('title');
+            $uname=$users->where($u_where)->getField('nickname');
+            if(!$catename){
+                $s['sid']='无分类';
             }else{
-                $s['member']=0;
+                $s['sid']=$catename;
             }
-            $uname=$user->where($m_where)->getField('nickname');
             if(!$uname){
-                $s['uid']='小青椒';
+                $s['uid']='系统添加';
             }else{
                 $s['uid']=$uname;
             }
@@ -293,10 +294,15 @@ class ZoneAction extends CommAction {
         $this->shares=$shares;
         $this->display();
     }
+    //添加帖子
     public function  addArticle(){
         $this->postion();
+        $shareModel=M('share');
+        $shares=$shareModel->field('id,title')->select();
+        $this->shares=$shares;
         $this->display();
     }
+    //帖子表单处理
     public function article_action(){
         $setting = array(
             'mimes' => '', //允许上传的文件MiMe类型
@@ -307,7 +313,10 @@ class ZoneAction extends CommAction {
             'rootPath' => './Public/Uploads/', //保存根路径
             'savePath' => '', //保存路径
         );
-        $modle=M('share');
+        $modle=M('article');
+        if($_POST['title']==''|| $_POST['content']==''|| $_POST['sid']<1){
+            $this->error('请填写完整的信息！');
+        }
         $data['title']=trim($_POST['title']);
         if(isset($_POST['is_tj'])){
             $data['is_tj']=$_POST['is_tj'];
@@ -318,8 +327,9 @@ class ZoneAction extends CommAction {
         if(isset($_POST['is_top'])){
             $data['is_top']=$_POST['is_top'];
         }
-        $data['content']=$_POST['desc'];
-        $data['ctime']=time();
+        $data['content']=$_POST['content'];
+        $data['sid']=$_POST['sid'];
+        $data['addtime']=time();
         import('ORG.Util.Upload');
         if($_FILES['pic']['error']!=4 && $_FILES['pic']['error']!=4){
             $this->uploader = new Upload($setting, 'Local');
@@ -353,5 +363,122 @@ class ZoneAction extends CommAction {
             }
         }
     }
+    //查找分享圈ajax
+    public function find(){
+        $model=M('share');
+        $keys=trim($_POST['thesid']);
+        $where['title']  = array("like", "%$keys%");
+        $select=$model->where($where)->field('id,title')->select();
+        $this->ajaxReturn($select,'json');
+    }
+    //ajax操作帖子状态、删除帖子
+    public function article_ajax(){
+        $modle=M('article');
+        $act=$_POST['act'];
+        $where['id']=$_POST['id'];
+        switch($act){
+            case'on':
+                $data['lock']=0;
+                break;
+            case'off':
+                $data['lock']=1;
+                break;
+            case'pass':
+                $data['is_check']=1;
+                $data['status']=1;
+                break;
+            case'nopass':
+                $data['is_check']=1;
+                $data['status']=0;
+                break;
+            case'top_on':
+                $data['is_top']=1;
+                break;
+            case'top_off':
+                $data['is_top']=0;
+                break;
+            case'hot_on':
+                $data['is_hot']=1;
+                break;
+            case'hot_off':
+                $data['is_hot']=0;
+                break;
+            case'tj_on':
+                $data['is_tj']=1;
+                break;
+            case'tj_off':
+                $data['is_tj']=0;
+                break;
+        }
+        if($act=='del'){
+            $info=$modle->where($where)->find();
+            if($modle->where($where)->delete()){
+                @unlink("./".$info['pics']);
+                echo 1;
+                exit;
+            }else{
+                echo 0;
+                exit;
+            }
+        }
+        if($modle->where($where)->data($data)->save()){
+            echo 1;
+            exit;
+        }else{
+            echo 0;
+            exit;
+        }
+    }
+    //批量操作帖子
+    public function article_delall(){
+        $model=M('article');
+        $conf=implode(',', $_POST['ids']);
+        $act=$_POST['act'];
+        $config="(".$conf.")";
+        switch($act){
+            case'del':
+                $infos=$model->where("id in ".$config)->select();
+                if ($model->where("id in ".$config)->delete()){
+                    foreach($infos as $info){
+                        @unlink("./".$info['pics']);
+                    }
+                    $this->success('批量删除成功！');
+                }else {
+                    $this->error('批量删除失败！');
+                }
+                break;
+            case'pass':
+                $data['status']=1;
+                $data['is_check']=1;
+                if($model->where("id in ".$config)->data($data)->save()){
+                    $this->success('已经批量通过！');
+                }else{
+                    $this->error('批量审核失败！');
+                }
+                break;
+            case'nopass':
+                $data['status']=0;
+                $data['is_check']=1;
+                if($model->where("id in ".$config)->data($data)->save()){
+                    $this->success('已经批量不通过！');
+                }else{
+                    $this->error('批量审核失败！');
+                }
+                break;
+        }
+    }
+    //编辑分享圈
+    public function editArticle(){
+        $where['id']=$_GET['id'];
+        $info=M('article')->where($where)->find();
+        $shareModel=M('share');
+        $shares=$shareModel->field('id,title')->select();
+        $this->shares=$shares;
+        $this->info=$info;
+        $this->display();
+    }
+
+
+
 
 }

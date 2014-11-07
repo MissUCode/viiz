@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="__PUBLIC__/css/datepicker.css" />
 <link rel="stylesheet" href="__PUBLIC__/css/uniform.css" />
 <link rel="stylesheet" href="__PUBLIC__/css/select2.css" />
+<link rel="stylesheet" href="__PUBLIC__/css/tip.css" />
 <link rel="stylesheet" href="__PUBLIC__/css/matrix-style.css" />
 <link rel="stylesheet" href="__PUBLIC__/css/matrix-media.css" />
 <link rel="stylesheet" href="__PUBLIC__/css/bootstrap-wysihtml5.css" />
@@ -87,7 +88,7 @@
             <ul>
                 <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
-                <li><a href="__ROOT__/Zoneadmin/Zone/adlist" > 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist" > 评论管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
@@ -120,7 +121,20 @@
                 <input type="text" class="span11" placeholder="帖子标题" name="title" />
               </div>
             </div>
+              <div class="control-group">
+                  <label class="control-label">帖子所属分享圈 :</label>
+                  <div class="controls">
+                     <input type="text"  class="span2" placeholder="可输入分享圈名称查找" name="thesid" id="thesid"   style="margin-top: 0px;" />
+                      <select class="form-control" style="margin-top: 0px;color: #666;" name="sid" id="sid">
+                          <option value="0">请选择帖子所属分享圈</option>
+                          <?php if(is_array($shares)): $i = 0; $__LIST__ = $shares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shares): $mod = ($i % 2 );++$i;?><option value="<?php echo ($shares["id"]); ?>"><?php echo ($shares["title"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                      </select>
+                  </div>
+                  <div class="controls">
 
+
+                  </div>
+              </div>
 
               <div class="control-group">
                   <label class="control-label">帖子图片 :</label>
@@ -158,7 +172,7 @@
             <div class="control-group">
               <label class="control-label">帖子内容：</label>
               <div class="controls">
-                <textarea class="span11" name="desc" style="min-height: 200px;" placeholder="分享圈的描述信息"></textarea>
+                <textarea class="span11" name="content" style="min-height: 200px;" placeholder="分享圈的描述信息"></textarea>
               </div>
             </div>
 
@@ -185,6 +199,7 @@
 <script src="__PUBLIC__/js/jquery.uniform.js"></script>
 <script src="__PUBLIC__/js/select2.min.js"></script>
 <script src="__PUBLIC__/js/matrix.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
 <script src="__PUBLIC__/js/jquery.peity.min.js"></script>
 <script type="text/javascript">
     $(function(){
@@ -193,6 +208,32 @@
         if(attr==p){
             $('#zone').children('ul').css('display','block');
         }
+        $('#thesid').blur(function(){
+            var thesid=$(this).val();
+            if(thesid==''){
+                return false;
+            }
+            $("#sid option:first").nextAll().remove();
+            $.post(
+                    "/Zoneadmin/Zone/find",
+                    {thesid:thesid},
+                    function(data){
+                        if(!data){
+                            content="不存在名称为‘"+thesid+"’的分享圈！";
+                            viitip('notice',content,1000);
+                        }else{
+                            jQuery.each( data, function(i,v){
+                                value="<option value='"+data[i]['id']+"' >"+data[i]['title']+"</option>";
+                                $("#sid").append(value);
+                            });
+                            content="已查出名称为‘"+thesid+"’的分享圈，请选择！";
+                            viitip('success',content,1500);
+                        }
+                    }
+            );
+        })
+
+
     })
 
     window.URL = window.URL || window.webkitURL;

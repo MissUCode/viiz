@@ -87,7 +87,7 @@
             <ul>
                 <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
-                <li><a href="__ROOT__/Zoneadmin/Zone/adlist" > 广告管理</a></li>
+                <li><a href="__ROOT__/Zoneadmin/Zone/adlist" > 评论管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
@@ -107,7 +107,7 @@
     <hr>
     <div class="row-fluid">
       <div class="span12">
-          <form method="post" action="__ROOT__/Zoneadmin/Zone/shareLists">
+          <form method="post" action="__ROOT__/Zoneadmin/Zone/articleLists">
           选择条件：<input type="text"  class="span2" placeholder="帖子标题" name="title"  style="margin-top: 11px;" />
               <select class="form-control" style="margin-top: 11px;color: #666;" name="is_check">
                   <option value="2">请选择</option>
@@ -135,29 +135,32 @@
               <thead>
                 <tr>
                   <th><i class="icon-resize-vertical"></i></th>
-                  <th>分享圈名称</th>
-                  <th>封面图片</th>
-                  <th>圈主人ID</th>
+                  <th>帖子标题</th>
+                  <th>所属圈子</th>
+                  <th>图片</th>
+                  <th>发布会员</th>
                   <th>是否置顶</th>
                   <th>是否热门</th>
                   <th>是否推荐</th>
-                  <th>会员数</th>
+
                   <th>点击率</th>
                   <th>是否审核</th>
                   <th>状态（默认通过）</th>
-                  <th>创建时间</th>
-                  <th>备注信息</th>
+                  <th>帖子内容</th>
                   <th>操作</th>
                 </tr>
 
               </thead>
               <tbody>
-              <form method="post" action="__ROOT__/Zoneadmin/Zone/delall" id="delall">
+              <form method="post" action="__ROOT__/Zoneadmin/Zone/article_delall" id="delall">
                   <input type="hidden" name="act" value="" id="action">
               <?php if(is_array($shares)): $i = 0; $__LIST__ = $shares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shares): $mod = ($i % 2 );++$i;?><tr>
                   <td><input type="checkbox" name="ids[]" value="<?php echo ($shares["id"]); ?>" class="checkbox"  /></td>
                   <td style="text-align: center"><?php echo ($shares["title"]); ?></td>
-                  <td style="text-align: center"><img src="__ROOT__/<?php echo ($shares["pic"]); ?>" style="width: 120px;height: 30px;"></td>
+                  <td style="text-align: center"><?php echo ($shares["sid"]); ?></td>
+                  <td style="text-align: center">
+                      <img src="__ROOT__/<?php echo ($shares["pics"]); ?>" style="width: 120px;height: 30px;">
+                  </td>
                   <td style="text-align: center"><?php echo ($shares["uid"]); ?></td>
                   <td style="text-align: center">
                       <?php if($shares['is_top'] == 1): ?><img src="__PUBLIC__/images/Y.png" style="width: 15px;height: 15px;cursor: pointer;" class="turn" alt="top_off" attr="<?php echo ($shares["id"]); ?>">
@@ -174,7 +177,7 @@
                             <?php else: ?>
                             <img src="__PUBLIC__/images/N.png" style="width: 15px;height: 15px;cursor: pointer;" class="turn" alt="tj_on" attr="<?php echo ($shares["id"]); ?>" ><?php endif; ?>
                     </td>
-                    <td style="text-align: center"><?php echo ($shares["member"]); ?></td>
+
                     <td style="text-align: center"><?php echo ($shares["click"]); ?></td>
                     <td style="text-align: center">
                         <?php if($shares['is_check'] == 1): ?><span class="badge badge-success">已审核</span>
@@ -186,21 +189,21 @@
                             <?php else: ?>
                             <span class="badge">未通过审核</span><?php endif; ?>
                     </td>
-                  <td style="text-align: center"><?php echo (date('Y-m-d H:i:s',$shares["ctime"])); ?></td>
-                   <?php if($admins['remark']): ?><td style="text-align: center"><?php echo ($shares["remark"]); ?></td>
-                       <?php else: ?>
-                       <td style="text-align: center">无备注信息！</td><?php endif; ?>
 
+                   <?php if($shares['content']): ?><td style="text-align: center"><?php echo (msubstr($shares["content"],0,12)); ?>...</td>
+                       <?php else: ?>
+                       <td style="text-align: center">内容为空！</td><?php endif; ?>
                   <td class="center" style="text-align: center">
                       <button class="btn btn-mini btn-info edit" type="button"  attr="<?php echo ($shares["id"]); ?>">编辑&查看</button>
-                      <?php if($shares['lock'] == 1): ?><button class="btn btn-mini btn-success turn" type="button" alt="on" attr="<?php echo ($shares["id"]); ?>">允许显示</button><?php endif; ?>
-                      <?php if($shares['lock'] == 0): ?><button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="<?php echo ($shares["id"]); ?>">禁止显示</button><?php endif; ?>
-                      <button class="btn btn-mini btn-primary turn" type="button" alt="pass" attr="<?php echo ($shares["id"]); ?>">通过审核</button>
-                      <button class="btn btn-mini btn-inverse turn" type="button" alt="nopass" attr="<?php echo ($shares["id"]); ?>">不通过审核</button>
+                      <a class="btn btn-mini btn-info"  href="#"  attr="<?php echo ($shares["id"]); ?>">评论</a>
+                      <?php if($shares['lock'] == 1): ?><button class="btn btn-mini btn-success turn" type="button" alt="on" attr="<?php echo ($shares["id"]); ?>">显示</button><?php endif; ?>
+                      <?php if($shares['lock'] == 0): ?><button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="<?php echo ($shares["id"]); ?>">禁止</button><?php endif; ?>
+                      <button class="btn btn-mini btn-primary turn" type="button" alt="pass" attr="<?php echo ($shares["id"]); ?>">通过</button>
+                      <button class="btn btn-mini btn-inverse turn" type="button" alt="nopass" attr="<?php echo ($shares["id"]); ?>">不通过</button>
                       <button class="btn btn-mini btn-danger turn" type="button" alt="del" attr="<?php echo ($shares["id"]); ?>">删除</button>
                   </td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                <tr><td colspan="14">
+                <tr><td colspan="13">
                     <button class="btn btn-mini btn-danger delall" type="button" alt="del">全部删除</button>
                     <button class="btn btn-mini btn-primary delall" type="button" alt="pass">批量通过</button>
                     <button class="btn btn-mini btn-inverse delall" type="button" alt="nopass">批量不通过</button>
@@ -248,7 +251,7 @@
                 okValue: '确定',
                 ok: function () {
                     $.post(
-                            "__ROOT__/Zoneadmin/Zone/ajax.html",
+                            "__ROOT__/Zoneadmin/Zone/article_ajax.html",
                             {act:act,id:id},
                             function(data){
                                 if(data==1){
@@ -268,7 +271,7 @@
             d.showModal();
             }else{
                 $.post(
-                        "__ROOT__/Zoneadmin/Zone/ajax.html",
+                        "__ROOT__/Zoneadmin/Zone/article_ajax.html",
                         {act:act,id:id},
                         function(data){
                             if(data==1){
@@ -286,10 +289,10 @@
 
         $('.edit').click(function(){
             var id=$(this).attr('attr');
-            var spurl="__ROOT__/Zoneadmin/Zone/edit/id/"+id;
+            var spurl="__ROOT__/Zoneadmin/Zone/editArticle/id/"+id;
             var  d=dialog({
                 id: 'open',
-                title: '编辑分享圈',
+                title: '编辑帖子',
                 url: spurl,
                 cancelValue: '关闭窗口',
                 cancel: function () {}

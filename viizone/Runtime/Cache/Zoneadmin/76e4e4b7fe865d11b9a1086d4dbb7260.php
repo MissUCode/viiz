@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 <title>论坛管理-添加帖子</title>
@@ -18,6 +18,7 @@
 <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 <style type='text/css'>
 	body{
+        background: #fff;
 		font-family:'微软雅黑';
 	}
     .btn{
@@ -26,106 +27,81 @@
 </style>
 </head>
 <body>
-
-<include file="Public/header" />
-<!--sidebar-menu-->
-<include file="Public/menu" />
-<!--sidebar-menu-->
-
-<div id="content">
-<div id="content-header">
-  <div id="breadcrumb">
-      <a href="__ROOT__/Zoneadmin/Index/index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
-      <a href="#" class="tip-bottom">论坛管理</a> <a href="__ROOT__/Zoneadmin/Zone/addArticle" class="current">添加帖子</a>
-  </div>
-</div>
-<div class="container-fluid">
-  <hr>
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="widget-box">
-        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-          <h5>添加帖子</h5>
-        </div>
-        <div class="widget-content nopadding">
-          <form action="__ROOT__/Zoneadmin/Zone/article_action" method="post" class="form-horizontal" enctype="multipart/form-data">
+<div class="widget-box" style="width: 1300px;">
+    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+        <h5>编辑帖子</h5>
+    </div>
+    <div class="widget-content nopadding">
+        <form action="__ROOT__/Zoneadmin/Zone/article_action" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="control-group">
-              <label class="control-label">帖子标题 :</label>
-              <div class="controls">
-                <input type="text" class="span11" placeholder="帖子标题" name="title" />
-              </div>
+                <label class="control-label">帖子标题 :</label>
+                <div class="controls">
+                    <input type="text" class="span11" placeholder="帖子标题" name="title" value="<?php echo ($info["title"]); ?>" />
+                    <input type="hidden" class="span11" name="id" value="<?php echo ($info["id"]); ?>" />
+                </div>
             </div>
-              <div class="control-group">
-                  <label class="control-label">帖子所属分享圈 :</label>
-                  <div class="controls">
-                     <input type="text"  class="span2" placeholder="可输入分享圈名称查找" name="thesid" id="thesid"   style="margin-top: 0px;" />
-                      <select class="form-control" style="margin-top: 0px;color: #666;" name="sid" id="sid">
-                          <option value="0">请选择帖子所属分享圈</option>
-                          <volist name="shares" id="shares">
-                          <option value="{$shares.id}">{$shares.title}</option>
-                          </volist>
-                      </select>
-                  </div>
-                  <div class="controls">
+            <div class="control-group">
+                <label class="control-label">帖子所属分享圈 :</label>
+                <div class="controls">
+                    <input type="text"  class="span2" placeholder="可输入分享圈名称查找" name="thesid" id="thesid"   style="margin-top: 0px;" />
+                    <select class="form-control" style="margin-top: 0px;color: #666;" name="sid" id="sid">
+                        <option value="0">请选择帖子所属分享圈</option>
+                        <?php if(is_array($shares)): $i = 0; $__LIST__ = $shares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shares): $mod = ($i % 2 );++$i;?><option value="<?php echo ($shares["id"]); ?>" <?php if($info['sid'] == $shares['id']): ?>selected='selected'<?php endif; ?> ><?php echo ($shares["title"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                    </select>
+                </div>
+                <div class="controls">
+                </div>
+            </div>
 
+            <div class="control-group">
+                <label class="control-label">帖子图片 :</label>
+                <div class="controls">
+                    <div class="uploader" id="uniform-undefined">
+                        <input type="file" id="fileElem" multiple accept="image/*"  onchange="handleFiles(this)" size="19" style="opacity: 0;" name="pic">
+                        <span class="filename"></span><span class="action">添加图片</span>
+                    </div>
+                    <div id="fileList" style="width:100px;height:100px;">
+                        <?php if($info['pics']): ?><a href="__ROOT__/<?php echo ($info["pics"]); ?>" target="_blank"> <img src="__ROOT__/<?php echo ($info["pics"]); ?>" style="width: 120px;height: 80px;"></a>
+                            <?php else: ?>
+                            <img src="__PUBLIC__/images/logo.png"><?php endif; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">帖子设置 ：</label>
+                <div class="controls">
+                    <label>
+                        <input type="checkbox" name="is_tj"  value="1" <?php if($info['is_tj'] == 1): ?>checked='checked'<?php endif; ?> />
+                        推荐
+                    </label>
+                    <label>
+                        <input type="checkbox" name="is_hot" value="1" <?php if($info['is_hot'] == 1): ?>checked='checked'<?php endif; ?> />
+                        热门
+                    </label>
+                    <label>
+                        <input type="checkbox" name="is_top" value="1" <?php if($info['is_top'] == 1): ?>checked='checked'<?php endif; ?> />
+                        置顶
+                    </label>
 
-                  </div>
-              </div>
-
-              <div class="control-group">
-                  <label class="control-label">帖子图片 :</label>
-                  <div class="controls">
-                      <div class="uploader" id="uniform-undefined">
-                          <input type="file" id="fileElem" multiple accept="image/*"  onchange="handleFiles(this)" size="19" style="opacity: 0;" name="pic">
-                          <span class="filename"></span><span class="action">添加图片</span>
-                      </div>
-                      <div id="fileList" style="width:100px;height:100px;">
-                        <img src="__PUBLIC__/images/logo.png">
-                      </div>
-                  </div>
-              </div>
-              <div class="control-group">
-                  <label class="control-label">帖子设置 ：</label>
-                  <div class="controls">
-                      <label>
-                          <input type="checkbox" name="is_tj"  value="1" />
-                          推荐
-                      </label>
-                      <label>
-                          <input type="checkbox" name="is_hot" value="1" />
-                          热门
-                      </label>
-                      <label>
-                          <input type="checkbox" name="is_top" value="1" />
-                          置顶
-                      </label>
-
-                  </div>
-              </div>
+                </div>
+            </div>
             <div class="control-group">
 
             </div>
             <div class="control-group">
-              <label class="control-label">帖子内容：</label>
-              <div class="controls">
-                <textarea class="span11" name="content" style="min-height: 200px;" placeholder="分享圈的描述信息"></textarea>
-              </div>
+                <label class="control-label">帖子内容：</label>
+                <div class="controls">
+                    <textarea class="span11" name="content" style="min-height: 200px;" placeholder="分享圈的描述信息"><?php echo ($info["content"]); ?></textarea>
+                </div>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn btn-success">添加</button>
-              <button type="reset" class="btn btn-primary">取消</button>
+                <button type="submit" class="btn btn-success">提交</button>
+                <button type="reset" class="btn btn-primary">取消</button>
             </div>
-          </form>
-        </div>
-      </div>
+        </form>
     </div>
-  </div>
 </div>
-</div>
-<!--Footer-part-->
-<include file="Public/footer" />
-<!--end-Footer-part-->
 <script src="__PUBLIC__/js/jquery.min.js"></script>
 <script src="__PUBLIC__/js/jquery.ui.custom.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
@@ -138,7 +114,7 @@
 <script type="text/javascript">
     $(function(){
         var attr=$('#zone').attr('attr');
-        var p='{$position}';
+        var p='<?php echo ($position); ?>';
         if(attr==p){
             $('#zone').children('ul').css('display','block');
         }
