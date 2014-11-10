@@ -467,7 +467,7 @@ class ZoneAction extends CommAction {
                 break;
         }
     }
-    //编辑分享圈
+    //编辑帖子
     public function editArticle(){
         $where['id']=$_GET['id'];
         $info=M('article')->where($where)->find();
@@ -477,8 +477,74 @@ class ZoneAction extends CommAction {
         $this->info=$info;
         $this->display();
     }
+    //添加评论
+    public function addComment(){
+        $aid=$_GET['aid'];
+        $where['id']=$aid;
+        $Model=M('article');
+        $sid=$Model->where($where)->getField('sid');
+        $this->aid=$aid;
+        $this->sid=$sid;
+        $this->display();
+    }
 
+    //帖子表单处理
+    public function comment_action(){
+        $setting = array(
+            'mimes' => '', //允许上传的文件MiMe类型
+            'maxSize' => 1 * 1024 * 1024, //上传的文件大小限制 (0-不做限制)
+            'exts' => "jpg,png,jpeg", //允许上传的文件后缀
+            'autoSub' => true, //自动子目录保存文件
+            'subName' => array('date', 'Ymd'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
+            'rootPath' => './Public/Uploads/', //保存根路径
+            'savePath' => '', //保存路径
+        );
+        $modle=M('comment');
+        if($_POST['content']==''|| $_POST['sid']<1){
+            $this->error('请填写评论内容！');
+        }
+        $data['content']=$_POST['content'];
+        $data['sid']=$_POST['sid'];
+        $data['aid']=$_POST['aid'];
+        $data['addtime']=time();
+        import('ORG.Util.Upload');
+        if($_FILES['pic']['error']!=4 && $_FILES['pic']['error']!=4){
+            $this->uploader = new Upload($setting, 'Local');
+            $info = $this->uploader->upload($_FILES);
+            if($info){
+                $data['pics']="Public/Uploads/".$info['pic']['savepath'].$info['pic']['savename'];
+                //$data['code']="Public/Uploads/".$info['code']['savepath'].$info['code']['savename'];
+            }else{
+                //exit($this->uploader->getError());
+                $this->error($this->uploader->getError());
+            }
+        }
+        if($_POST['id']){
+            $where['id']=$_POST['id'];
+            $info=$modle->where($where)->find();
+            if($modle->where($where)->data($data)->save()){
+                if($data['pics']){
+                    @unlink("./".$info['pics']);
+                }
+                $this->success('编辑成功！');
+            }else{
+                @unlink("./".$data['pics']);
+                $this->error('编辑失败！');
+            }
+        }else{
+            if($modle->data($data)->add()){
+                $this->success('添加成功！');
+            }else{
+                @unlink("./".$data['pics']);
+                $this->error('添加失败！');
+            }
+        }
+    }
 
+    public function comment(){
+        $this->postion();
+        $this->display();
+    }
 
 
 }

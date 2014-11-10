@@ -194,8 +194,10 @@
                        <?php else: ?>
                        <td style="text-align: center">内容为空！</td><?php endif; ?>
                   <td class="center" style="text-align: center">
-                      <button class="btn btn-mini btn-info edit" type="button"  attr="<?php echo ($shares["id"]); ?>">编辑&查看</button>
-                      <a class="btn btn-mini btn-info"  href="#"  attr="<?php echo ($shares["id"]); ?>">评论</a>
+
+                      <button class="btn btn-mini btn-success addcomment"  type="button"   attr="<?php echo ($shares["id"]); ?>">添加评论</button>
+                      <a class="btn btn-mini btn-success comment"  href="__ROOT__/Zoneadmin/Zone/comment/aid/<?php echo ($shares["id"]); ?>"  attr="<?php echo ($shares["id"]); ?>">查看评论</a>
+                      <button class="btn btn-mini btn-info edit" type="button"  attr="<?php echo ($shares["id"]); ?>">编辑</button>
                       <?php if($shares['lock'] == 1): ?><button class="btn btn-mini btn-success turn" type="button" alt="on" attr="<?php echo ($shares["id"]); ?>">显示</button><?php endif; ?>
                       <?php if($shares['lock'] == 0): ?><button class="btn btn-mini btn-warning turn" type="button" alt="off" attr="<?php echo ($shares["id"]); ?>">禁止</button><?php endif; ?>
                       <button class="btn btn-mini btn-primary turn" type="button" alt="pass" attr="<?php echo ($shares["id"]); ?>">通过</button>
@@ -320,6 +322,18 @@
                     $('#delall').submit();
                 },
                 cancelValue: '取消',
+                cancel: function () {}
+            });
+            d.showModal();
+        })
+        $('.addcomment').click(function(){
+            var id=$(this).attr('attr');
+            var spurl="__ROOT__/Zoneadmin/Zone/addComment/aid/"+id;
+            var  d=dialog({
+                id: 'open',
+                title: '添加评论',
+                url: spurl,
+                cancelValue: '关闭窗口',
                 cancel: function () {}
             });
             d.showModal();
