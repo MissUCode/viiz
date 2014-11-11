@@ -542,9 +542,155 @@ class ZoneAction extends CommAction {
     }
 
     public function comment(){
+        $where['aid']=$_GET['aid'];
+        if(isset($_GET['is_check'])&&$_GET['is_check']==0){
+            $where['is_check']=0;
+        }
+        $model=M('comment');
+        import('ORG.Util.Page');// 导入分页类
+        $count= $model->where($where)->count();// 查询满足要求的总记录数
+        $Page = new  Page($count, 10);// 实例化分页类 传入总记录数和每页显示的记录数
+        $show = $Page->zone_show();// 分页显示输出
+        //进行分页数据查询 注意limit方法的参数要使用Page类的属性
+        $comments = $model->where($where)->order("id DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+        $this->page=$show;
+        $this->comments=$comments;
         $this->postion();
         $this->display();
     }
+    public function commentLists(){
+        $where['is_check']=0;
+        $model=M('comment');
+        import('ORG.Util.Page');// 导入分页类
+        $count= $model->where($where)->count();// 查询满足要求的总记录数
+        $Page = new  Page($count, 10);// 实例化分页类 传入总记录数和每页显示的记录数
+        $show = $Page->zone_show();// 分页显示输出
+        //进行分页数据查询 注意limit方法的参数要使用Page类的属性
+        $comments = $model->where($where)->order("id DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+        $this->page=$show;
+        $this->comments=$comments;
+        $this->postion();
+        $this->display();
+    }
+    //ajax操作评论状态、删除评论
+    public function comment_ajax(){
+        $modle=M('comment');
+        $act=$_POST['act'];
+        $where['id']=$_POST['id'];
+        switch($act){
+            case'on':
+                $data['status']=1;
+                $data['is_check']=1;
+                break;
+            case'off':
+                $data['status']=0;
+                $data['is_check']=1;
+                break;
+            case'pass':
+                $data['is_check']=1;
+                $data['status']=1;
+                break;
+            case'nopass':
+                $data['is_check']=1;
+                $data['status']=0;
+                break;
+            case'good':
+                $infos=$modle->where($where)->getField('aid');
+                $where_info['aid']=$infos;
+                $data_info['is_good']=0;
+                $modle->where($where_info)->data($data_info)->save();
+                $data['is_good']=1;
+                break;
+            case'top_on':
+                $data['is_top']=1;
+                break;
+            case'top_off':
+                $data['is_top']=0;
+                break;
+            case'hot_on':
+                $data['is_hot']=1;
+                break;
+            case'hot_off':
+                $data['is_hot']=0;
+                break;
+            case'tj_on':
+                $data['is_tj']=1;
+                break;
+            case'tj_off':
+                $data['is_tj']=0;
+                break;
+        }
+        if($act=='del'){
+            $info=$modle->where($where)->find();
+            if($modle->where($where)->delete()){
+                @unlink("./".$info['pics']);
+                echo 1;
+                exit;
+            }else{
+                echo 0;
+                exit;
+            }
+        }
+        if($modle->where($where)->data($data)->save()){
+            echo 1;
+            exit;
+        }else{
+            echo 0;
+            exit;
+        }
+    }
+    //批量操作评论
+    public function comment_delall(){
+        $model=M('comment');
+        $conf=implode(',', $_POST['ids']);
+        $act=$_POST['act'];
+        $config="(".$conf.")";
+        switch($act){
+            case'del':
+                $infos=$model->where("id in ".$config)->select();
+                if ($model->where("id in ".$config)->delete()){
+                    foreach($infos as $info){
+                        @unlink("./".$info['pics']);
+                    }
+                    $this->success('批量删除成功！');
+                }else {
+                    $this->error('批量删除失败！');
+                }
+                break;
+            case'pass':
+                $data['status']=1;
+                $data['is_check']=1;
+                if($model->where("id in ".$config)->data($data)->save()){
+                    $this->success('已经批量通过！');
+                }else{
+                    $this->error('批量审核失败！');
+                }
+                break;
+            case'nopass':
+                $data['status']=0;
+                $data['is_check']=1;
+                if($model->where("id in ".$config)->data($data)->save()){
+                    $this->success('已经批量不通过！');
+                }else{
+                    $this->error('批量审核失败！');
+                }
+                break;
+        }
+    }
 
+    //留言管理
+    public function feedback(){
+        $model=M('feedback');
+        import('ORG.Util.Page');// 导入分页类
+        $count= $model->count();// 查询满足要求的总记录数
+        $Page = new  Page($count, 10);// 实例化分页类 传入总记录数和每页显示的记录数
+        $show = $Page->zone_show();// 分页显示输出
+        //进行分页数据查询 注意limit方法的参数要使用Page类的属性
+        $comments = $model->order("id DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
+        $this->page=$show;
+        $this->comments=$comments;
+        $this->postion();
+        $this->display();
+    }
 
 }

@@ -91,13 +91,13 @@
             </ul>
         </li>
         <li class="submenu <?php if($position == zone): ?>active<?php endif; ?>"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span>
-            <span class="label label-important">3</span></a>
+            <span class="label label-important">4</span></a>
             <ul>
                 <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/commentLists" > 评论审核</a></li>
                 <!--<li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>-->
-                <!--<li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>-->
+                <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
         </li>
 
@@ -107,7 +107,7 @@
 <div id="content">
   <div id="content-header">
     <div id="breadcrumb">  <a href="__ROOT__/Zoneadmin/Index/index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
-        <a href="__ROOT__/Zoneadmin/Zone/shareLists" class="tip-bottom">论坛管理</a> <a href="__ROOT__/Zoneadmin/Zone/articleLists" class="current">评论管理</a> </div>
+        <a href="__ROOT__/Zoneadmin/Zone/shareLists" class="tip-bottom">论坛管理</a> <a href="__ROOT__/Zoneadmin/Zone/feedback" class="current">留言管理</a> </div>
   </div>
   <div class="container-fluid">
     <hr>
@@ -115,39 +115,45 @@
       <div class="span12">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"> <i class="icon-file"></i> </span>
-            <h5>帖子评论</h5>
+            <h5>留言管理</h5>
           </div>
           <div class="widget-content nopadding">
               <form action="__ROOT__/Zoneadmin/Zone/comment_delall" method="post" id="delall">
-                  <input type="hidden" name="act" id="action">
+
               <ul class="recent-posts">
              <?php if(is_array($comments)): $i = 0; $__LIST__ = $comments;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$comment): $mod = ($i % 2 );++$i;?><li style="position: relative;">
                 <div class="user-thumb" style="background: none;">
-                    <input type="checkbox" name="ids[]" class="cid" value="<?php echo ($comment["id"]); ?>">
+
                 </div>
                 <div class="article-post">
-                  <div class="fr">
-                      <button class="btn btn-warning btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="off">禁止</button>
-                      <button class="btn btn-success btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="on">通过</button>
-                      <button class="btn btn-primary btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="good">加精</button>
-                      <button class="btn btn-danger btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="del">删除</button>
-                  </div>
-                  <span class="user-info"> 评论时间：<?php echo (date('Y-m-d H:i:s',$comment["addtime"])); ?> </span>
+
+                  <span class="user-info">联系方式：<?php echo ($comment["contact"]); ?>  留言时间：<?php echo (date('Y-m-d H:i:s',$comment["addtime"])); ?> </span>
                   <p>
+                      留言内容：
                       <a href=""><?php echo ($comment["content"]); ?></a>
                   </p>
                     <?php if($comment['pics'] != ''): ?><a href="__ROOT__/<?php echo ($comment["pics"]); ?>" target="_blank"><img src="__ROOT__/<?php echo ($comment["pics"]); ?>" style="width: 60px;height: 80px;margin-left: 60px;"></a><?php endif; ?>
                 </div>
-                <?php if($comment['status'] == 1): ?><img src="__PUBLIC__/images/pass.png" style="position: absolute;top: 20px;left: 30%;" class="tran"><?php endif; ?>
-                  <?php if($comment['status'] == 0): ?><img src="__PUBLIC__/images/nopass.png" style="position: absolute;top: 20px;left: 30%;" class="tran"><?php endif; ?>
-                  <?php if($comment['is_check'] == 1): ?><img src="__PUBLIC__/images/check.png" style="position: absolute;top: 20px;left: 50%;" class="tran"><?php endif; ?>
-                  <?php if($comment['is_good'] == 1): ?><img src="__PUBLIC__/images/hot.gif" style="position: absolute;top: 20px;left: 70%;cursor: pointer;" class="tran1"><?php endif; ?>
+                <?php if($comment['status'] == 1): ?><img src="__PUBLIC__/images/check.png" style="position: absolute;top: 20px;left: 50%;" class="tran"><?php endif; ?>
               </li><?php endforeach; endif; else: echo "" ;endif; ?>
+                  <?php if(!$comment): ?><li style="position: relative;">
+
+                          <div class="article-post">
+                              <div class="fr">
+
+                              </div>
+                              <span class="user-info"></span>
+                              <p style="text-align: center;">
+                                  无网站留言！
+                              </p>
+                          </div>
+
+                      </li><?php endif; ?>
               <li>
-                  <label style="display:block;width: 80px;cursor: pointer;float: left;" for="selectall"><input type="checkbox" id="selectall">  全选</label>
-                  <button class="btn btn-warning btn-mini doall" type="button" alt="nopass">批量禁止</button>
-                  <button class="btn btn-success btn-mini doall" type="button" alt="pass">批量通过</button>
-                  <button class="btn btn-danger btn-mini doall" type="button" alt="del">批量删除</button>
+                  <!--<label style="display:block;width: 80px;cursor: pointer;float: left;" for="selectall"><input type="checkbox" id="selectall">  全选</label>-->
+                  <!--<button class="btn btn-warning btn-mini doall" type="button" alt="nopass">批量禁止</button>-->
+                  <!--<button class="btn btn-success btn-mini doall" type="button" alt="pass">批量通过</button>-->
+                  <!--<button class="btn btn-danger btn-mini doall" type="button" alt="del">批量删除</button>-->
               </li>
             </ul>
               </form>

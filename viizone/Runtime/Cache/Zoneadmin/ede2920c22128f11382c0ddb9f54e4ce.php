@@ -91,13 +91,13 @@
             </ul>
         </li>
         <li class="submenu <?php if($position == zone): ?>active<?php endif; ?>"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span>
-            <span class="label label-important">3</span></a>
+            <span class="label label-important">4</span></a>
             <ul>
                 <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/commentLists" > 评论审核</a></li>
                 <!--<li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>-->
-                <!--<li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>-->
+                <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
         </li>
 
@@ -129,7 +129,6 @@
                   <div class="fr">
                       <button class="btn btn-warning btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="off">禁止</button>
                       <button class="btn btn-success btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="on">通过</button>
-                      <button class="btn btn-primary btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="good">加精</button>
                       <button class="btn btn-danger btn-mini turn" type="button" attr="<?php echo ($comment["id"]); ?>" alt="del">删除</button>
                   </div>
                   <span class="user-info"> 评论时间：<?php echo (date('Y-m-d H:i:s',$comment["addtime"])); ?> </span>
@@ -141,8 +140,21 @@
                 <?php if($comment['status'] == 1): ?><img src="__PUBLIC__/images/pass.png" style="position: absolute;top: 20px;left: 30%;" class="tran"><?php endif; ?>
                   <?php if($comment['status'] == 0): ?><img src="__PUBLIC__/images/nopass.png" style="position: absolute;top: 20px;left: 30%;" class="tran"><?php endif; ?>
                   <?php if($comment['is_check'] == 1): ?><img src="__PUBLIC__/images/check.png" style="position: absolute;top: 20px;left: 50%;" class="tran"><?php endif; ?>
-                  <?php if($comment['is_good'] == 1): ?><img src="__PUBLIC__/images/hot.gif" style="position: absolute;top: 20px;left: 70%;cursor: pointer;" class="tran1"><?php endif; ?>
               </li><?php endforeach; endif; else: echo "" ;endif; ?>
+             <?php if(!$comment): ?><li style="position: relative;">
+
+                     <div class="article-post">
+                         <div class="fr">
+
+                         </div>
+                         <span class="user-info"></span>
+                         <p style="text-align: center;">
+                            无需要审核的评论！
+                         </p>
+
+                     </div>
+
+                 </li><?php endif; ?>
               <li>
                   <label style="display:block;width: 80px;cursor: pointer;float: left;" for="selectall"><input type="checkbox" id="selectall">  全选</label>
                   <button class="btn btn-warning btn-mini doall" type="button" alt="nopass">批量禁止</button>
