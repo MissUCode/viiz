@@ -11,36 +11,36 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 ad">
+  <div class="row">
+    <div class="col-sm-12 ad">
 
-        </div>
     </div>
-    <div class="row">
-        <!--<div class="col-sm-12 header-nav">-->
-           <!--<a href="#" class="go-back"></a>-->
-           <!--<h1 class="header-title">微商部落</h1>-->
-            <!--<a href="#" class="add-new"></a>-->
-        <!--</div>-->
-        <div class="col-sm-12 header" style="background: #fff;">
-          <img src="__PUBLIC__/images/logo.png" class="img-circle img-responsive logo" >
-          <h1 class="website-name">微商助手</h1>
-          <img src="__PUBLIC__/images/chat.png" class="chat">
+</div>
+<div class="row">
+    <!--<div class="col-sm-12 header-nav">-->
+    <!--<a href="#" class="go-back"></a>-->
+    <!--<h1 class="header-title">微商部落</h1>-->
+    <!--<a href="#" class="add-new"></a>-->
+    <!--</div>-->
+    <div class="col-sm-12 header" style="background: #fff;">
+        <img src="__PUBLIC__/images/logo.png" class="img-circle img-responsive logo" >
+        <h1 class="website-name">微商助手</h1>
+        <img src="__PUBLIC__/images/chat.png" class="chat">
           <span class="tj">
               <label>分享圈：<font style="color: #42ab35;">23458</font></label>
               <label>&nbsp;访问量：<font style="color: #42ab35;">1923458</font></label>
           </span>
-          <!--<a href="#" class="action">-->
-             <!--<img src="__PUBLIC__/images/join.png" >-->
-          <!--</a>-->
-            <!--<a href="#" class="action">-->
-                <!--<img src="__PUBLIC__/images/create.png" >-->
-            <!--</a>-->
-            <a href="#" class="action">
-                <img src="__PUBLIC__/images/share.png" >
-            </a>
-        </div>
+        <!--<a href="#" class="action">-->
+        <!--<img src="__PUBLIC__/images/join.png" >-->
+        <!--</a>-->
+        <!--<a href="#" class="action">-->
+        <!--<img src="__PUBLIC__/images/create.png" >-->
+        <!--</a>-->
+        <a href="#" class="action">
+            <img src="__PUBLIC__/images/share.png" >
+        </a>
     </div>
+</div>
     <div class="row" >
         <div class="col-md-12" style="padding-top: 10px; border-bottom: #eee 1px solid;background: #fff;">
             <span class="col-md-12 hot-title">
@@ -50,7 +50,7 @@
             <span class="col-md-12 hot-clude">
                <p class="hot-c4">
                  <a href="#">
-                    <img src="__PUBLIC__/images/u.jpg" class="img-circle img-responsive">
+                    <img src="__PUBLIC__/images/vii.png" class="img-circle img-responsive">
                  </a>
                  <label>988贴子</label>
                </p>
@@ -62,7 +62,7 @@
                 </p>
                 <p class="hot-c4">
                     <a href="#">
-                        <img src="__PUBLIC__/images/u.jpg" class="img-circle img-responsive">
+                        <img src="__PUBLIC__/images/img3.jpg" class="img-circle img-responsive">
                     </a>
                     <label>988贴子</label>
                 </p>
@@ -74,212 +74,33 @@
                 </p>
             </span>
         </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                    <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-                <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-
-            </div>
-        </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                    <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-                <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-            </div>
-
-        </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                   <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-                <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                  <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-            </div>
-
-        </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                   <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-            </div>
-            <!--<div class="col-md-12 content-comment">-->
-                <!--<span class="col-md-12 " >-->
-
-                <!--</span>-->
-            <!--</div>-->
-        </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                   <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-            </div>
-            <!--<div class="col-md-12 content-comment">-->
-            <!--<span class="col-md-12 " >-->
-
-            <!--</span>-->
-            <!--</div>-->
-        </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                   <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-            </div>
-            <!--<div class="col-md-12 content-comment">-->
-            <!--<span class="col-md-12 " >-->
-
-            <!--</span>-->
-            <!--</div>-->
-        </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                   <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-            </div>
-            <!--<div class="col-md-12 content-comment">-->
-            <!--<span class="col-md-12 " >-->
-
-            <!--</span>-->
-            <!--</div>-->
-        </div>
-        <div class="col-md-12 content">
-            <div class="col-md-12 content-user">
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
-                <span class="infos">
-                   <label><b>莉莉化妆品代购分享</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">会员：<font style="color: #42ab35;">234</font>　帖子：<font style="color: #42ab35;">200</font></label>
-                </span>
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <img src="__PUBLIC__/images/img2.png" class="img-responsive" >
-                   <p class="action-list">
-                       <label>
-                           <a href="zan" class="zan">10</a>
-                           <a href="share" class="share"></a>
-                           <a href="comment" class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-            </div>
-            <!--<div class="col-md-12 content-comment">-->
-            <!--<span class="col-md-12 " >-->
-            <!--</span>-->
-            <!--</div>-->
-        </div>
+       <?php if(is_array($shares)): $i = 0; $__LIST__ = $shares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shares): $mod = ($i % 2 );++$i;?><div class="col-md-12 content" alt="<?php echo ($shares["id"]); ?>">
+                <div class="col-md-12 content-user">
+                    <?php if($shares['userpic']): ?><img src="__ROOT__/<?php echo ($shares["userpic"]); ?>" class="img-responsive img-circle user-pic">
+                        <?php else: ?>
+                        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic"><?php endif; ?>
+                    <span class="infos">
+                        <label><b><?php echo ($shares["title"]); ?></b>
+                            <img src="__PUBLIC__/images/l1.jpg">
+                        </label>
+                        <label style="font-size: 10px;">会员：<font style="color: #42ab35;"><?php echo ($shares["members"]); ?></font>　帖子：<font style="color: #42ab35;"><?php echo ($shares["article"]); ?></font></label>
+                    </span>
+                    <?php if($shares['is_top'] == 1): ?><img src="__PUBLIC__/images/hot.gif" class="hot-best-top"><?php endif; ?>
+                </div>
+                <div class="col-md-12 content-content">
+                    <span class="col-md-12" >
+                       <p><?php echo (msubstr($shares["desc"],0,100)); ?>...</p>
+                        <?php if($shares['pic'] != ''): ?><img src="__ROOT__/<?php echo ($shares["pic"]); ?>" class="img-responsive" ><?php endif; ?>
+                       <p class="action-list">
+                           <label>
+                               <a href="zan" class="zan"><?php echo ($shares["like"]); ?></a>
+                               <a href="share" class="share"></a>
+                               <a href="comment" class="comment"><?php echo ($shares["comment"]); ?></a>
+                           </label>
+                       </p>
+                    </span>
+                </div>
+            </div><?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
     <div class="row" style="padding-bottom: 60px;">
         <div class="col-md-12">
@@ -297,13 +118,13 @@
     <span class="banner-right"><a >...</a></span>
 </div>
 <div class="menu">
-       <h2 class="center-head"><i class="glyphicon glyphicon-user"></i> 个人中心</h2>
-       <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
-           <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+    <h2 class="center-head"><i class="glyphicon glyphicon-user"></i> 个人中心</h2>
+    <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
+        <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
                 <span class="infos" style="top:8px;left: 45px;">
                    <label><b>翘脚的故事</b><img src="__PUBLIC__/images/l1.jpg"></label>
                 </span>
-       </div>
+    </div>
     <ul class="menu-list">
         <li><a href="#">我的分享圈</a><i class="go"> > </i></li>
         <li><a href="#">我的帖子</a><i class="go">></i></li>
@@ -316,8 +137,8 @@
   <span class="text-content">
       <label class="text-content-header"><i class="glyphicon glyphicon-map-marker" style=""></i> 有你参与才精彩<button class="cancel">取消</button></label>
       <p class="circel-desc">
-         <label class="circel-name">分享圈名称：<input type="text" placeholder="分享圈名称..."></label>
-         <label class="circel-d">分享圈简述：<textarea  placeholder="说点什么吧..."></textarea></label>
+          <label class="circel-name">分享圈名称：<input type="text" placeholder="分享圈名称..."></label>
+          <label class="circel-d">分享圈简述：<textarea  placeholder="说点什么吧..."></textarea></label>
       </p>
       <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>

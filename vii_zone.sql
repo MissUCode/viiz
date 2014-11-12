@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 11 月 11 日 08:31
+-- 生成日期: 2014 年 11 月 12 日 08:53
 -- 服务器版本: 5.5.20
 -- PHP 版本: 5.3.10
 
@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `vii_article` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `pics` varchar(300) NOT NULL,
   `click` int(13) NOT NULL DEFAULT '0',
+  `like` int(6) NOT NULL DEFAULT '0',
   `lock` tinyint(1) NOT NULL DEFAULT '0',
   `content` varchar(600) NOT NULL,
   `addtime` varchar(13) NOT NULL,
@@ -78,10 +79,10 @@ CREATE TABLE IF NOT EXISTS `vii_article` (
 -- 转存表中的数据 `vii_article`
 --
 
-INSERT INTO `vii_article` (`id`, `title`, `uid`, `sid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `pics`, `click`, `lock`, `content`, `addtime`) VALUES
-(13, '测试帖子1', 0, 1, 0, 1, 0, 1, 0, 'Public/Uploads/20141107/545c73d991cc3.jpg', 0, 0, '测试帖子1', '1415345113'),
-(14, '测试帖子2', 0, 2, 0, 0, 1, 0, 1, 'Public/Uploads/20141107/545c73f1d2300.jpg', 0, 0, '测试帖子2', '1415345137'),
-(15, '测试帖子3', 0, 3, 1, 1, 1, 1, 1, 'Public/Uploads/20141107/545c74046e55d.jpg', 0, 0, '测试帖子3', '1415600615');
+INSERT INTO `vii_article` (`id`, `title`, `uid`, `sid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `pics`, `click`, `like`, `lock`, `content`, `addtime`) VALUES
+(13, '测试帖子1', 0, 1, 0, 1, 0, 1, 0, 'Public/Uploads/20141107/545c73d991cc3.jpg', 0, 0, 0, '测试帖子1', '1415345113'),
+(14, '测试帖子2', 0, 2, 0, 0, 1, 0, 1, 'Public/Uploads/20141107/545c73f1d2300.jpg', 0, 0, 0, '测试帖子2', '1415345137'),
+(15, '测试帖子3', 0, 3, 1, 1, 1, 1, 1, 'Public/Uploads/20141107/545c74046e55d.jpg', 0, 0, 0, '测试帖子3', '1415600615');
 
 -- --------------------------------------------------------
 
@@ -102,26 +103,26 @@ CREATE TABLE IF NOT EXISTS `vii_comment` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `addtime` varchar(13) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- 转存表中的数据 `vii_comment`
 --
 
 INSERT INTO `vii_comment` (`id`, `uid`, `sid`, `aid`, `toid`, `is_good`, `is_check`, `pics`, `content`, `status`, `addtime`) VALUES
-(16, 0, 3, 15, 0, 1, 1, '', '我就不信了，不是吧！！！', 1, '1415690921'),
-(3, 0, 2, 14, 0, 1, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603355'),
+(16, 0, 3, 15, 0, 0, 1, '', '我就不信了，不是吧！！！', 1, '1415690921'),
+(3, 0, 2, 14, 0, 0, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603355'),
 (4, 0, 2, 14, 0, 0, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603359'),
 (5, 0, 2, 14, 0, 0, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 0, '1415603362'),
 (6, 0, 2, 14, 0, 0, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 0, '1415603366'),
 (7, 0, 2, 14, 0, 0, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 0, '1415603369'),
-(8, 0, 2, 14, 0, 0, 1, 'Public/Uploads/20141110/546064ba83b96.jpg', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603386'),
+(8, 0, 2, 14, 0, 1, 1, 'Public/Uploads/20141110/546064ba83b96.jpg', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603386'),
 (9, 0, 1, 13, 0, 0, 1, 'Public/Uploads/20141110/546064c8a26a6.jpg', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603400'),
 (10, 0, 1, 13, 0, 0, 1, 'Public/Uploads/20141110/546064d25bce2.jpg', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603410'),
 (11, 0, 1, 13, 0, 0, 1, 'Public/Uploads/20141110/546064df9c051.jpg', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603423'),
 (12, 0, 1, 13, 0, 0, 1, 'Public/Uploads/20141110/546064ee4e8ea.jpg', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603438'),
-(13, 0, 1, 13, 0, 0, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603449'),
-(14, 0, 1, 13, 0, 0, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603454');
+(13, 0, 1, 13, 0, 1, 1, '', '好些时候没上来了，你们很积极啊，亲们！！', 1, '1415603449'),
+(17, 0, 3, 15, 0, 1, 1, 'Public/Uploads/20141112/5462bacac2fe7.jpg', '只想你过得好，我心里其实很痛，但是不会有人知道的，是吧？他们跟我不熟，没有理由要理解我，我也没有必要让他们理解我？我干嘛要？？', 1, '1415756490');
 
 -- --------------------------------------------------------
 
@@ -179,6 +180,7 @@ CREATE TABLE IF NOT EXISTS `vii_share` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `member` text NOT NULL,
   `click` int(13) NOT NULL DEFAULT '0',
+  `like` int(6) NOT NULL DEFAULT '0',
   `pic` varchar(200) NOT NULL,
   `lock` tinyint(1) NOT NULL DEFAULT '0',
   `desc` varchar(300) NOT NULL,
@@ -191,15 +193,15 @@ CREATE TABLE IF NOT EXISTS `vii_share` (
 -- 转存表中的数据 `vii_share`
 --
 
-INSERT INTO `vii_share` (`id`, `title`, `uid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `member`, `click`, `pic`, `lock`, `desc`, `remark`, `ctime`) VALUES
-(1, '小青椒微商分享圈', 0, 0, 1, 1, 1, 1, '1', 0, 'Public/Uploads/20141104/545832fbb61fd.jpg', 0, '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '1415066363'),
-(2, '微商城ddd', 0, 0, 0, 0, 0, 1, '', 0, 'Public/Uploads/20141103/545737ddc63e9.png', 0, '微商城，一个让你成长让你进步让你成微商城，一个让你成长让你进步让你成功的平台！微商城，一个让你成长让你进步让你成功的平台！功的平台！', '微商城ddd', '1415002077'),
-(3, '微商城', 1, 0, 0, 0, 1, 0, '1,2,3', 0, 'Public/Uploads/20141103/545737eb5c41d.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002091'),
-(4, '微商城2222', 0, 0, 0, 1, 0, 1, '', 0, 'Public/Uploads/20141103/5457380c544c7.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002124'),
-(8, '测试项目3', 0, 0, 1, 0, 1, 0, '', 0, 'Public/Uploads/20141104/54587d5c25d04.jpg', 0, '测试项目3', '测试项目3', '1415085403'),
-(6, '服务内容介绍1111', 0, 0, 1, 0, 1, 0, '', 0, 'Public/Uploads/20141104/545826bc5f816.jpg', 1, '服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111', '服务内容介绍1111服务内容介绍1111v', '1415063228'),
-(7, '小青椒微商分享圈', 0, 1, 1, 1, 1, 1, '', 0, 'Public/Uploads/20141104/5458327ce28ca.jpg', 0, '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '1415066236'),
-(14, '冰冰的美，你懂嘛？', 0, 0, 1, 0, 1, 1, '', 0, 'Public/Uploads/20141104/5458327ce28ca.jpg', 1, '', '', '1415244273');
+INSERT INTO `vii_share` (`id`, `title`, `uid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `member`, `click`, `like`, `pic`, `lock`, `desc`, `remark`, `ctime`) VALUES
+(1, '小青椒微商分享圈', 0, 0, 1, 0, 1, 1, '1', 10, 0, 'Public/Uploads/20141104/545832fbb61fd.jpg', 0, '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '1415066363'),
+(2, '微商城ddd', 0, 0, 0, 0, 0, 1, '', 0, 0, 'Public/Uploads/20141103/545737ddc63e9.png', 0, '微商城，一个让你成长让你进步让你成微商城，一个让你成长让你进步让你成功的平台！微商城，一个让你成长让你进步让你成功的平台！功的平台！', '微商城ddd', '1415002077'),
+(3, '微商城', 1, 1, 0, 0, 1, 0, '1,2,3', 0, 0, 'Public/Uploads/20141103/545737eb5c41d.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002091'),
+(4, '微商城2222', 0, 1, 0, 0, 0, 1, '', 0, 0, 'Public/Uploads/20141103/5457380c544c7.jpg', 0, '微商城，一个让你成长让你进步让你成功的平台！', '微商城，一个让你成长让你进步让你成功的平台！', '1415002124'),
+(8, '测试项目3', 0, 1, 1, 0, 1, 0, '', 0, 0, 'Public/Uploads/20141104/54587d5c25d04.jpg', 0, '测试项目3', '测试项目3', '1415085403'),
+(6, '服务内容介绍1111', 0, 0, 0, 0, 1, 0, '', 0, 0, 'Public/Uploads/20141104/545826bc5f816.jpg', 1, '服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111服务内容介绍1111', '服务内容介绍1111服务内容介绍1111v', '1415063228'),
+(7, '小青椒微商分享圈', 0, 1, 1, 1, 1, 1, '', 0, 0, 'Public/Uploads/20141104/5458327ce28ca.jpg', 0, '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '小青椒微商分享圈，分享微商经验，让你进步，让你成功！', '1415066236'),
+(14, '冰冰的美，你懂嘛？', 0, 0, 1, 0, 1, 1, '', 0, 0, 'Public/Uploads/20141104/5458327ce28ca.jpg', 1, '', '', '1415244273');
 
 -- --------------------------------------------------------
 
@@ -216,6 +218,7 @@ CREATE TABLE IF NOT EXISTS `vii_users` (
   `score` int(7) NOT NULL,
   `lock` tinyint(1) NOT NULL DEFAULT '0',
   `lev` tinyint(1) NOT NULL DEFAULT '0',
+  `pic` varchar(200) NOT NULL,
   `reg_time` varchar(13) NOT NULL,
   `remark` varchar(60) NOT NULL DEFAULT '无信息备注！',
   PRIMARY KEY (`id`)
@@ -225,10 +228,23 @@ CREATE TABLE IF NOT EXISTS `vii_users` (
 -- 转存表中的数据 `vii_users`
 --
 
-INSERT INTO `vii_users` (`id`, `nickname`, `password`, `phone`, `email`, `score`, `lock`, `lev`, `reg_time`, `remark`) VALUES
-(1, '爱恨情仇', 'e10adc3949ba59abbe56e057f20f883e', '13249170728', '595441550@qq.com', 0, 0, 0, '1415071241', '56445544455544545'),
-(2, '青椒的故事', '343b1c4a3ea721b2d640fc8700db0f36', '15876513076', '451436241@qq.com', 20000, 0, 3, '1414742188', '青椒小故事！'),
-(3, 'superStar', '980ac217c6b51e7dc41040bec1edfec8', '13249170720', '5654548@qq.com', 0, 0, 0, '1415071256', '洒大地');
+INSERT INTO `vii_users` (`id`, `nickname`, `password`, `phone`, `email`, `score`, `lock`, `lev`, `pic`, `reg_time`, `remark`) VALUES
+(1, '爱恨情仇', 'e10adc3949ba59abbe56e057f20f883e', '13249170728', '595441550@qq.com', 0, 0, 0, '', '1415071241', '56445544455544545'),
+(2, '青椒的故事', '343b1c4a3ea721b2d640fc8700db0f36', '15876513076', '451436241@qq.com', 20000, 0, 3, '', '1414742188', '青椒小故事！'),
+(3, 'superStar', '980ac217c6b51e7dc41040bec1edfec8', '13249170720', '5654548@qq.com', 0, 0, 0, '', '1415071256', '洒大地');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `vii_user_share`
+--
+
+CREATE TABLE IF NOT EXISTS `vii_user_share` (
+  `id` int(13) NOT NULL AUTO_INCREMENT,
+  `uid` int(13) NOT NULL,
+  `sid` int(13) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

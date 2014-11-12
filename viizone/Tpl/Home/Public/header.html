@@ -1,55 +1,30 @@
-<div class="header">
-    <div class="header-top">
-        <a href="__ROOT__/Home?from=logo"><img src="__PUBLIC__/images/logo.png" class="logo"></a>
-        <div class="col-lg-4 col-left">
-            <form action="__ROOT__/Home/Index/search.html" method="post" id="searchForm">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="公众号id、账号名称、关键字" name="keys" id="keysword" >
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">搜索</button>
-                  </span>
-            </div>
-            </form>
-        </div>
-        <div class="header-right">
-            <a href="http://weibo.com/u/5278129210" target="_blank"><img src="__PUBLIC__/images/wb.jpg"></a>
-            <label onclick="location.href='http://weibo.com/u/5278129210';">关注微博</label>
-            <a href="#"><img src="__PUBLIC__/images/wx.png"></a>
-            <label id="wx-gz">关注微信</label>
-            <div class="wx-acount">
-                <img src="__PUBLIC__/images/wx.jpg">
-            </div>
-        </div>
+<div class="row">
+    <div class="col-sm-12 ad">
+
     </div>
-    <div class="nav-one">
-        <div class="nav-banner">
-            <ul>
-                <li class="nav-left"><a href="__ROOT__/Home?from=nav" class="nav-active">导航首页</a></li>
-                <volist name="navs" id="navs">
-                 <li class="nav-left"><a href="__ROOT__/Home/Index/lists/cate/{$navs.cat_id}.html" class="">{$navs.cat_name}</a>
-                </volist>
-                <if condition="$_SESSION['member_id']">
-                    <li class="nav-left"><a href="{:U('Home/Users/index')}" class="">个人中心</a></li>
-                    <else/>
-                    <li class="nav-left"><a href="{:U('Home/Users/add')}" class="">提交账号</a></li>
-                </if>
-                <if condition="$_SESSION['member_id']">
-                <li class="nav-right"><a href="{:U('Home/Uenter/logout')}" class="">退出登录</a></li>
-                 <else />
-                <li class="nav-right"><a href="{:U('Home/Uenter/uenter')}" class="">登陆/注册</a></li>
-                </if>
-            </ul>
-        </div>
-    </div>
-    <div class="vii-tip">
-        <div class="tip-content">
-            <span class="speaker">公告 :</span>
-            <ul id="speaker-cont">
-                <li><a href="#">1.微搜网上线有好礼，注册即送500积分，好礼送不停，你懂的！</a></li>
-                <li><a href="#">2.登陆微搜网，每天签到赢得积分，积分兑好礼，永不落空！</a></li>
-                <li><a href="#">1.微搜网上线有好礼，注册即送500积分，好礼送不停，你懂的！</a></li>
-                <li><a href="#">2.登陆微搜网，每天签到赢得积分，积分兑好礼，永不落空！</a></li>
-            </ul>
-        </div>
+</div>
+<div class="row">
+    <!--<div class="col-sm-12 header-nav">-->
+    <!--<a href="#" class="go-back"></a>-->
+    <!--<h1 class="header-title">微商部落</h1>-->
+    <!--<a href="#" class="add-new"></a>-->
+    <!--</div>-->
+    <div class="col-sm-12 header" style="background: #fff;">
+        <img src="__PUBLIC__/images/logo.png" class="img-circle img-responsive logo" >
+        <h1 class="website-name">微商助手</h1>
+        <img src="__PUBLIC__/images/chat.png" class="chat">
+          <span class="tj">
+              <label>分享圈：<font style="color: #42ab35;">23458</font></label>
+              <label>&nbsp;访问量：<font style="color: #42ab35;">1923458</font></label>
+          </span>
+        <!--<a href="#" class="action">-->
+        <!--<img src="__PUBLIC__/images/join.png" >-->
+        <!--</a>-->
+        <!--<a href="#" class="action">-->
+        <!--<img src="__PUBLIC__/images/create.png" >-->
+        <!--</a>-->
+        <a href="#" class="action">
+            <img src="__PUBLIC__/images/share.png" >
+        </a>
     </div>
 </div>

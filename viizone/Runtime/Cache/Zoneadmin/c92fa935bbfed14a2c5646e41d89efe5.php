@@ -91,13 +91,13 @@
             </ul>
         </li>
         <li class="submenu <?php if($position == zone): ?>active<?php endif; ?>"  attr="zone" id="zone"> <a href="#"><i class="icon icon-info-sign"></i> <span>论坛管理</span>
-            <span class="label label-important">3</span></a>
+            <span class="label label-important">4</span></a>
             <ul>
                 <li><a href="__ROOT__/Zoneadmin/Zone/shareLists"> 圈子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 帖子管理</a></li>
                 <li><a href="__ROOT__/Zoneadmin/Zone/commentLists" > 评论审核</a></li>
                 <!--<li><a href="__ROOT__/Zoneadmin/Zone/articleLists"> 数据统计</a></li>-->
-                <!--<li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>-->
+                <li><a href="__ROOT__/Zoneadmin/Zone/feedback"> 留言管理</a></li>
             </ul>
         </li>
 

@@ -10,7 +10,11 @@ body{
 img{
     border:none;
 }
+a{
+    color: #666;
+}
 a:hover{
+    color: #666;
     text-decoration: none;
 }
 .header-nav{
@@ -128,6 +132,8 @@ label{
 }
 .hot-c4 img{
     display: block;
+    width:60px;
+    height: 60px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -136,7 +142,7 @@ label{
 .hot-c4 label{
     font-size: 10px;
     display: block;
-    width: 100%;
+    width: 60px;
     height: 30px;
     line-height: 30px;
     font-weight: bold;

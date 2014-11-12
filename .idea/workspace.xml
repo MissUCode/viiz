@@ -23,38 +23,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
+      <file leaf-file-name="IndexcomAction.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Home/IndexcomAction.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="18" selection-start="2545" selection-end="2545" vertical-scroll-proportion="0.32004556" vertical-offset="1315" max-vertical-offset="4060">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="700">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZoneAction.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/ZoneAction.class.php">
+      <file leaf-file-name="IndexAction.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Home/IndexAction.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="682" column="26" selection-start="22233" selection-end="22233" vertical-scroll-proportion="-13.870968" vertical-offset="10406" max-vertical-offset="11368">
+            <state line="25" column="0" selection-start="777" selection-end="818" vertical-scroll-proportion="-22.580645" vertical-offset="0" max-vertical-offset="1036">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Home/Index/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="19" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.28701594" vertical-offset="1008" max-vertical-offset="2912">
               <folding>
-                <element signature="n#article_ajax#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#article_delall#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#editArticle#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#addComment#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#comment_action#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#comment#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#commentLists#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#comment_ajax#0;n#ZoneAction#0;n#!!top" expanded="false" />
-                <element signature="n#comment_delall#0;n#ZoneAction#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#label#1;n#span#0;n#div#0;n#div#0;n#volist#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
+      <file leaf-file-name="comm.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/css/comm.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="49" selection-start="1325" selection-end="1325" vertical-scroll-proportion="-16.258064" vertical-offset="0" max-vertical-offset="980">
+            <state line="141" column="14" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.0" vertical-offset="3512" max-vertical-offset="22120">
               <folding />
             </state>
           </provider>
@@ -85,7 +86,6 @@
         <option value="$PROJECT_DIR$/css/comm.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/EnterAction.class.php" />
-        <option value="$PROJECT_DIR$/viizone/Tpl/Home/Index/index.html" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/footer.html" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Enter/login.html" />
         <option value="$PROJECT_DIR$/ThinkPHP/Extend/Library/ORG/Util/Page.class.php" />
@@ -112,6 +112,11 @@
         <option value="$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/ZoneAction.class.php" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/feedback.html" />
         <option value="$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Home/Public/header.html" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Home/Public/footer.html" />
+        <option value="$PROJECT_DIR$/Public/css/comm.css" />
+        <option value="$PROJECT_DIR$/viizone/Lib/Action/Home/IndexAction.class.php" />
+        <option value="$PROJECT_DIR$/viizone/Tpl/Home/Index/index.html" />
       </list>
     </option>
   </component>
@@ -148,7 +153,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,6 +192,10 @@
               <option name="myItemId" value="Zoneadmin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -208,6 +216,94 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Zoneadmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viizone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viizone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viizone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viizone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -228,24 +324,6 @@
               <option name="myItemId" value="viizone" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viizone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -286,10 +364,6 @@
               <option name="myItemId" value="Action" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zoneadmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -310,6 +384,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -327,8 +405,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,19 +485,19 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -410,8 +507,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16927083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -432,35 +529,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="127" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.0" vertical-offset="1222" max-vertical-offset="5264" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="85" selection-start="1193" selection-end="1197" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/shareLists.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="34" selection-start="9238" selection-end="9238" vertical-scroll-proportion="0.0" vertical-offset="6010" max-vertical-offset="6888" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="646" selection-end="720" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="10780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/MemberAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="27" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="4004" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="75" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="952">
@@ -559,11 +627,6 @@
         <state line="2" column="6" selection-start="104" selection-end="104" vertical-scroll-proportion="0.06378132" vertical-offset="0" max-vertical-offset="878" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Home/Index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="3" selection-start="452" selection-end="527" vertical-scroll-proportion="0.28701594" vertical-offset="0" max-vertical-offset="9800" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Enter/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="172" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-0.9032258" vertical-offset="504" max-vertical-offset="1736" />
@@ -646,107 +709,124 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Admin/lists.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="4066" selection-end="5979" vertical-scroll-proportion="0.13365155" vertical-offset="2436" max-vertical-offset="6300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/articleLists.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="0" selection-start="12797" selection-end="13082" vertical-scroll-proportion="4.4669704" vertical-offset="4226" max-vertical-offset="8652">
-          <folding />
-        </state>
+        <state line="91" column="0" selection-start="4066" selection-end="5979" vertical-scroll-proportion="0.13365155" vertical-offset="2436" max-vertical-offset="6300" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/addArticle.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="54" selection-start="4635" selection-end="4635" vertical-scroll-proportion="-12.064516" vertical-offset="2706" max-vertical-offset="6328">
-          <folding />
-        </state>
+        <state line="110" column="54" selection-start="4635" selection-end="4635" vertical-scroll-proportion="-12.064516" vertical-offset="2706" max-vertical-offset="6328" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/addComment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="828" selection-end="902" vertical-scroll-proportion="0.09567198" vertical-offset="364" max-vertical-offset="3864">
-          <folding />
-        </state>
+        <state line="16" column="0" selection-start="828" selection-end="902" vertical-scroll-proportion="0.09567198" vertical-offset="364" max-vertical-offset="3864" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/feedback.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="69" selection-start="2383" selection-end="2383" vertical-scroll-proportion="0.54214126" vertical-offset="1288" max-vertical-offset="6104">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#if#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#if#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/shareLists.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="59" selection-start="7972" selection-end="7983" vertical-scroll-proportion="0.30410022" vertical-offset="4017" max-vertical-offset="8092">
-          <folding>
-            <element signature="n#style#0;n#select#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="63" column="69" selection-start="2383" selection-end="2383" vertical-scroll-proportion="0.54214126" vertical-offset="1288" max-vertical-offset="6104" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/commentLists.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="18" selection-start="4040" selection-end="4495" vertical-scroll-proportion="0.52164006" vertical-offset="2370" max-vertical-offset="6384">
-          <folding>
-            <element signature="n#style#0;n#li#0;n#if#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#if#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="101" column="18" selection-start="4040" selection-end="4495" vertical-scroll-proportion="0.52164006" vertical-offset="2370" max-vertical-offset="6384" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/comment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="16" selection-start="5174" selection-end="5180" vertical-scroll-proportion="0.712984" vertical-offset="2258" max-vertical-offset="4816">
-          <folding>
-            <element signature="n#style#0;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#if#0;n#div#1;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#if#0;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#if#1;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#if#2;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#if#3;n#li#0;n#volist#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#li#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#6225#8039#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/ZoneAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="682" column="26" selection-start="22233" selection-end="22233" vertical-scroll-proportion="-13.870968" vertical-offset="10406" max-vertical-offset="11368">
-          <folding>
-            <element signature="n#article_ajax#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#article_delall#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#editArticle#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#addComment#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#comment_action#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#comment#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#commentLists#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#comment_ajax#0;n#ZoneAction#0;n#!!top" expanded="false" />
-            <element signature="n#comment_delall#0;n#ZoneAction#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
+        <state line="103" column="16" selection-start="5174" selection-end="5180" vertical-scroll-proportion="0.712984" vertical-offset="2258" max-vertical-offset="4816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Public/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="49" selection-start="1325" selection-end="1325" vertical-scroll-proportion="-16.258064" vertical-offset="0" max-vertical-offset="980">
+        <state line="18" column="49" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="980">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="18" selection-start="2545" selection-end="2545" vertical-scroll-proportion="0.32004556" vertical-offset="1315" max-vertical-offset="4060">
+        <state line="57" column="18" selection-start="2545" selection-end="2545" vertical-scroll-proportion="-9.064516" vertical-offset="1315" max-vertical-offset="4060">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Zoneadmin/ZoneAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="682" column="26" selection-start="22233" selection-end="22233" vertical-scroll-proportion="-11.16129" vertical-offset="18554" max-vertical-offset="19432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Home/Public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="6" selection-start="1098" selection-end="1098" vertical-scroll-proportion="-26.193548" vertical-offset="0" max-vertical-offset="980">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#label#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#label#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Home/Public/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="22" selection-start="2336" selection-end="2336" vertical-scroll-proportion="-26.516129" vertical-offset="466" max-vertical-offset="1456">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#span#2;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#span#2;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#span#0;n#div#0;n#div#0;n#span#2;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/shareLists.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="59" selection-start="7972" selection-end="7983" vertical-scroll-proportion="3.1742597" vertical-offset="1497" max-vertical-offset="8092">
+          <folding>
+            <element signature="n#style#0;n#select#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Zoneadmin/Zone/articleLists.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="83" selection-start="6553" selection-end="6566" vertical-scroll-proportion="0.35307518" vertical-offset="3554" max-vertical-offset="8652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Home/IndexcomAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="909">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/comm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="14" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.0" vertical-offset="3512" max-vertical-offset="22120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Lib/Action/Home/IndexAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="777" selection-end="818" vertical-scroll-proportion="-22.580645" vertical-offset="0" max-vertical-offset="1036">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viizone/Tpl/Home/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="19" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.28701594" vertical-offset="1008" max-vertical-offset="2912">
+          <folding>
+            <element signature="n#style#0;n#label#1;n#span#0;n#div#0;n#div#0;n#volist#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
