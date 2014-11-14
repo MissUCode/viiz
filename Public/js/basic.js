@@ -14,7 +14,8 @@ $(function(){
         $('.menu').animate({
             right:"-50%"
         }, 500 );
-        $(this).fadeOut(500);
+        $('.bu').fadeOut(500);
+        $('.addshare').fadeOut(500);
     })
     $('.banner-center').click(function(){
         Height= $(document).height();
@@ -32,5 +33,18 @@ $(function(){
     })
     $('.add-pic').click(function(){
         $('.up-img').click();
+    })
+    $('.shareTo').click(function(){
+        Height= $(document).height();
+        $('.bu').css('height',Height);
+        $('.bu').fadeIn(500);
+        $('.addshare').fadeIn(500);
+        return false;
+    })
+    $('.content').click(function(){
+        var url=$(this).attr('url');
+        if(url!=''&& url !='undefined'){
+            location.href=url;
+        }
     })
 })

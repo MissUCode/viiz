@@ -94,6 +94,7 @@ label{
     width: 90px;
     height: 60px;
     position: absolute;
+    cursor: pointer;
     top: -5px;
     right: 15px;
 }
@@ -238,6 +239,7 @@ label{
     min-width: 24px;
     height: 25px;
     margin-left: 15px;
+    cursor: pointer;
     float: left;
 }
 .action-list label a:hover{
@@ -775,7 +777,16 @@ label{
     color: #666;
 }
 
-
+.addshare{
+    display: none;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    right: 10px;
+    background: url(../images/addshare.png) left center no-repeat;
+    z-index: 10;
+}
 
 
 

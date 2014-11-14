@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>微商助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
+</head>
+<body>
+<div class="container-fluid">
+    <include file="Public/header" />
+    <div class="row" style="background: #fff;">
+        <div class="col-md-12" style="width:100%;background: #fff;">
+          <span class="detail-header"><h2><a href="__ROOT__/Index/share/share_id/{$shareinfo.id}">帖子来自：<b>{$shareinfo.title}</b></a></h2><i class="ii"> > </i></span>
+        </div>
+        <div class="col-md-12 content content-d" url="" >
+            <div class="col-md-12 content-user" >
+                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+                <span class="infos">
+                    <label><b>{$articleinfo.title|msubstr=0,15}</b><img src="__PUBLIC__/images/l1.jpg"></label>
+                    <label style="font-size: 10px;">{$articleinfo.addtime|date='Y-m-d H:i:s',###}</label>
+                </span>
+                <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
+            </div>
+            <div class="col-md-12 content-content">
+                <span class="col-md-12" >
+                   <p>{$articleinfo.content}</p>
+                     <if condition="$articleinfo['pics'] neq ''">
+                         <img src="__ROOT__/{$articleinfo.pics}" class="img-responsive">
+                     </if>
+                   <p class="action-list">
+                       <label>
+                           <a  class="zan">{$articleinfo.like}</a>
+                           <a  class="share shareTo"></a>
+                           <a  class="comment">{$commentCounts}</a>
+                       </label>
+                   </p>
+                </span>
+
+            </div>
+            <div class="col-md-12 content-comment">
+            <h2><b><i class="glyphicon glyphicon-comment" ></i> 所有评论</b></h2>
+                <span class="the-comment" >
+                   <!--<p class="no-comment">本帖暂时没有用户评价~~！</p>-->
+                   <p class="the-left">
+                      <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2">
+                   </p>
+                   <p class="the-right">
+                       <font style="color: #42ab35;">杨哲<img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :</font>
+                       说得好呀，做生意就是要讲诚信的嘛，要不然大家都来破坏，吃亏了最后都是大家！大家看看我曾经的女友，很带劲的...O(∩_∩)O哈哈~
+                       <img src="__PUBLIC__/images/img3.jpg" class="img-responsive" >
+                     <p class="c-action">
+                        <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
+                     </p>
+                    <p class="comment-in-comment">
+                        <i class="san"></i>
+                        <label class="rep"><font style="color: #42ab35;">杨哲：</font>别这样好不好？</label>
+                        <label class="rep"><font style="color: #42ab35;">傻大个：</font>扯淡，明明是我的女人？</label>
+                        <label class="rep"><font style="color: #42ab35;">杨哲 回复 傻大个：</font>你们赢了，我说的是真的！不信就算了，反正也就是那么回事的的啦，爱爱爱！</label>
+                    </p>
+                   </p>
+                </span>
+                <span class="the-comment" >
+               <!--<p class="no-comment">本帖暂时没有用户评价~~！</p>-->
+                   <p class="the-left">
+                       <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2">
+                   </p>
+                   <p class="the-right">
+                       <font style="color: #42ab35;">杨哲<img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :</font>
+                       说得好呀，做生意就是要讲诚信的嘛，要不然大家都来破坏，吃亏了最后都是大家！大家看看我曾经的女友，很带劲的...O(∩_∩)O哈哈~
+                       <img src="__PUBLIC__/images/img3.jpg" class="img-responsive" >
+                      <p class="c-action">
+                          <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
+                      </p>
+                    </p>
+               </span>
+               <span class="the-comment" >
+               <!--<p class="no-comment">本帖暂时没有用户评价~~！</p>-->
+               <p class="the-left">
+                   <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2">
+               </p>
+               <p class="the-right">
+                   <font style="color: #42ab35;">杨哲<img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :</font>
+                   说得好呀，做生意就是要讲诚信的嘛，要不然大家都来破坏，吃亏了最后都是大家！大家看看我曾经的女友，很带劲的...O(∩_∩)O哈哈~
+
+                  <p class="c-action">
+                      <label><a class="glyphicon glyphicon-thumbs-up">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
+                  </p>
+                   </p>
+            </span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 60px;">
+        <div class="col-md-12">
+            <p style="text-align: center;line-height: 30px;color: #666;">已显示全部</p>
+        </div>
+        <div class="col-md-12">
+            <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
+        </div>
+    </div>
+
+</div>
+<include file="Public/footer" />
+<script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/basic.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>微商助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
+</head>
+<body>
+<div class="container-fluid">
+    <include file="Public/header" />
+    <div class="row" >
+        <div class="col-md-12" style="padding-top: 10px; border-bottom: #eee 1px solid;background: #fff;">
+            <span class="col-md-12 hot-title">
+                <img src="__PUBLIC__/images/king.png" >
+                <label>“{$shareinfo.title}”活跃份子</label>
+            </span>
+            <span class="col-md-12 hot-clude">
+               <volist name="hot_users" id="hot">
+                   <p class="hot-c4">
+                     <a href="#">
+                         <if condition="$hot['pic'] neq ''">
+                             <img src="__ROOT__/{$hot.pic}" class="img-responsive img-circle user-pic">
+                             <else />
+                             <img src="__PUBLIC__/images/vii.png" class="img-circle img-responsive">
+                         </if>
+                     </a>
+                     <label>{$hot.nickname|msubstr=0,5}</label>
+                   </p>
+               </volist>
+            </span>
+        </div>
+        <volist name="articles" id="art">
+          <div class="col-md-12 content" url="__ROOT__/Index/article/article_id/{$art.id}.html">
+            <div class="col-md-12 content-user">
+                <if condition="$art['userpic'] neq ''">
+                  <img src="__ROOT__/{$art.userpic}" class="img-responsive img-circle user-pic">
+                    <else />
+                    <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
+                </if>
+                <span class="infos">
+                    <label><b>{$art.title|msubstr=0,15}...</b><img src="__PUBLIC__/images/l1.jpg"></label>
+                    <label style="font-size: 10px;">{$art.addtime|date='Y-m-d H:i:s',###}</label>
+                </span>
+                <if condition="$art['is_top']">
+                 <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
+                </if>
+            </div>
+            <div class="col-md-12 content-content">
+                <span class="col-md-12" >
+                   <p>{$art.content}</p>
+                   <img src="__ROOT__/{$art.pics}" class="img-responsive" width="40%" height="40%">
+                   <p class="action-list">
+                       <label>
+                           <a  class="zan">{$art.like}</a>
+                           <a  class="share shareTo"></a>
+                           <a  class="comment">{$art.comment}</a>
+                       </label>
+                   </p>
+                </span>
+
+            </div>
+        </div>
+        </volist>
+    </div>
+    <div class="row" style="padding-bottom: 60px;">
+        <div class="col-md-12">
+            <p style="text-align: center;line-height: 30px;color: #666;">已显示全部</p>
+        </div>
+        <div class="col-md-12">
+            <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
+        </div>
+    </div>
+
+</div>
+<include file="Public/footer" />
+<script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/basic.js"></script>
+</body>
+</html>

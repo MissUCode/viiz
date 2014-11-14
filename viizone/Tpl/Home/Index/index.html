@@ -19,34 +19,24 @@
                 <label>活跃分享圈</label>
             </span>
             <span class="col-md-12 hot-clude">
+              <volist name="activeShare" id="tj">
                <p class="hot-c4">
-                 <a href="#">
-                    <img src="__PUBLIC__/images/vii.png" class="img-circle img-responsive">
+                 <if condition="$tj['pic'] neq ''">
+                     <a href="Index/share/share_id/{$tj.id}.html">
+                         <img src="__ROOT__/{$tj.pic}" class="img-circle">
+                     </a>
+                     <else />
+                 <a href="Index/share/share_id/{$tj.id}">
+                    <img src="__PUBLIC__/images/vii.png" class="img-circle">
                  </a>
-                 <label>988贴子</label>
+                 </if>
+                 <label>浏览:{$tj.click}</label>
                </p>
-                <p class="hot-c4">
-                    <a href="#">
-                        <img src="__PUBLIC__/images/u.jpg" class="img-circle img-responsive">
-                    </a>
-                    <label>988贴子</label>
-                </p>
-                <p class="hot-c4">
-                    <a href="#">
-                        <img src="__PUBLIC__/images/img3.jpg" class="img-circle img-responsive">
-                    </a>
-                    <label>988贴子</label>
-                </p>
-                <p class="hot-c4">
-                    <a href="#">
-                        <img src="__PUBLIC__/images/u.jpg" class="img-circle img-responsive">
-                    </a>
-                    <label>988贴子</label>
-                </p>
+              </volist>
             </span>
         </div>
        <volist name="shares" id="shares">
-            <div class="col-md-12 content" alt="{$shares.id}">
+            <div class="col-md-12 content" alt="{$shares.title}" url="__ROOT__/Index/share/share_id/{$shares.id}.html">
                 <div class="col-md-12 content-user">
                     <if condition="$shares['userpic']">
                      <img src="__ROOT__/{$shares.userpic}" class="img-responsive img-circle user-pic">
@@ -71,9 +61,9 @@
                         </if>
                        <p class="action-list">
                            <label>
-                               <a href="zan" class="zan">{$shares.like}</a>
-                               <a href="share" class="share"></a>
-                               <a href="comment" class="comment">{$shares.comment}</a>
+                               <a  class="zan">{$shares.like}</a>
+                               <a  class="share shareTo"></a>
+                               <a  class="comment">{$shares.comment}</a>
                            </label>
                        </p>
                     </span>

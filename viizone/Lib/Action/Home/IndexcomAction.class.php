@@ -7,14 +7,17 @@
  */
 class IndexcomAction extends Action {
     public function _initialize(){
-        $model=M('cate');
-        $set=M('set');
-        $where['pid']=0;
-        $navs=$model->where($where)->order('sort DESC')->select();
-        $seo=$set->find();
-        $this->navs=$navs;
-        $this->seo=$seo;
-        //$this->display();
+        $visitModel=M('visit');
+        $activeModel=M('share');
+        $where_visit['title']='visit';
+        $visitcount=$visitModel->where($where_visit)->getField('counts');
+        $activeShare=$activeModel->order('is_tj DESC,click DESC')->limit(0,4)->select();
+        $sharecount=$activeModel->count();
+        $data['counts']=$visitcount+1;
+        $visitModel->where($where_visit)->data($data)->save();
+        $this->visitcount=$visitcount;
+        $this->sharecount=$sharecount;
+        $this->activeShare=$activeShare;
     }
 
 }
