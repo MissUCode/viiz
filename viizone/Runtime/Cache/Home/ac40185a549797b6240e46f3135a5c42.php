@@ -109,11 +109,12 @@
                 </span>
     </div>
     <ul class="menu-list">
-        <li><a href="#">我的分享圈</a><i class="go"> > </i></li>
-        <li><a href="#">我的帖子</a><i class="go">></i></li>
-        <li><a href="#">我的资料</a><i class="go">></i></li>
-        <li><a href="#">我的通知</a><i class="go">></i><i class="notice">15</i></li>
-        <li><a href="#">反馈建议</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/shares.html">我的分享圈</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/articles.html">我的帖子</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
+        <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
     </ul>
 </div>
 <div class="add-content">

@@ -13,43 +13,13 @@ class UenterAction extends IndexcomAction {
      * 首页
      * */
     public function index(){
-        $this->uenter();
+        $this->login();
     }
-    public function maylike(){
-        $spc=M('spcate');
-        $spread=M('spread');
-        $weixin=M('weixin');
-        $where_may['title']="May_like";
-        $cat_id=$spc->where($where_may)->field('cat_id')->find();
-        $where_mlike['cid']=$cat_id['cat_id'];
-        $where_mlike['status']=1;
-        $where_mlike['end']=array('gt',time());
-        $where_mlike['_logic'] = 'and';
-        $may_like=D('Index')->where($where_mlike)->relation(true)->order('price DESC')->limit(0,7)->select();
-        if(count($may_like)<7){
-            $limit=7-count($may_like);
-            if(!empty($may_like)){
-                foreach($may_like as $m){
-                    $wxid[]=$m['weixin_id'];
-                }
-                $wxids='('.implode(',',$wxid).')';
-                $where_meg['id']=array('not in',$wxids);
-            }else{
-                $where_meg=1;
-            }
-            $may_megs=$weixin->where($where_meg)->field('id as weixin_id,name as weixin_name,logo,code,clicks,like')->order('clicks DESC')->limit(0,$limit)->select();
-            $may_meg=$may_megs;
-            if(!empty($may_like)){
-                $may_like=array_merge ($may_like,$may_meg);
-            }else{
-                $may_like= $may_meg;
-            }
-        }
-        $this->may_like=$may_like;
+    public function login(){
+        $this->display('login');
     }
-    public function uenter(){
-        $this->maylike();
-        $this->display('enter');
+    public function reg(){
+        $this->display('reg');
     }
     public function verycode(){
         $config = array(
@@ -63,113 +33,146 @@ class UenterAction extends IndexcomAction {
         $Verify->entry();
     }
 
-    public function login_action(){
+    public function loginAction(){
         if(!IS_POST){
-            $this->error('非法进入领空，射掉你！');
+            echo '110';
+            exit;
         }
-        $modle=M('member');
-        $uname=$_POST['login_name'];
+        if(isset($_SESSION['time'])&& (time()-$_SESSION['time'])<60){
+            echo 'wait';
+            exit;
+        }
+        if(!isset($_SESSION['failtime'])){
+            $_SESSION['failtime']=1;
+        }else{
+            $_SESSION['failtime']=$_SESSION['failtime']+1;
+        }
+        if($_SESSION['failtime']>5){
+            echo 'failtime';
+            $_SESSION['time']=time();
+            $_SESSION['failtime']=0;
+            exit;
+        }
+        $modle=M('users');
+        $uname=$_POST['username'];
         $is_emai=checkEmail($uname);
         $is_tel=checkTel($uname);
-        $password=$_POST['login_password'];
+        $password=$_POST['password'];
         if($is_tel){
-            $where['mobile_phone']=$uname;
+            $where['phone']=$uname;
         }else if($is_emai){
             $where['email']=$uname;
         }else{
-            $where['member_name']=$uname;
+            $where['nickname']=$uname;
         }
-        $where['status']=1;
+        $where['lock']=0;
        $memberinfo=$modle->where($where)->find();
         if(empty($memberinfo)){
-            $this->error("用户不存在或被禁用！");
+            echo 'no-in';
+            exit;
         }else{
-
            if($memberinfo['password']==md5($password)){
-
-               $_SESSION['member_id']=$memberinfo['id'];
-               if($memberinfo['member_name']!=""){
-                   $_SESSION['member_name']=$memberinfo['member_name'];
+               $_SESSION['users_id']=$memberinfo['id'];
+               if($memberinfo['nickname']!=""){
+                   $_SESSION['users_name']=$memberinfo['nickname'];
                }else if($is_tel){
-                   $_SESSION['member_name']=$memberinfo['mobile_phone'];
+                   $_SESSION['users_name']=$memberinfo['phone'];
                }else if($is_emai){
-                   $_SESSION['member_name']=$memberinfo['email'];
+                   $_SESSION['users_name']=$memberinfo['email'];
                }
-               $this->redirect('Users/index');
+              // $this->redirect('Users/index');
+               echo 'ok';
+               exit;
 
            }else{
-               $this->error('密码错误！');
+               echo'wrong';
+               exit;
            }
 
         }
     }
-    public function reg_action(){
-        if(!IS_POST){
-            $this->error('非法进入领空，射掉你！');
-        }
-        import('ORG.Util.Verify');// 导入验证码类
-        $Verify = new Verify();
-        $modle=M('member');
-        $notice=M('notice');
-       if($Verify->check($_POST['code'])){
-           $uname=trim($_POST['reg_name']);
+    public function regAction(){
+            if(!IS_POST){
+                echo 110;
+                exit;
+            }
+            if(isset($_SESSION['time'])&& (time()-$_SESSION['time'])<60){
+                echo 'wait';
+                exit;
+            }
+            if(!isset($_SESSION['failtime'])){
+                $_SESSION['failtime']=1;
+            }else{
+                $_SESSION['failtime']=$_SESSION['failtime']+1;
+            }
+            if($_SESSION['failtime']>5){
+                $_SESSION['time']=time();
+                $_SESSION['failtime']=0;
+            }
+            $modle=M('users');
+            $uname=$_POST['username'];
+            $where_n['nickname']=$_POST['nickname'];
+            if($_POST['nickname']==''||$_POST['username']==''||$_POST['password']==''){
+                echo 'lost';
+                exit;
+            }
+            $has_nickname=$modle->where($where_n)->find();
+            if(!empty($has_nickname)){
+                echo 'n-had';
+                exit;
+            }
             if(!checkEmail($uname)&&!checkTel($uname)){
-                $this->error("用户格式错误！");
+                echo 'a-wrong';
+                exit;
             }
            if(checkEmail($uname)){
-               $data['email']=trim($_POST['reg_name']);
+               $data['email']=trim($_POST['username']);
                $where['email']=$data['email'];
                $emails=$modle->where($where)->find();
                if(!empty($emails)){
-                   $this->error("该邮箱已被注册！");
+                   echo 'a-had';
+                   exit;
                }
            }
            if(checkTel($uname)){
-               $data['mobile_phone']=trim($_POST['reg_name']);
-               $where['mobile_phone']=$data['mobile_phone'];
+               $data['phone']=$_POST['username'];
+               $where['phone']=$data['phone'];
                $mobile_phone=$modle->where($where)->find();
                if(!empty($mobile_phone)){
-                   $this->error("该手机号码已被注册！");
+                   echo 'a-had';
+                   exit;
                }
            }
-            $data['password']=md5(trim($_POST['reg_password']));
+            $data['nickname']=$_POST['nickname'];
+            $data['password']=md5($_POST['password']);
             $data['score']=500;
-            $data['ctime']=time();
-            $data['status']=1;
+            $data['reg_time']=time();
+            $data['lock']=0;
            if($m_id=$modle->data($data)->add()){
-               $_SESSION['member_id']=$m_id;
-               $_SESSION['member_name']=$uname;
-               $data_n['uid']=$m_id;
-               $data_n['status']=0;
-               $data_n['content']="恭喜您注册成为微搜会员，感谢您的微搜的关注与支持，微搜网已赠送您500积分。<br>
-               在微搜，您可以提交您的微信账号，并且可以根据实际需求在微搜推广您的账号。<br>
-               您可以进入个人中心对您的资料进行修改，您还可以每天登陆微搜签到赚取积分，
-               以便在微搜推广你的微信账户，增加您的微信账号的曝光度，还等什么，赶快行动吧！";
-               $data_n['ctime']=time();
-               $notice->data($data_n)->add();
-               $this->success("恭喜您注册成功！",U('Home/Users/index'));
+               echo 'ok';
+               exit;
            }else{
-               $this->error("注册失败！");
+               echo 'fail';
+               exit;
            }
-        }else{
-           $this->error("验证码错误！");
-        }
     }
 
-    public function check_user(){
-        $m=M('member');
-        $act=$_POST['act'];
-        $uname=$_POST['reg_name'];
-        if($act=='reg'){
+    public function checkUser(){
+            $m=M('users');
+            $uname=$_POST['keys'];
+            $type=$_POST['type'];
             if(checkEmail($uname)){
                 $where['email']=$uname;
+            }else if(checkTel($uname)){
+                $where['phone']=$uname;
+            }else{
+                $where['nickname']=$uname;
             }
-            if(checkTel($uname)){
-                $where['mobile_phone']=$uname;
-            }
-            if(!checkEmail($uname) && !checkTel($uname)){
-                echo 2;
-                exit;
+            if($type=='account'){
+                if(!checkEmail($uname) && !checkTel($uname)){
+                    echo 2;
+                    exit;
+                }
             }
             $info=$m->where($where)->find();
             if(!empty($info)){
@@ -179,8 +182,6 @@ class UenterAction extends IndexcomAction {
                 echo 1;
                 exit;
             }
-        }
-
     }
     public function logout(){
         session_destroy();
@@ -193,7 +194,6 @@ class UenterAction extends IndexcomAction {
         exit;
     }
     public function getpass(){
-        $this->maylike();
         $this->display();
     }
     public function email(){

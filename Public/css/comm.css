@@ -705,15 +705,24 @@ label{
     font-size: 12px;
     display: block;
     width: 100%;
-    height: 32px;
+    height: 62px;
     line-height: 30px;
+    float: left;
+}
+.profile-form label i{
+    display: block;
+    width: 100%;
+    height: 30px;
+    font-style: normal;
     float: left;
 }
 .profile-form label input.tt{
     border: #eee 1px solid;
     height: 30px;
-    width: 200px;
+    width: 100%;
+    line-height: 30px;
     text-indent: 8px;
+    float: left;
 }
 .saved{
     border: none;
@@ -786,6 +795,13 @@ label{
     right: 10px;
     background: url(../images/addshare.png) left center no-repeat;
     z-index: 10;
+}
+.h1-top{
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #666;
+    background: #fff;
 }
 
 

@@ -831,10 +831,31 @@ function tree($data,$id = 0,$count = 0) {
             $value['count'] = $count;
             $res[]=$value;
             unset($data[$key]);
-            tree($data,$value['cat_id'],$count+4);
+            tree($data,$value['id'],$count+1);
         }
     }
     return $res ;
+}
+function to_tree($data) {
+    static $res=array();
+    if(!empty($data)){
+        foreach ($data as $key => $value){
+            if($value['pid']==0){
+                $res[]=$value;
+                unset($data[$key]);
+            }
+        }
+        foreach($res as $r){
+            foreach ($data as $k => $v){
+                if($v['pid']==$r['id']){
+                    $r['child'][]=$v;
+                    unset($data[$key]);
+                }
+        }
+        $result[]=$r;
+    }
+   }
+    return $result ;
 }
 function sptree($data,$id = 0,$count = 0) {
     static $res=array();

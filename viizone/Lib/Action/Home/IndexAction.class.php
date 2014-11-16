@@ -66,12 +66,13 @@ class IndexAction extends IndexcomAction {
         $cModel=D('Comment');
         $articleinfo=$aModel->where($where)->find();
         $where_share['id']=$articleinfo['sid'];
-        $where_comm['aid']=$articleinfo['aid'];
+        $where_comm['aid']=$_GET['article_id'];
         $shareinfo=$sModel->where($where_share)->find();
         $comments=$cModel->where($where_comm)->order('addtime DESC')->relation(true)->select();
         $commentCounts=$cModel->where($where_comm)->count();
-        print_r($comments);
-        exit;
+        $comments=to_tree($comments);
+//        print_r($comments);
+//        exit;
         $this->shareinfo=$shareinfo;
         $this->articleinfo=$articleinfo;
         $this->commentCounts=$commentCounts;

@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container-fluid">
-  <div class="row">
+    <div class="row">
     <div class="col-sm-12 ad">
 
     </div>
@@ -42,51 +42,75 @@
     </div>
 </div>
     <div class="row" >
-        <div class="col-md-12" style="padding-top: 10px; border-bottom: #eee 1px solid;background: #fff;">
-            <span class="col-md-12 hot-title">
-                <img src="__PUBLIC__/images/king.png" >
-                <label>活跃分享圈</label>
-            </span>
-            <span class="col-md-12 hot-clude">
-              <?php if(is_array($activeShare)): $i = 0; $__LIST__ = $activeShare;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tj): $mod = ($i % 2 );++$i;?><p class="hot-c4">
-                 <?php if($tj['pic'] != ''): ?><a href="Index/share/share_id/<?php echo ($tj["id"]); ?>.html">
-                         <img src="__ROOT__/<?php echo ($tj["pic"]); ?>" class="img-circle">
-                     </a>
-                     <?php else: ?>
-                 <a href="Index/share/share_id/<?php echo ($tj["id"]); ?>">
-                    <img src="__PUBLIC__/images/vii.png" class="img-circle">
-                 </a><?php endif; ?>
-                 <label>浏览:<?php echo ($tj["click"]); ?></label>
-               </p><?php endforeach; endif; else: echo "" ;endif; ?>
-            </span>
+        <div class="col-md-12 content content-d" url=""  >
+            <h1 class="h1-top">我的分享圈</h1>
         </div>
-       <?php if(is_array($shares)): $i = 0; $__LIST__ = $shares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shares): $mod = ($i % 2 );++$i;?><div class="col-md-12 content" alt="<?php echo ($shares["title"]); ?>" url="__ROOT__/Index/share/share_id/<?php echo ($shares["id"]); ?>.html">
-                <div class="col-md-12 content-user">
-                    <?php if($shares['userpic']): ?><img src="__ROOT__/<?php echo ($shares["userpic"]); ?>" class="img-responsive img-circle user-pic">
-                        <?php else: ?>
-                        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic"><?php endif; ?>
-                    <span class="infos">
-                        <label><b><?php echo ($shares["title"]); ?></b>
-                            <img src="__PUBLIC__/images/l1.jpg">
-                        </label>
-                        <label style="font-size: 10px;">会员：<font style="color: #42ab35;"><?php echo ($shares["members"]); ?></font>　帖子：<font style="color: #42ab35;"><?php echo ($shares["article"]); ?></font></label>
-                    </span>
-                    <?php if($shares['is_top'] == 1): ?><img src="__PUBLIC__/images/hot.gif" class="hot-best-top"><?php endif; ?>
-                </div>
-                <div class="col-md-12 content-content">
-                    <span class="col-md-12" >
-                       <p><?php echo (msubstr($shares["desc"],0,100)); ?>...</p>
-                        <?php if($shares['pic'] != ''): ?><img src="__ROOT__/<?php echo ($shares["pic"]); ?>" class="img-responsive" ><?php endif; ?>
-                       <p class="action-list">
-                           <label>
-                               <a  class="zan"><?php echo ($shares["like"]); ?></a>
-                               <a  class="share shareTo"></a>
-                               <a  class="comment"><?php echo ($shares["comment"]); ?></a>
-                           </label>
-                       </p>
-                    </span>
-                </div>
-            </div><?php endforeach; endif; else: echo "" ;endif; ?>
+        <div class="col-md-12 content content-d" url="" >
+            <div class="col-md-12 content-user" >
+                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+                <span class="infos">
+                    <label><b>微商的做法</b></label>
+                    <label style="font-size: 10px;">2014-10-21 14:28:36</label>
+                </span>
+            </div>
+            <div class="col-md-12 content-content" url="">
+                <span class="col-md-12" >
+                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
+                   <p class="action-list">
+                       <label>
+                           <a href="zan" class="zan">10</a>
+                           <a href="share" class="share"></a>
+                           <a href="comment" class="comment">110</a>
+                       </label>
+                   </p>
+                </span>
+
+            </div>
+    </div>
+        <div class="col-md-12 content content-d" url="" >
+            <div class="col-md-12 content-user" >
+                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+                <span class="infos">
+                    <label><b>微商的做法</b></label>
+                    <label style="font-size: 10px;">2014-10-21 14:28:36</label>
+                </span>
+            </div>
+            <div class="col-md-12 content-content">
+                <span class="col-md-12" >
+                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
+                   <p class="action-list">
+                       <label>
+                           <a href="zan" class="zan">10</a>
+                           <a href="share" class="share"></a>
+                           <a href="comment" class="comment">110</a>
+                       </label>
+                   </p>
+                </span>
+
+            </div>
+        </div>
+        <div class="col-md-12 content content-d"  url="">
+            <div class="col-md-12 content-user" >
+                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+                <span class="infos">
+                    <label><b>微商的做法</b></label>
+                    <label style="font-size: 10px;">2014-10-21 14:28:36</label>
+                </span>
+            </div>
+            <div class="col-md-12 content-content">
+                <span class="col-md-12" >
+                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
+                   <p class="action-list">
+                       <label>
+                           <a href="zan" class="zan">10</a>
+                           <a href="share" class="share"></a>
+                           <a href="comment" class="comment">110</a>
+                       </label>
+                   </p>
+                </span>
+
+            </div>
+        </div>
     </div>
     <div class="row" style="padding-bottom: 60px;">
         <div class="col-md-12">
@@ -96,7 +120,6 @@
             <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
         </div>
     </div>
-
 </div>
 <div class="banner">
     <span class="banner-left"><a href="javascript:history.go(-1);"> < </a></span>

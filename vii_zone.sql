@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 11 月 14 日 09:09
--- 服务器版本: 5.5.20
--- PHP 版本: 5.3.10
+-- 生成日期: 2014 年 11 月 16 日 12:34
+-- 服务器版本: 5.5.24-log
+-- PHP 版本: 5.4.3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `vii_comment` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `addtime` varchar(13) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- 转存表中的数据 `vii_comment`
@@ -136,7 +136,14 @@ INSERT INTO `vii_comment` (`id`, `uid`, `sid`, `aid`, `pid`, `toid`, `is_good`, 
 (19, 0, 1, 22, 0, 0, 0, 0, '', 'sdadsadsadsadsa', 1, '1415931745'),
 (20, 0, 1, 13, 0, 0, 0, 0, '', 'hahahahahahah', 1, '1415931757'),
 (21, 0, 1, 13, 0, 0, 0, 0, '', 'dddd', 1, '1415931762'),
-(22, 2, 7, 23, 0, 0, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903');
+(22, 2, 7, 23, 0, 1, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903'),
+(23, 1, 7, 23, 22, 2, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903'),
+(24, 2, 7, 23, 22, 1, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903'),
+(25, 1, 7, 23, 22, 2, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903'),
+(26, 3, 7, 23, 22, 2, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903'),
+(27, 3, 7, 23, 0, 2, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903'),
+(28, 2, 7, 23, 27, 3, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903'),
+(29, 2, 7, 23, 27, 3, 0, 0, 'Public/Uploads/20141114/5465c5bf9bbdc.jpg', '你说的真好，支持支持！！', 1, '1415955903');
 
 -- --------------------------------------------------------
 
@@ -236,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `vii_users` (
   `reg_time` varchar(13) NOT NULL,
   `remark` varchar(60) NOT NULL DEFAULT '无信息备注！',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
 
 --
 -- 转存表中的数据 `vii_users`
@@ -245,7 +252,10 @@ CREATE TABLE IF NOT EXISTS `vii_users` (
 INSERT INTO `vii_users` (`id`, `nickname`, `password`, `phone`, `email`, `score`, `lock`, `lev`, `pic`, `reg_time`, `remark`) VALUES
 (1, '爱恨情仇', 'e10adc3949ba59abbe56e057f20f883e', '13249170728', '595441550@qq.com', 0, 0, 0, '', '1415071241', '56445544455544545'),
 (2, '青椒的故事', '343b1c4a3ea721b2d640fc8700db0f36', '15876513076', '451436241@qq.com', 20000, 0, 3, '', '1414742188', '青椒小故事！'),
-(3, 'superStar', '980ac217c6b51e7dc41040bec1edfec8', '13249170720', '5654548@qq.com', 0, 0, 0, '', '1415071256', '洒大地');
+(3, 'superStar', '980ac217c6b51e7dc41040bec1edfec8', '13249170720', '5654548@qq.com', 0, 0, 0, '', '1415071256', '洒大地'),
+(52, 'test', '098f6bcd4621d373cade4e832627b4f6', '13249170728', '5954415501@qq.com', 0, 0, 0, '', '1416071121', '5954415501@qq.com'),
+(53, '测试注册', 'e10adc3949ba59abbe56e057f20f883e', '', 'super@163.com', 500, 0, 0, '', '1416133950', '无信息备注！'),
+(54, '测试注册198', 'e10adc3949ba59abbe56e057f20f883e', '', 'super@qq.com', 500, 0, 0, '', '1416134124', '无信息备注！');
 
 -- --------------------------------------------------------
 
@@ -287,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `vii_visit` (
 --
 
 INSERT INTO `vii_visit` (`id`, `title`, `counts`) VALUES
-(1, 'visit', 436);
+(1, 'visit', 919);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

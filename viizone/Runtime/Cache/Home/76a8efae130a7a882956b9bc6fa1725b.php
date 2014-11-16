@@ -70,54 +70,33 @@
             </div>
             <div class="col-md-12 content-comment">
             <h2><b><i class="glyphicon glyphicon-comment" ></i> 所有评论</b></h2>
-                <span class="the-comment" >
-                   <!--<p class="no-comment">本帖暂时没有用户评价~~！</p>-->
+                <?php if(!$comments): ?><span class="the-comment" >
+                   <p class="no-comment">本帖暂时没有用户评价~~！</p>
+                   </span><?php endif; ?>
+                <?php if(is_array($comments)): $i = 0; $__LIST__ = $comments;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$comments): $mod = ($i % 2 );++$i;?><span class="the-comment" >
                    <p class="the-left">
-                      <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2">
+                       <?php if($comments['pic']): ?><img src="__ROOT__/<?php echo ($comments["pic"]); ?>" class="img-responsive img-circle user-pic2">
+                           <?php else: ?>
+                           <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic2"><?php endif; ?>
                    </p>
                    <p class="the-right">
-                       <font style="color: #42ab35;">杨哲<img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :</font>
-                       说得好呀，做生意就是要讲诚信的嘛，要不然大家都来破坏，吃亏了最后都是大家！大家看看我曾经的女友，很带劲的...O(∩_∩)O哈哈~
-                       <img src="__PUBLIC__/images/img3.jpg" class="img-responsive" >
+                       <font style="color: #42ab35;"><?php echo (($comments["nickname"])?($comments["nickname"]):"该用户隐藏昵称"); ?>
+                           <img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :
+                       </font>
+                       <?php echo ($comments["content"]); ?>
+                       <?php if($comments['pics']): ?><img src="__ROOT__/<?php echo ($comments["pics"]); ?>" class="img-responsive" style="margin-top: 5px;" ><?php endif; ?>
                      <p class="c-action">
                         <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
                      </p>
-                    <p class="comment-in-comment">
+                    <?php if($comments['child']): ?><p class="comment-in-comment">
                         <i class="san"></i>
-                        <label class="rep"><font style="color: #42ab35;">杨哲：</font>别这样好不好？</label>
-                        <label class="rep"><font style="color: #42ab35;">傻大个：</font>扯淡，明明是我的女人？</label>
-                        <label class="rep"><font style="color: #42ab35;">杨哲 回复 傻大个：</font>你们赢了，我说的是真的！不信就算了，反正也就是那么回事的的啦，爱爱爱！</label>
-                    </p>
+                        <?php if(is_array($comments['child'])): $i = 0; $__LIST__ = $comments['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$child): $mod = ($i % 2 );++$i; if(!$child['toid']): ?><label class="rep"><font style="color: #42ab35;"><?php echo (($child["nickname"])?($child["nickname"]):"匿名会有"); ?>：</font><?php echo ($child["content"]); ?></label><?php endif; ?>
+                            <?php if($child['toid']): ?><label class="rep"><font style="color: #42ab35;"><?php echo ($child["nickname"]); ?> 回复 <?php echo ($child["toname"]); ?>：</font>
+                                <?php echo ($child["content"]); ?>
+                            </label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                    </p><?php endif; ?>
                    </p>
-                </span>
-                <span class="the-comment" >
-               <!--<p class="no-comment">本帖暂时没有用户评价~~！</p>-->
-                   <p class="the-left">
-                       <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2">
-                   </p>
-                   <p class="the-right">
-                       <font style="color: #42ab35;">杨哲<img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :</font>
-                       说得好呀，做生意就是要讲诚信的嘛，要不然大家都来破坏，吃亏了最后都是大家！大家看看我曾经的女友，很带劲的...O(∩_∩)O哈哈~
-                       <img src="__PUBLIC__/images/img3.jpg" class="img-responsive" >
-                      <p class="c-action">
-                          <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
-                      </p>
-                    </p>
-               </span>
-               <span class="the-comment" >
-               <!--<p class="no-comment">本帖暂时没有用户评价~~！</p>-->
-               <p class="the-left">
-                   <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2">
-               </p>
-               <p class="the-right">
-                   <font style="color: #42ab35;">杨哲<img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :</font>
-                   说得好呀，做生意就是要讲诚信的嘛，要不然大家都来破坏，吃亏了最后都是大家！大家看看我曾经的女友，很带劲的...O(∩_∩)O哈哈~
-
-                  <p class="c-action">
-                      <label><a class="glyphicon glyphicon-thumbs-up">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
-                  </p>
-                   </p>
-            </span>
+                </span><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
         </div>
     </div>
@@ -145,11 +124,12 @@
                 </span>
     </div>
     <ul class="menu-list">
-        <li><a href="#">我的分享圈</a><i class="go"> > </i></li>
-        <li><a href="#">我的帖子</a><i class="go">></i></li>
-        <li><a href="#">我的资料</a><i class="go">></i></li>
-        <li><a href="#">我的通知</a><i class="go">></i><i class="notice">15</i></li>
-        <li><a href="#">反馈建议</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/shares.html">我的分享圈</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/articles.html">我的帖子</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
+        <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
     </ul>
 </div>
 <div class="add-content">
