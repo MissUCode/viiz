@@ -147,18 +147,21 @@
   <span class="text-content">
       <label class="text-content-header"><i class="glyphicon glyphicon-map-marker" style=""></i> 有你参与才精彩<button class="cancel">取消</button></label>
       <p class="circel-desc">
-          <label class="circel-name">分享圈名称：<input type="text" placeholder="分享圈名称..."></label>
-          <label class="circel-d">分享圈简述：<textarea  placeholder="说点什么吧..."></textarea></label>
+          <label class="circel-name"><i >分享圈名称：</i><input type="text" placeholder="分享圈名称..." id="share-title"></label>
+          <label class="circel-d"><i >分享圈简述：</i><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
       </p>
       <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>
   <span class="pic-content">
-      <img src="__PUBLIC__/images/img3.jpg" class="upload-img">
-      <input type="file" class="up-img" style="display: none;">
-      <img src="__PUBLIC__/images/img.jpg" class="upload-img">
-      <a class="add-face">+_+</a>
+      <!--<img src="__PUBLIC__/images/img3.jpg" class="upload-img">-->
+      <form action="__ROOT__/Index/upImg" method="post" id="uploadForm" enctype="multipart/form-data" >
+       <input type="file" class="up-img" style="display: none;" name="pic" id="pic">
+      </form>
+      <input type="hidden" name="pics" id="sharepic" value="">
+      <!--<img src="__PUBLIC__/images/img.jpg" class="upload-img">-->
+      <!--<a class="add-face">+_+</a>-->
       <a class="add-pic"><i class="glyphicon glyphicon-picture"></i></a>
-      <button class="submit">发送</button>
+      <button class="submit" type="button" id="submit-button">发送</button>
   </span>
   <span class="bottom-content" style="display:block;width:100%;background: #fff;float: left;border-top:#eee 1px solid;">
       <div class="row" style="padding:20px 0px 60px 0px;">
@@ -170,6 +173,9 @@
 </div>
 <div class="addshare"></div>
 <div class="bu"></div>
+<script type="text/javascript">
+    delurl="__ROOT__/Index/delPic";
+</script>
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>

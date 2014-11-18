@@ -112,7 +112,7 @@
 </div>
 <div class="banner">
     <span class="banner-left"><a href="javascript:history.go(-1);"> < </a></span>
-    <span class="banner-center"><a >建分享圈</a></span>
+    <span class="banner-center"><a >发布帖子</a></span>
     <span class="banner-right"><a >...</a></span>
 </div>
 <div class="menu">
@@ -120,7 +120,7 @@
     <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
         <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
                 <span class="infos" style="top:8px;left: 45px;">
-                   <label><b>翘脚的故事</b><img src="__PUBLIC__/images/l1.jpg"></label>
+                   <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/l1.jpg"></label>
                 </span>
     </div>
     <ul class="menu-list">
@@ -136,19 +136,21 @@
   <span class="text-content">
       <label class="text-content-header"><i class="glyphicon glyphicon-map-marker" style=""></i> 有你参与才精彩<button class="cancel">取消</button></label>
       <p class="circel-desc">
-          <label class="circel-name"><i >分享圈名称：</i><input type="text" placeholder="分享圈名称..."></label>
-          <label class="circel-d"><i >分享圈简述：</i><textarea  placeholder="说点什么吧..."></textarea></label>
+          <label class="circel-name"><i >帖子标题：</i><input type="text" placeholder="帖子标题..." id="share-title"></label>
+          <label class="circel-d"><i >帖子内容：</i><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
       </p>
       <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>
   <span class="pic-content">
-      <img src="__PUBLIC__/images/img3.jpg" class="upload-img">
-      <input type="file" class="up-img" style="display: none;">
-      <input type="hidden" name="pics" id="sharepic">
+      <!--<img src="__PUBLIC__/images/img3.jpg" class="upload-img">-->
+      <form action="__ROOT__/Index/upImg" method="post" id="uploadForm" enctype="multipart/form-data" >
+       <input type="file" class="up-img" style="display: none;" name="pic" id="pic">
+      </form>
+      <input type="hidden" name="pics" id="sharepic" value="">
       <!--<img src="__PUBLIC__/images/img.jpg" class="upload-img">-->
       <!--<a class="add-face">+_+</a>-->
       <a class="add-pic"><i class="glyphicon glyphicon-picture"></i></a>
-      <button class="submit">发送</button>
+      <button class="submit" type="button" id="submit-button">发送</button>
   </span>
   <span class="bottom-content" style="display:block;width:100%;background: #fff;float: left;border-top:#eee 1px solid;">
       <div class="row" style="padding:20px 0px 60px 0px;">
@@ -160,6 +162,9 @@
 </div>
 <div class="addshare"></div>
 <div class="bu"></div>
+<script type="text/javascript">
+    delurl="__ROOT__/Index/delPic";
+</script>
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>

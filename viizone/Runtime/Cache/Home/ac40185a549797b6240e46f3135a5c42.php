@@ -7,6 +7,7 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
     <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 </head>
 <body>
@@ -42,7 +43,7 @@
     </div>
 </div>
     <div class="row" >
-        <div class="col-md-12" style="padding-top: 10px; border-bottom: #eee 1px solid;background: #fff;">
+        <div class="col-md-12" style="padding-top: 10px; border-bottom: #eee 1px solid;background: #fff;position: relative;">
             <span class="col-md-12 hot-title">
                 <img src="__PUBLIC__/images/king.png" >
                 <label>“<?php echo ($shareinfo["title"]); ?>”活跃份子</label>
@@ -50,13 +51,14 @@
             <span class="col-md-12 hot-clude">
                <?php if(is_array($hot_users)): $i = 0; $__LIST__ = $hot_users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$hot): $mod = ($i % 2 );++$i;?><p class="hot-c4">
                      <a href="#">
-                         <?php if($hot['pic'] != ''): ?><img src="__ROOT__/<?php echo ($hot["pic"]); ?>" class="img-responsive img-circle user-pic">
+                         <?php if($hot['pic'] != ''): ?><img src="__ROOT__/<?php echo ($hot["pic"]); ?>" class="img-circle">
                              <?php else: ?>
-                             <img src="__PUBLIC__/images/vii.png" class="img-circle img-responsive"><?php endif; ?>
+                             <img src="__PUBLIC__/images/vii.png" class="img-circle"><?php endif; ?>
                      </a>
                      <label><?php echo (msubstr($hot["nickname"],0,5)); ?></label>
                    </p><?php endforeach; endif; else: echo "" ;endif; ?>
             </span>
+            <a class="joinTo" alt="<?php echo ($shareinfo["id"]); ?>"></a>
         </div>
         <?php if(is_array($articles)): $i = 0; $__LIST__ = $articles;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$art): $mod = ($i % 2 );++$i;?><div class="col-md-12 content" url="__ROOT__/Index/article/article_id/<?php echo ($art["id"]); ?>.html">
             <div class="col-md-12 content-user">
@@ -97,7 +99,7 @@
 </div>
 <div class="banner">
     <span class="banner-left"><a href="javascript:history.go(-1);"> < </a></span>
-    <span class="banner-center"><a >建分享圈</a></span>
+    <span class="banner-center"><a >发布帖子</a></span>
     <span class="banner-right"><a >...</a></span>
 </div>
 <div class="menu">
@@ -105,7 +107,7 @@
     <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
         <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
                 <span class="infos" style="top:8px;left: 45px;">
-                   <label><b>翘脚的故事</b><img src="__PUBLIC__/images/l1.jpg"></label>
+                   <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/l1.jpg"></label>
                 </span>
     </div>
     <ul class="menu-list">
@@ -121,8 +123,8 @@
   <span class="text-content">
       <label class="text-content-header"><i class="glyphicon glyphicon-map-marker" style=""></i> 有你参与才精彩<button class="cancel">取消</button></label>
       <p class="circel-desc">
-          <label class="circel-name"><i >分享圈名称：</i><input type="text" placeholder="分享圈名称..." id="share-title"></label>
-          <label class="circel-d"><i >分享圈简述：</i><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
+          <label class="circel-name"><i >帖子标题：</i><input type="text" placeholder="帖子标题..." id="share-title"></label>
+          <label class="circel-d"><i >帖子内容：</i><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
       </p>
       <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>
@@ -152,6 +154,68 @@
 </script>
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/upload.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.add-pic').click(function(){
+            uploadimg('__ROOT__/Index/upImg','pic','pic','json','sharepic','__ROOT__/');
+        })
+        $('#submit-button').click(function(){
+            var title=$('#share-title').val();
+            var desc=$('#share-desc').val();
+            var pic=$('#sharepic').val();
+            var sid='<?php echo ($shareinfo["id"]); ?>';
+            if(title==''||desc==''){
+                mobile_tip('error','请填写完整的信息！',1000);
+                return false;
+            }
+            $.post('__ROOT__/Index/addArticle',{title:title,desc:desc,pic:pic,sid:sid},function(data){
+                var m=data.message;
+                if(m=='no-in'){
+                    mobile_tip('waiting','请先加入分享圈！',1000);
+                    setTimeout(function(){
+                        $('.cancel').click();
+                    },1500);
+                }else if(m=='110'){
+                    mobile_tip('error','您还没登录！',1000);
+                    setTimeout(function(){
+                        location.href='__ROOT__/Uenter/login';
+                    },1000);
+                }else if(m=='success'){
+                    mobile_tip('success','发布成功！',1000);
+                    setTimeout(function(){
+                        location.href='__ROOT__/Users/shares';
+                    },1000);
+                }else if(m=='fail'){
+                    mobile_tip('error','发布帖子失败！',1000);
+                }else{
+                    mobile_tip('error','请填写完整的信息！',1000);
+                }
+            })
+        })
+        $('.joinTo').click(function(){
+            var sid=$(this).attr('alt');
+            $.post('__ROOT__/Index/joinTo',{sid:sid},function(data){
+                var m=data.message;
+                if(m=='had-in'){
+                    mobile_tip('error','您已加入此圈很久了！',1000);
+                }else if(m=='110'){
+                    mobile_tip('error','您还没登录！',1000);
+                    setTimeout(function(){
+                        location.href='__ROOT__/Uenter/login';
+                    },1000);
+                }else if(m=='success'){
+                    mobile_tip('success','加入成功！',1000);
+                }else if(m=='fail'){
+                    mobile_tip('error','加入失败！',1000);
+                }else{
+                    mobile_tip('error','系统繁忙！',1000);
+                }
+            })
+        })
+    })
+</script>
 </body>
 </html>

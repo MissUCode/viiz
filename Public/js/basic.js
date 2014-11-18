@@ -55,7 +55,7 @@ $(function(){
     })
 })
 
-function uploadimg(url,file,name,type,hidden){
+function uploadimg(url,file,name,type,hidden,picurl){
     $.upload({
         // 上传地址
         url: url,
@@ -73,7 +73,7 @@ function uploadimg(url,file,name,type,hidden){
         onComplate: function(data) {
             if(data.message=='ok'){
                 $('#'+hidden).val(data.name);
-                img='<img src="'+data.name+'" class="upload-img">';
+                img='<img src="'+picurl+data.name+'" class="upload-img">';
                 $('.pic-content').prepend(img);
                 $('.add-pic').hide();
             }else{

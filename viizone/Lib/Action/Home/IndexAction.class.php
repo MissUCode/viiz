@@ -26,6 +26,7 @@ class IndexAction extends IndexcomAction {
         $this->shares=$shares;
 	    $this->display();
     }
+    //分享圈详情
     public function share(){
         $where['id']=$_GET['share_id'];
         $where_a['sid']=$_GET['share_id'];
@@ -42,7 +43,8 @@ class IndexAction extends IndexcomAction {
         $where_hot['id']=array('in',$uids);
         $hot_users=$userModel->where($where_hot)->field('id,nickname,pic')->select();
         $shareinfo=$shareModel->where($where)->find();
-
+        $data_update['click']=$shareinfo['click']+1;
+        $shareModel->where($where)->data($data_update)->save();
         $article=$articleModel->where($where_a)->order('is_top DESC,click DESC')->select();
         foreach($article as $a){
             $where_user['id']=$a['uid'];
@@ -60,6 +62,7 @@ class IndexAction extends IndexcomAction {
         $this->hot_users=$hot_users;
         $this->display();
     }
+    //帖子详情
     public function article(){
         $where['id']=$_GET['article_id'];
         $aModel=M('article');
@@ -80,39 +83,7 @@ class IndexAction extends IndexcomAction {
         $this->comments=$comments;
         $this->display();
     }
-    public function upImg(){
-        $setting = array(
-            'mimes' => '', //允许上传的文件MiMe类型
-            'maxSize' => 1 * 1024 * 1024, //上传的文件大小限制 (0-不做限制)
-            'exts' => "jpg,png,jpeg", //允许上传的文件后缀
-            'autoSub' => true, //自动子目录保存文件
-            'subName' => array('date', 'Ymd'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
-            'rootPath' => './Public/Uploads/', //保存根路径
-            'savePath' => '', //保存路径
-        );
-        import('ORG.Util.Upload');
-        if($_FILES['pic']['error']!=4 && $_FILES['pic']['error']!=4){
-            $this->uploader = new Upload($setting, 'Local');
-            $info = $this->uploader->upload($_FILES);
-            if($info){
-                $data['pic']="Public/Uploads/".$info['pic']['savepath'].$info['pic']['savename'];
-                $result['message']='ok';
-                $result['name']=$data['pic'];
-                $this->ajaxReturn($result,'JSON');
-                exit;
-                //$data['code']="Public/Uploads/".$info['code']['savepath'].$info['code']['savename'];
-            }else{
-                $result['message']='wrong';
-                $this->ajaxReturn($result,'JSON');
-                exit;
-                //exit($this->uploader->getError());
-                //$this->error($this->uploader->getError());
-            }
-        }
-    }
-    public function test(){
-        $this->display();
-    }
+    //添加分享圈
     public function addshare(){
         $model=M('share');
         $user_share=M('user_share');
@@ -157,7 +128,187 @@ class IndexAction extends IndexcomAction {
             exit;
         }
     }
+    //添加帖子
+    public function addArticle(){
+        $model=M('article');
+        $user_share=M('user_share');
+        $title=$_POST['title'];
+        $desc=$_POST['desc'];
+        $pic=$_POST['pic'];
+        $sid=$_POST['sid'];
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
+        if($title==''||$desc==''){
+            echo 'no';
+            exit;
+        }
+        //是否登录
+        if(!isset($_SESSION['users_id'])||$_SESSION['users_id']==''){
+            @unlink("./".$pic);
+            $res['message']=110;
+            $res['id']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            //是否已加入分享圈
+            $where_in['uid']=$_SESSION['users_id'];
+            $where_in['sid']=$sid;
+            $inshare=$user_share->where($where_in)->find();
+            if(!$inshare){
+                @unlink("./".$pic);
+                $res['message']='no-in';
+                $res['id']=0;
+                $this->ajaxReturn($res,'JSON');
+                exit;
+            }
+        }
+        $data['sid']=$sid;
+        $data['title']=$title;
+        $data['content']=$desc;
+        $data['pics']=$pic;
+        $data['uid']=$_SESSION['users_id'];
+        $data['addtime']=time();
+        if($id=$model->data($data)->add()){
+            //预留发帖奖励积分入口
+//            $datas['uid']=$_SESSION['users_id'];
+//            $datas['sid']=$id;
+//            $datas['score']=3;
+//            $user_share->data($datas)->add();
+            $res['message']='success';
+            $res['id']=$id;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            @unlink("./".$pic);
+            $res['message']='fail';
+            $res['id']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }
+    }
+    //加入分享圈
+    public function joinTo(){
+        //目前未做防止连续点击加入造成服务器压力的处理，预留问题
+        $model=M('share');
+        $user_share=M('user_share');
+        $sid=$_POST['sid'];
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
+        //是否登录
+        if(!isset($_SESSION['users_id'])||$_SESSION['users_id']==''){
+            $res['message']=110;
+            $res['id']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            //是否已经是会员
+            $where_in['uid']=$_SESSION['users_id'];
+            $where_in['sid']=$sid;
+            $inshare=$user_share->where($where_in)->find();
+            if($inshare){
+                $res['message']='had-in';
+                $res['id']=0;
+                $this->ajaxReturn($res,'JSON');
+                exit;
+            }
+        }
+        $data['sid']=$sid;
+        $data['uid']=$_SESSION['users_id'];
+       if($id=$user_share->data($data)->add()){
+           $res['message']='success';
+           $res['id']=$id;
+           $this->ajaxReturn($res,'JSON');
+           exit;
+       } else{
+           $res['message']='fail';
+           $res['id']=0;
+           $this->ajaxReturn($res,'JSON');
+           exit;
+       }
+    }
+    //评论帖子
+    public function comment(){
+        //目前未做防止连续点击加入造成服务器压力的处理，预留问题
+        $model=M('comment');
+        $user_share=M('user_share');
+        $sid=$_POST['sid'];
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
+        //是否登录
+        if(!isset($_SESSION['users_id'])||$_SESSION['users_id']==''){
+            $res['message']=110;
+            $res['id']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            //是否已经是会员
+            $where_in['uid']=$_SESSION['users_id'];
+            $where_in['sid']=$sid;
+            $inshare=$user_share->where($where_in)->find();
+            if($inshare){
+                $res['message']='had-in';
+                $res['id']=0;
+                $this->ajaxReturn($res,'JSON');
+                exit;
+            }
+        }
+        $data['sid']=$sid;
+        $data['uid']=$_SESSION['users_id'];
+        if($id=$user_share->data($data)->add()){
+            $res['message']='success';
+            $res['id']=$id;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        } else{
+            $res['message']='fail';
+            $res['id']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }
+    }
+    //异步上传图片
+    public function upImg(){
+        $setting = array(
+            'mimes' => '', //允许上传的文件MiMe类型
+            'maxSize' => 1 * 1024 * 1024, //上传的文件大小限制 (0-不做限制)
+            'exts' => "jpg,png,jpeg", //允许上传的文件后缀
+            'autoSub' => true, //自动子目录保存文件
+            'subName' => array('date', 'Ymd'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
+            'rootPath' => './Public/Uploads/', //保存根路径
+            'savePath' => '', //保存路径
+        );
+        import('ORG.Util.Upload');
+        if($_FILES['pic']['error']!=4 && $_FILES['pic']['error']!=4){
+            $this->uploader = new Upload($setting, 'Local');
+            $info = $this->uploader->upload($_FILES);
+            if($info){
+                $data['pic']="Public/Uploads/".$info['pic']['savepath'].$info['pic']['savename'];
+                $result['message']='ok';
+                $result['name']=$data['pic'];
+                $this->ajaxReturn($result,'JSON');
+                exit;
+                //$data['code']="Public/Uploads/".$info['code']['savepath'].$info['code']['savename'];
+            }else{
+                $result['message']='wrong';
+                $this->ajaxReturn($result,'JSON');
+                exit;
+                //exit($this->uploader->getError());
+                //$this->error($this->uploader->getError());
+            }
+        }
+    }
+    //异步删除图片
     public function  delPic(){
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
         $pic=$_POST['pic'];
         if(isset($_POST['act'])){
             @unlink("./".$pic);
