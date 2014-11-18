@@ -7,6 +7,7 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
     <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 </head>
 <body>
@@ -84,6 +85,60 @@
 <include file="Public/footer" />
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/upload.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.add-pic').click(function(){
+            /*$.upload({
+                // 上传地址
+                url: '__ROOT__/Index/upimg',
+                // 文件域名字
+                fileName: 'pic',
+                // 其他表单数据
+                params: {name: 'pic'},
+                // 上传完成后, 返回json, text
+                dataType: 'json',
+                // 上传之前回调,return true表示可继续上传
+                onSend: function() {
+                    return true;
+                },
+                // 上传之后回调
+                onComplate: function(data) {
+                    alert(data.picname);
+                }
+            });*/
+            uploadimg('__ROOT__/Index/upImg','pic','pic','json','sharepic');
+        })
+        $('#submit-button').click(function(){
+            var title=$('#share-title').val();
+            var desc=$('#share-desc').val();
+            var pic=$('#sharepic').val();
+            if(title==''||desc==''){
+                mobile_tip('error','请填写完整的信息！',1000);
+                return false;
+            }
+            $.post('__ROOT__/Index/addshare',{title:title,desc:desc,pic:pic},function(data){
+                   var m=data.message;
+                if(m=='110'){
+                    mobile_tip('error','您还没登录！',1000);
+                    setTimeout(function(){
+                            location.href='__ROOT__/Uenter/login';
+                        },1000);
+                 }else if(m=='success'){
+                    mobile_tip('success','添加成功！',1000);
+                        setTimeout(function(){
+                            location.href='__ROOT__/Users/shares';
+                        },1000);
+                }else if(m=='fail'){
+                    mobile_tip('error','建圈失败！',1000);
+                }else{
+                    mobile_tip('error','请填写完整的信息！',1000);
+                }
+            })
+        })
+    })
+</script>
 </body>
 </html>

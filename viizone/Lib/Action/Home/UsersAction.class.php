@@ -26,15 +26,16 @@ class UsersAction extends UcommAction {
         $this->infos=$mem_info;
         $this->display();
     }
-    //我的账号
+    //我的分享圈
     public function shares(){
-
         $this->display();
     }
+    //我的帖子
     public function articles(){
-
         $this->display();
     }
+
+
 
 
 

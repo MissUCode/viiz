@@ -136,16 +136,17 @@
   <span class="text-content">
       <label class="text-content-header"><i class="glyphicon glyphicon-map-marker" style=""></i> 有你参与才精彩<button class="cancel">取消</button></label>
       <p class="circel-desc">
-          <label class="circel-name">分享圈名称：<input type="text" placeholder="分享圈名称..."></label>
-          <label class="circel-d">分享圈简述：<textarea  placeholder="说点什么吧..."></textarea></label>
+          <label class="circel-name"><i >分享圈名称：</i><input type="text" placeholder="分享圈名称..."></label>
+          <label class="circel-d"><i >分享圈简述：</i><textarea  placeholder="说点什么吧..."></textarea></label>
       </p>
       <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>
   <span class="pic-content">
       <img src="__PUBLIC__/images/img3.jpg" class="upload-img">
       <input type="file" class="up-img" style="display: none;">
-      <img src="__PUBLIC__/images/img.jpg" class="upload-img">
-      <a class="add-face">+_+</a>
+      <input type="hidden" name="pics" id="sharepic">
+      <!--<img src="__PUBLIC__/images/img.jpg" class="upload-img">-->
+      <!--<a class="add-face">+_+</a>-->
       <a class="add-pic"><i class="glyphicon glyphicon-picture"></i></a>
       <button class="submit">发送</button>
   </span>
