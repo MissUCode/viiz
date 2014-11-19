@@ -470,7 +470,7 @@ label{
     top: 15px;
     right: -10px;
     font-style: normal;
-    z-index: 10;
+    z-index: 1;
 }
 .bu{
     display: none;
@@ -613,6 +613,19 @@ label{
     background: #fff;
     float: left;
     border-top:#eee 1px solid;
+}
+.face-pic{
+    display: none;
+    width: 100%;
+    min-height: 70px;
+    padding: 10px;
+    background: #fff;
+    float: left;
+    border-top:#eee 1px solid;
+}
+.face-pic img{
+    margin: 3px;
+    cursor: pointer;
 }
 .upload-img{
     display: block;

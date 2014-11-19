@@ -74,13 +74,17 @@ class IndexAction extends IndexcomAction {
         $shareinfo=$sModel->where($where_share)->find();
         $comments=$cModel->where($where_comm)->order('addtime DESC')->relation(true)->select();
         $commentCounts=$cModel->where($where_comm)->count();
-        $comments=to_tree($comments);
-//        print_r($comments);
+        foreach($comments as $cc){
+            $cc['content']=faceToimg($cc['content']);
+            $comments_alls[]=$cc;
+        }
+        $comments_alls=to_tree($comments_alls);
+//        print_r($comments_alls);
 //        exit;
         $this->shareinfo=$shareinfo;
         $this->articleinfo=$articleinfo;
         $this->commentCounts=$commentCounts;
-        $this->comments=$comments;
+        $this->comments=$comments_alls;
         $this->display();
     }
     //添加分享圈
@@ -236,6 +240,10 @@ class IndexAction extends IndexcomAction {
         $model=M('comment');
         $user_share=M('user_share');
         $sid=$_POST['sid'];
+        $aid=$_POST['aid'];
+        $pid=$_POST['pid'];
+        $toid=$_POST['toid'];
+        $content=$_POST['desc'];
         if(!IS_POST){
             echo '您无操作权限！';
             exit;
@@ -251,8 +259,8 @@ class IndexAction extends IndexcomAction {
             $where_in['uid']=$_SESSION['users_id'];
             $where_in['sid']=$sid;
             $inshare=$user_share->where($where_in)->find();
-            if($inshare){
-                $res['message']='had-in';
+            if(!$inshare){
+                $res['message']='no-in';
                 $res['id']=0;
                 $this->ajaxReturn($res,'JSON');
                 exit;
@@ -260,7 +268,12 @@ class IndexAction extends IndexcomAction {
         }
         $data['sid']=$sid;
         $data['uid']=$_SESSION['users_id'];
-        if($id=$user_share->data($data)->add()){
+        $data['aid']=$aid;
+        $data['pid']=$pid;
+        $data['toid']=$toid;
+        $data['content']=$content;
+        $data['addtime']=time();
+        if($id=$model->data($data)->add()){
             $res['message']='success';
             $res['id']=$id;
             $this->ajaxReturn($res,'JSON');
@@ -319,5 +332,12 @@ class IndexAction extends IndexcomAction {
             exit;
         }
        exit;
+    }
+
+    public function test(){
+        $cont="<emt>3.gif</emt><emt>4.gif</emt>";
+        echo faceToimg($cont);
+        exit;
+
     }
 }

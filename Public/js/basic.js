@@ -53,6 +53,34 @@ $(function(){
             location.href=url;
         }
     })
+    $('.add-face').click(function(){
+        $('.face-pic').slideToggle("fast");
+    })
+    $('.face').click(function(){
+        var value=$('#share-desc').val();
+        var face=$(this).attr('alt');
+        $('#share-desc').val(value+face);
+    })
+    $('.comment-to').click(function(){
+        var val=$(this).attr('alt');
+        $('#pid').val(val);
+        $('#toid').val(val);
+        $('.banner-center').click();
+    })
+    $('.comment-to1').click(function(){
+        var val=$(this).attr('alt');
+        var val1=$(this).attr('title');
+        $('#pid').val(val);
+        $('#toid').val(val1);
+        $('.banner-center').click();
+    })
+    $('.comment-to2').click(function(){
+        var val=$(this).attr('alt');
+        var val1=$(this).attr('title');
+        $('#pid').val(val);
+        $('#toid').val(val1);
+        $('.banner-center').click();
+    })
 })
 
 function uploadimg(url,file,name,type,hidden,picurl){

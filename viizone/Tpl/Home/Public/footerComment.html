@@ -1,6 +1,6 @@
 <div class="banner">
     <span class="banner-left"><a href="javascript:history.go(-1);"> < </a></span>
-    <span class="banner-center"><a >发布帖子</a></span>
+    <span class="banner-center"><a >评论</a></span>
     <span class="banner-right"><a >...</a></span>
 </div>
 <div class="menu">
@@ -20,34 +20,28 @@
         <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
     </ul>
 </div>
-<div class="add-content">
-  <span class="text-content">
+<div class="add-content" >
+  <span class="text-content" style="height: 230px;">
       <label class="text-content-header"><i class="glyphicon glyphicon-map-marker" style=""></i> 有你参与才精彩<button class="cancel">取消</button></label>
       <p class="circel-desc">
-          <label class="circel-name"><i >帖子标题：</i><input type="text" placeholder="帖子标题..." id="share-title"></label>
-          <label class="circel-d"><i >帖子内容：</i><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
+          <label class="circel-d"><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
       </p>
-      <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>
-  <span class="pic-content">
-      <!--<img src="__PUBLIC__/images/img3.jpg" class="upload-img">-->
+  <span class="pic-content" style="height: 60px;">
       <form action="__ROOT__/Index/upImg" method="post" id="uploadForm" enctype="multipart/form-data" >
        <input type="file" class="up-img" style="display: none;" name="pic" id="pic">
       </form>
       <input type="hidden" name="pics" id="sharepic" value="">
-      <!--<img src="__PUBLIC__/images/img.jpg" class="upload-img">-->
-      <!--<a class="add-face">+_+</a>-->
-      <a class="add-pic"><i class="glyphicon glyphicon-picture"></i></a>
-      <button class="submit" type="button" id="submit-button">发送</button>
+      <a class="add-face">+_+</a>
+      <button class="submit" type="button" id="submit-button">评论</button>
   </span>
-  <span class="bottom-content" style="display:block;width:100%;background: #fff;float: left;border-top:#eee 1px solid;">
-      <div class="row" style="padding:20px 0px 60px 0px;">
-          <div class="col-md-12">
-              <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
-          </div>
-      </div>
+  <span class="face-pic">
+     <volist id="faces" name="faces">
+         <img src="__PUBLIC__/images/face/{$faces.name}" alt="<emt>{$faces.name}</emt>" class="face">
+     </volist>
   </span>
 </div>
+
 <div class="addshare"></div>
 <div class="bu"></div>
 <script type="text/javascript">

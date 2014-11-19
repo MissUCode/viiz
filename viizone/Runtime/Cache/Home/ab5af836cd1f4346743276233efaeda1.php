@@ -109,7 +109,7 @@
     <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
         <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
                 <span class="infos" style="top:8px;left: 45px;">
-                   <label><b>翘脚的故事</b><img src="__PUBLIC__/images/l1.jpg"></label>
+                   <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/l1.jpg"></label>
                 </span>
     </div>
     <ul class="menu-list">
@@ -128,7 +128,6 @@
           <label class="circel-name"><i >分享圈名称：</i><input type="text" placeholder="分享圈名称..." id="share-title"></label>
           <label class="circel-d"><i >分享圈简述：</i><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
       </p>
-      <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>
   <span class="pic-content">
       <!--<img src="__PUBLIC__/images/img3.jpg" class="upload-img">-->
@@ -137,9 +136,12 @@
       </form>
       <input type="hidden" name="pics" id="sharepic" value="">
       <!--<img src="__PUBLIC__/images/img.jpg" class="upload-img">-->
-      <!--<a class="add-face">+_+</a>-->
+      <a class="add-face">+_+</a>
       <a class="add-pic"><i class="glyphicon glyphicon-picture"></i></a>
       <button class="submit" type="button" id="submit-button">发送</button>
+  </span>
+     <span class="face-pic">
+     <?php if(is_array($faces)): $i = 0; $__LIST__ = $faces;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$faces): $mod = ($i % 2 );++$i;?><img src="__PUBLIC__/images/face/<?php echo ($faces["name"]); ?>" alt="<emt><?php echo ($faces["name"]); ?></emt>" class="face"><?php endforeach; endif; else: echo "" ;endif; ?>
   </span>
   <span class="bottom-content" style="display:block;width:100%;background: #fff;float: left;border-top:#eee 1px solid;">
       <div class="row" style="padding:20px 0px 60px 0px;">

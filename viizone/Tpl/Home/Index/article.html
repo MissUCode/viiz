@@ -7,6 +7,7 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
     <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 </head>
 <body>
@@ -35,14 +36,15 @@
                        <label>
                            <a  class="zan">{$articleinfo.like}</a>
                            <a  class="share shareTo"></a>
-                           <a  class="comment">{$commentCounts}</a>
+                           <a  class="comment comment-to" alt="0">{$commentCounts}</a>
                        </label>
                    </p>
                 </span>
-
             </div>
             <div class="col-md-12 content-comment">
             <h2><b><i class="glyphicon glyphicon-comment" ></i> 所有评论</b></h2>
+                <input type="hidden" id="toid" value="0">
+                <input type="hidden" id="pid" value="0">
                 <if condition="!$comments">
                     <span class="the-comment" >
                    <p class="no-comment">本帖暂时没有用户评价~~！</p>
@@ -66,17 +68,17 @@
                            <img src="__ROOT__/{$comments.pics}" class="img-responsive" style="margin-top: 5px;" >
                        </if>
                      <p class="c-action">
-                        <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
+                        <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment comment-to1" alt="{$comments.id}" title="0">&nbsp;评论</a></label>
                      </p>
                     <if condition="$comments['child']">
                     <p class="comment-in-comment">
                         <i class="san"></i>
                         <volist name="comments['child']" id="child">
                            <if condition="!$child['toid']">
-                             <label class="rep"><font style="color: #42ab35;">{$child.nickname|default="匿名会有"}：</font>{$child.content}</label>
+                             <label class="rep comment-to2" alt="{$comments.id}" title="{$child.uid}"><font style="color: #42ab35;">{$child.nickname|default="匿名会有"}：</font>{$child.content}</label>
                            </if>
                             <if condition="$child['toid']">
-                            <label class="rep"><font style="color: #42ab35;">{$child.nickname} 回复 {$child.toname}：</font>
+                            <label class="rep comment-to2" alt="{$comments.id}" title="{$child.uid}"><font style="color: #42ab35;">{$child.nickname} 回复 {$child.toname}：</font>
                                 {$child.content}
                             </label>
                             </if>
@@ -102,6 +104,47 @@
 <include file="Public/footerComment" />
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/upload.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#submit-button').click(function(){
+            var desc=$('#share-desc').val();
+            var sid='{$shareinfo.id}';
+            var aid='{$articleinfo.id}';
+            var toid=$('#toid').val();
+            var pid=$('#pid').val();
+            if(desc==''){
+                mobile_tip('error','请填写评论内容！',1000);
+                return false;
+            }
+            $.post('__ROOT__/Index/comment',{desc:desc,aid:aid,toid:toid,pid:pid,sid:sid},function(data){
+                var m=data.message;
+                if(m=='no-in'){
+                    mobile_tip('waiting','请先加入分享圈！',1000);
+                    setTimeout(function(){
+                        location.href='__ROOT__/Index/share/share_id/'+sid;
+                    },1000);
+                }else if(m=='110'){
+                    mobile_tip('error','您还没登录！',1000);
+                    setTimeout(function(){
+                        location.href='__ROOT__/Uenter/login';
+                    },1000);
+                }else if(m=='success'){
+                    mobile_tip('success','评论成功！',1000);
+                    setTimeout(function(){
+                        location.reload();
+                    },1000);
+                }else if(m=='fail'){
+                    mobile_tip('error','评论失败！',1000);
+                }else{
+                    mobile_tip('error','请填写评论内容！',1000);
+                }
+            })
+        })
+
+    })
+</script>
 </body>
 </html>

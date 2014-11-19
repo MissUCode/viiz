@@ -26,7 +26,7 @@ class UsersAction extends UcommAction {
         $this->infos=$mem_info;
         $this->display();
     }
-    //我的分享圈
+    //我的分享圈 羁绊浅尝辄止污染
     public function shares(){
         $this->display();
     }

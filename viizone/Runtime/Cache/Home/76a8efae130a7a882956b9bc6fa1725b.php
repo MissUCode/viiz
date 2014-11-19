@@ -7,6 +7,7 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
     <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 </head>
 <body>
@@ -62,14 +63,15 @@
                        <label>
                            <a  class="zan"><?php echo ($articleinfo["like"]); ?></a>
                            <a  class="share shareTo"></a>
-                           <a  class="comment"><?php echo ($commentCounts); ?></a>
+                           <a  class="comment comment-to" alt="0"><?php echo ($commentCounts); ?></a>
                        </label>
                    </p>
                 </span>
-
             </div>
             <div class="col-md-12 content-comment">
             <h2><b><i class="glyphicon glyphicon-comment" ></i> 所有评论</b></h2>
+                <input type="hidden" id="toid" value="0">
+                <input type="hidden" id="pid" value="0">
                 <?php if(!$comments): ?><span class="the-comment" >
                    <p class="no-comment">本帖暂时没有用户评价~~！</p>
                    </span><?php endif; ?>
@@ -86,12 +88,12 @@
                        <?php echo ($comments["content"]); ?>
                        <?php if($comments['pics']): ?><img src="__ROOT__/<?php echo ($comments["pics"]); ?>" class="img-responsive" style="margin-top: 5px;" ><?php endif; ?>
                      <p class="c-action">
-                        <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment">&nbsp;评论</a></label>
+                        <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment comment-to1" alt="<?php echo ($comments["id"]); ?>" title="0">&nbsp;评论</a></label>
                      </p>
                     <?php if($comments['child']): ?><p class="comment-in-comment">
                         <i class="san"></i>
-                        <?php if(is_array($comments['child'])): $i = 0; $__LIST__ = $comments['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$child): $mod = ($i % 2 );++$i; if(!$child['toid']): ?><label class="rep"><font style="color: #42ab35;"><?php echo (($child["nickname"])?($child["nickname"]):"匿名会有"); ?>：</font><?php echo ($child["content"]); ?></label><?php endif; ?>
-                            <?php if($child['toid']): ?><label class="rep"><font style="color: #42ab35;"><?php echo ($child["nickname"]); ?> 回复 <?php echo ($child["toname"]); ?>：</font>
+                        <?php if(is_array($comments['child'])): $i = 0; $__LIST__ = $comments['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$child): $mod = ($i % 2 );++$i; if(!$child['toid']): ?><label class="rep comment-to2" alt="<?php echo ($comments["id"]); ?>" title="<?php echo ($child["uid"]); ?>"><font style="color: #42ab35;"><?php echo (($child["nickname"])?($child["nickname"]):"匿名会有"); ?>：</font><?php echo ($child["content"]); ?></label><?php endif; ?>
+                            <?php if($child['toid']): ?><label class="rep comment-to2" alt="<?php echo ($comments["id"]); ?>" title="<?php echo ($child["uid"]); ?>"><font style="color: #42ab35;"><?php echo ($child["nickname"]); ?> 回复 <?php echo ($child["toname"]); ?>：</font>
                                 <?php echo ($child["content"]); ?>
                             </label><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                     </p><?php endif; ?>
@@ -112,7 +114,7 @@
 </div>
 <div class="banner">
     <span class="banner-left"><a href="javascript:history.go(-1);"> < </a></span>
-    <span class="banner-center"><a >发布帖子</a></span>
+    <span class="banner-center"><a >评论</a></span>
     <span class="banner-right"><a >...</a></span>
 </div>
 <div class="menu">
@@ -132,34 +134,26 @@
         <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
     </ul>
 </div>
-<div class="add-content">
-  <span class="text-content">
+<div class="add-content" >
+  <span class="text-content" style="height: 230px;">
       <label class="text-content-header"><i class="glyphicon glyphicon-map-marker" style=""></i> 有你参与才精彩<button class="cancel">取消</button></label>
       <p class="circel-desc">
-          <label class="circel-name"><i >帖子标题：</i><input type="text" placeholder="帖子标题..." id="share-title"></label>
-          <label class="circel-d"><i >帖子内容：</i><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
+          <label class="circel-d"><textarea  placeholder="说点什么吧..." id="share-desc"></textarea></label>
       </p>
-      <!--<textarea class="desc" placeholder="说点什么吧..."></textarea>-->
   </span>
-  <span class="pic-content">
-      <!--<img src="__PUBLIC__/images/img3.jpg" class="upload-img">-->
+  <span class="pic-content" style="height: 60px;">
       <form action="__ROOT__/Index/upImg" method="post" id="uploadForm" enctype="multipart/form-data" >
        <input type="file" class="up-img" style="display: none;" name="pic" id="pic">
       </form>
       <input type="hidden" name="pics" id="sharepic" value="">
-      <!--<img src="__PUBLIC__/images/img.jpg" class="upload-img">-->
-      <!--<a class="add-face">+_+</a>-->
-      <a class="add-pic"><i class="glyphicon glyphicon-picture"></i></a>
-      <button class="submit" type="button" id="submit-button">发送</button>
+      <a class="add-face">+_+</a>
+      <button class="submit" type="button" id="submit-button">评论</button>
   </span>
-  <span class="bottom-content" style="display:block;width:100%;background: #fff;float: left;border-top:#eee 1px solid;">
-      <div class="row" style="padding:20px 0px 60px 0px;">
-          <div class="col-md-12">
-              <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
-          </div>
-      </div>
+  <span class="face-pic">
+     <?php if(is_array($faces)): $i = 0; $__LIST__ = $faces;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$faces): $mod = ($i % 2 );++$i;?><img src="__PUBLIC__/images/face/<?php echo ($faces["name"]); ?>" alt="<emt><?php echo ($faces["name"]); ?></emt>" class="face"><?php endforeach; endif; else: echo "" ;endif; ?>
   </span>
 </div>
+
 <div class="addshare"></div>
 <div class="bu"></div>
 <script type="text/javascript">
@@ -167,6 +161,47 @@
 </script>
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/upload.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#submit-button').click(function(){
+            var desc=$('#share-desc').val();
+            var sid='<?php echo ($shareinfo["id"]); ?>';
+            var aid='<?php echo ($articleinfo["id"]); ?>';
+            var toid=$('#toid').val();
+            var pid=$('#pid').val();
+            if(desc==''){
+                mobile_tip('error','请填写评论内容！',1000);
+                return false;
+            }
+            $.post('__ROOT__/Index/comment',{desc:desc,aid:aid,toid:toid,pid:pid,sid:sid},function(data){
+                var m=data.message;
+                if(m=='no-in'){
+                    mobile_tip('waiting','请先加入分享圈！',1000);
+                    setTimeout(function(){
+                        location.href='__ROOT__/Index/share/share_id/'+sid;
+                    },1000);
+                }else if(m=='110'){
+                    mobile_tip('error','您还没登录！',1000);
+                    setTimeout(function(){
+                        location.href='__ROOT__/Uenter/login';
+                    },1000);
+                }else if(m=='success'){
+                    mobile_tip('success','评论成功！',1000);
+                    setTimeout(function(){
+                        location.reload();
+                    },1000);
+                }else if(m=='fail'){
+                    mobile_tip('error','评论失败！',1000);
+                }else{
+                    mobile_tip('error','请填写评论内容！',1000);
+                }
+            })
+        })
+
+    })
+</script>
 </body>
 </html>

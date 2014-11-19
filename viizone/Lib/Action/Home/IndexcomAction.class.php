@@ -15,6 +15,10 @@ class IndexcomAction extends Action {
         $sharecount=$activeModel->count();
         $data['counts']=$visitcount+1;
         $visitModel->where($where_visit)->data($data)->save();
+        for($i=1;$i<32;$i++){
+            $faces[$i]['name']=$i.'.gif';
+        }
+        $this->faces=$faces;
         $this->visitcount=$visitcount;
         $this->sharecount=$sharecount;
         $this->activeShare=$activeShare;

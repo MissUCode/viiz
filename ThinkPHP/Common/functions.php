@@ -938,4 +938,12 @@ function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true)
             return 1;
             exit;
         }    
-    } 
+    }
+ function faceToimg($content){
+     for($i=1;$i<32;$i++){
+         $zen="/<emt>$i.gif<\/emt>/is";
+         $img="<img src='__PUBLIC__/images/face/$i.gif'>";
+         $content = preg_replace($zen, $img, $content);
+     }
+     return $content;
+ }
