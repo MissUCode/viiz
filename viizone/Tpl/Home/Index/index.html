@@ -23,7 +23,7 @@
               <volist name="activeShare" id="tj">
                <p class="hot-c4">
                  <if condition="$tj['pic'] neq ''">
-                     <a href="Index/share/share_id/{$tj.id}.html">
+                     <a href="__ROOT__/Index/share/share_id/{$tj.id}.html">
                          <img src="__ROOT__/{$tj.pic}" class="img-circle">
                      </a>
                      <else />
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-md-12 content-content">
                     <span class="col-md-12" >
-                       <p>{$shares.desc|msubstr=0,100}...</p>
+                       <p>{$shares.desc|msubstr=0,300}...</p>
                         <if condition="$shares['pic'] neq ''">
                             <img src="__ROOT__/{$shares.pic}" class="img-responsive" >
                         </if>

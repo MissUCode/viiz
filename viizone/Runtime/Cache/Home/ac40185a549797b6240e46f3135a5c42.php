@@ -74,7 +74,7 @@
             <div class="col-md-12 content-content">
                 <span class="col-md-12" >
                    <p><?php echo ($art["content"]); ?></p>
-                   <img src="__ROOT__/<?php echo ($art["pics"]); ?>" class="img-responsive" width="40%" height="40%">
+                    <?php if($art['pics']): ?><img src="__ROOT__/<?php echo ($art["pics"]); ?>" class="img-responsive" width="40%" height="40%"><?php endif; ?>
                    <p class="action-list">
                        <label>
                            <a  class="zan"><?php echo ($art["like"]); ?></a>

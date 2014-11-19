@@ -21,6 +21,7 @@ class IndexAction extends IndexcomAction {
             $s['article']=$aModel->where($where)->count();
             $s['members']=$uModel->where($where)->count();
             $s['userpic']=M('users')->where($where_user)->getField('pic');
+            $s['desc']=faceToimg($s['desc']);
             $shares[]=$s;
         }
         $this->shares=$shares;
@@ -55,6 +56,7 @@ class IndexAction extends IndexcomAction {
                 $a['username']='weizhu_editer';
             }
             $a['comment']=$cModel->where($where_comm)->count();
+            $a['content']=faceToimg($a['content']);
             $articles[]=$a;
         }
         $this->shareinfo=$shareinfo;
@@ -69,6 +71,7 @@ class IndexAction extends IndexcomAction {
         $sModel=M('share');
         $cModel=D('Comment');
         $articleinfo=$aModel->where($where)->find();
+        $articleinfo['content']=faceToimg($articleinfo['content']);
         $where_share['id']=$articleinfo['sid'];
         $where_comm['aid']=$_GET['article_id'];
         $shareinfo=$sModel->where($where_share)->find();
@@ -338,6 +341,5 @@ class IndexAction extends IndexcomAction {
         $cont="<emt>3.gif</emt><emt>4.gif</emt>";
         echo faceToimg($cont);
         exit;
-
     }
 }

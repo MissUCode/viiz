@@ -54,7 +54,9 @@
             <div class="col-md-12 content-content">
                 <span class="col-md-12" >
                    <p>{$art.content}</p>
+                    <if condition="$art['pics']">
                    <img src="__ROOT__/{$art.pics}" class="img-responsive" width="40%" height="40%">
+                    </if>
                    <p class="action-list">
                        <label>
                            <a  class="zan">{$art.like}</a>

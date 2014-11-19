@@ -50,7 +50,7 @@
             </span>
             <span class="col-md-12 hot-clude">
               <?php if(is_array($activeShare)): $i = 0; $__LIST__ = $activeShare;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tj): $mod = ($i % 2 );++$i;?><p class="hot-c4">
-                 <?php if($tj['pic'] != ''): ?><a href="Index/share/share_id/<?php echo ($tj["id"]); ?>.html">
+                 <?php if($tj['pic'] != ''): ?><a href="__ROOT__/Index/share/share_id/<?php echo ($tj["id"]); ?>.html">
                          <img src="__ROOT__/<?php echo ($tj["pic"]); ?>" class="img-circle">
                      </a>
                      <?php else: ?>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-12 content-content">
                     <span class="col-md-12" >
-                       <p><?php echo (msubstr($shares["desc"],0,100)); ?>...</p>
+                       <p><?php echo (msubstr($shares["desc"],0,300)); ?>...</p>
                         <?php if($shares['pic'] != ''): ?><img src="__ROOT__/<?php echo ($shares["pic"]); ?>" class="img-responsive" ><?php endif; ?>
                        <p class="action-list">
                            <label>
