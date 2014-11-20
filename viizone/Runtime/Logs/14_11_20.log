@@ -8359,3 +8359,821 @@ INFO: [ view_end ] --START--
 INFO: ShowPageTrace Behavior ::run [ RunTime:0.001083s ]
 INFO: [ view_end ] --END-- [ RunTime:0.001220s ]
 
+[ 2014-11-20T20:56:17+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002578s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.004436s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.004243s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000439s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000529s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000255s ]
+SQL: UPDATE `vii_visit` SET `counts`=2129 WHERE ( `title` = 'visit' ) [ RunTime:0.000438s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.004387s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.004481s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003833s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_top DESC,click DESC  [ RunTime:0.000571s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000414s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.004257s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 52 ) LIMIT 1   [ RunTime:0.000311s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000294s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000250s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000231s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: users_id D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2b16bc0b8666b35ab6874c3acd09d7db.php 第 121 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023698s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023829s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000974s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000822s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000639s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001007s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003750s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000933s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001035s ]
+
+[ 2014-11-20T20:56:22+08:00 ] 127.0.0.1 /Uenter/login.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.023009s ]
+INFO: [ route_check ] --END-- [ RunTime:0.023249s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.004108s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003508s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000382s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000206s ]
+SQL: UPDATE `vii_visit` SET `counts`=2130 WHERE ( `title` = 'visit' ) [ RunTime:0.000260s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009780s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009927s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000802s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000932s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000787s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000908s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003846s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000915s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001029s ]
+
+[ 2014-11-20T20:56:33+08:00 ] 127.0.0.1 /Uenter/loginAction
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001108s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001273s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003355s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003138s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000430s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000237s ]
+SQL: UPDATE `vii_visit` SET `counts`=2131 WHERE ( `title` = 'visit' ) [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.003448s ]
+SQL: SELECT * FROM `vii_users` WHERE ( `nickname` = 'test' ) AND ( `lock` = 0 ) LIMIT 1   [ RunTime:0.000394s ]
+
+[ 2014-11-20T20:56:34+08:00 ] 127.0.0.1 /Users/index
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001065s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001201s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000963s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001093s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003745s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.004550s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000381s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000208s ]
+SQL: UPDATE `vii_visit` SET `counts`=2132 WHERE ( `title` = 'visit' ) [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `vii_member` [ RunTime:0.002907s ]
+ERR: 1146:Table 'vii_zone.vii_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vii_member`
+NOTIC: [8] Undefined index: member_id D:\wamp\www\viiz\viizone\Lib\Action\Home\UsersAction.class.php 第 24 行.
+SQL: SELECT * FROM `vii_member` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000398s ]
+ERR: 1146:Table 'vii_zone.vii_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `vii_member` WHERE ( `id` = null ) LIMIT 1  
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\e34f5f45943d598f2e78afec65a30220.php 第 107 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016539s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016702s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000952s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001734s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000787s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005118s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001144s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001249s ]
+
+[ 2014-11-20T20:57:35+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003837s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003499s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000336s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000399s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000212s ]
+SQL: UPDATE `vii_visit` SET `counts`=2133 WHERE ( `title` = 'visit' ) [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.004113s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003853s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003199s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_top DESC,click DESC  [ RunTime:0.000365s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000251s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.004275s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 52 ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000275s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000239s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000240s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000248s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000261s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000236s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023661s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001029s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000771s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000595s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000986s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003702s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001004s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001138s ]
+
+[ 2014-11-20T20:57:37+08:00 ] 127.0.0.1 /Index/share/share_id/19.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001358s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001581s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001264s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003305s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003387s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000377s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000201s ]
+SQL: UPDATE `vii_visit` SET `counts`=2134 WHERE ( `title` = 'visit' ) [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.003710s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003897s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.003833s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003110s ]
+SQL: SELECT `uid` FROM `vii_user_share` WHERE ( `sid` = 19 ) ORDER BY score DESC LIMIT 0,4   [ RunTime:0.000407s ]
+SQL: SELECT `id`,`nickname`,`pic` FROM `vii_users` WHERE ( `id` IN ('52','55','56') )  [ RunTime:0.000346s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000324s ]
+SQL: UPDATE `vii_share` SET `click`=162 WHERE ( `id` = 19 ) [ RunTime:0.000294s ]
+SQL: SELECT * FROM `vii_article` WHERE ( `sid` = 19 ) AND ( `status` = 1 ) ORDER BY is_top DESC,click DESC  [ RunTime:0.000338s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.000210s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `aid` = 24 ) LIMIT 1   [ RunTime:0.000251s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000228s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000233s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `aid` = 26 ) LIMIT 1   [ RunTime:0.000266s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023458s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023589s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000929s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000745s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000680s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000935s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003593s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000922s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001026s ]
+
+[ 2014-11-20T20:57:50+08:00 ] 127.0.0.1 /Index/article/article_id/24.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001453s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001632s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001163s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003471s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003456s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000394s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000508s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000291s ]
+SQL: UPDATE `vii_visit` SET `counts`=2135 WHERE ( `title` = 'visit' ) [ RunTime:0.000321s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.003575s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.007972s ]
+SQL: SELECT * FROM `vii_article` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.000812s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `id` = 19 ) LIMIT 1   [ RunTime:0.000749s ]
+SQL: SELECT * FROM `vii_comment` WHERE ( `aid` = 24 ) ORDER BY addtime DESC  [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.007471s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000859s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000330s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000257s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000277s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000295s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='32' ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000280s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='32' ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000287s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000298s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000279s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000336s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000324s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000306s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000296s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000269s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000276s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000233s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000380s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='56' ) LIMIT 1   [ RunTime:0.000315s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000268s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000313s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000341s ]
+SQL: SELECT `nickname`,`pic` FROM `vii_users` WHERE ( 1=1 AND id='55' ) LIMIT 1   [ RunTime:0.000312s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000268s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `aid` = 24 ) LIMIT 1   [ RunTime:0.000308s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: child D:\wamp\www\viiz\viizone\Runtime\Cache\Home\76a8efae130a7a882956b9bc6fa1725b.php 第 93 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.030682s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030818s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001057s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000787s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000627s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000949s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003719s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000978s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001082s ]
+
+[ 2014-11-20T20:58:11+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001193s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003715s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003850s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000341s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000390s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000245s ]
+SQL: UPDATE `vii_visit` SET `counts`=2136 WHERE ( `title` = 'visit' ) [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.003580s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003570s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003417s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_top DESC,click DESC  [ RunTime:0.000390s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000327s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.003356s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 52 ) LIMIT 1   [ RunTime:0.000331s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000297s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000309s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000217s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022680s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022822s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000901s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000718s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000557s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000852s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003375s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000941s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001048s ]
+
+[ 2014-11-20T20:58:15+08:00 ] 127.0.0.1 /Index/share/share_id/21.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001354s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001516s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003168s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003547s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000427s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000222s ]
+SQL: UPDATE `vii_visit` SET `counts`=2137 WHERE ( `title` = 'visit' ) [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.003524s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003371s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.003675s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003164s ]
+NOTIC: [8] unserialize(): Error at offset 0 of 97 bytes D:\wamp\www\viiz\ThinkPHP\Lib\Driver\Cache\CacheFile.class.php 第 107 行.
+SQL: SELECT `uid` FROM `vii_user_share` WHERE ( `sid` = 21 ) ORDER BY score DESC LIMIT 0,4   [ RunTime:0.000349s ]
+SQL: SELECT `id`,`nickname`,`pic` FROM `vii_users` WHERE ( `id` IN ('55') )  [ RunTime:0.000245s ]
+NOTIC: [8] unserialize(): Error at offset 0 of 65 bytes D:\wamp\www\viiz\ThinkPHP\Lib\Driver\Cache\CacheFile.class.php 第 107 行.
+SQL: SELECT * FROM `vii_share` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: UPDATE `vii_share` SET `click`=5 WHERE ( `id` = 21 ) [ RunTime:0.000256s ]
+NOTIC: [8] unserialize(): Error at offset 0 of 113 bytes D:\wamp\www\viiz\ThinkPHP\Lib\Driver\Cache\CacheFile.class.php 第 107 行.
+SQL: SELECT * FROM `vii_article` WHERE ( `sid` = 21 ) AND ( `status` = 1 ) ORDER BY is_top DESC,click DESC  [ RunTime:0.000386s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: SELECT `nickname` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000254s ]
+NOTIC: [8] unserialize(): Error at offset 0 of 87 bytes D:\wamp\www\viiz\ThinkPHP\Lib\Driver\Cache\CacheFile.class.php 第 107 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `aid` = 28 ) LIMIT 1   [ RunTime:0.000470s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022778s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000977s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000809s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000660s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000909s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003672s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001043s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001162s ]
+
+[ 2014-11-20T20:58:20+08:00 ] 127.0.0.1 /Index/joinTo
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001716s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001921s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001510s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003335s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003454s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000511s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000473s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000209s ]
+SQL: UPDATE `vii_visit` SET `counts`=2138 WHERE ( `title` = 'visit' ) [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003102s ]
+SQL: SELECT * FROM `vii_user_share` WHERE ( `uid` = 52 ) AND ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000321s ]
+SQL: INSERT INTO `vii_user_share` (`sid`,`uid`) VALUES (21,52) [ RunTime:0.000260s ]
+
+[ 2014-11-20T20:59:02+08:00 ] 127.0.0.1 /Index/addArticle
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001122s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001270s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003300s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003280s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000412s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000238s ]
+SQL: UPDATE `vii_visit` SET `counts`=2139 WHERE ( `title` = 'visit' ) [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.005371s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003609s ]
+SQL: SELECT * FROM `vii_user_share` WHERE ( `uid` = 52 ) AND ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000332s ]
+SQL: INSERT INTO `vii_article` (`sid`,`title`,`content`,`pics`,`uid`,`addtime`) VALUES (21,'没什么事情可以难道你','没什么事情可以难道你，加油交友！！<emt>2.gif</emt><emt>30.gif</emt><emt>30.gif</emt>','',52,1416488342) [ RunTime:0.000281s ]
+
+[ 2014-11-20T20:59:03+08:00 ] 127.0.0.1 /Users/shares
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001335s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001503s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001091s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003692s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003648s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000425s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000245s ]
+SQL: UPDATE `vii_visit` SET `counts`=2140 WHERE ( `title` = 'visit' ) [ RunTime:0.000345s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 173 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015784s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015925s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001118s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001244s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000839s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001384s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005119s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001104s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001227s ]
+
+[ 2014-11-20T20:59:08+08:00 ] 127.0.0.1 /Users/shares
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001393s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001565s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001222s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003248s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003377s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000303s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000192s ]
+SQL: UPDATE `vii_visit` SET `counts`=2141 WHERE ( `title` = 'visit' ) [ RunTime:0.000257s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 173 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016115s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016288s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001067s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000764s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000684s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001232s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004194s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001054s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001168s ]
+
+[ 2014-11-20T21:09:45+08:00 ] 127.0.0.1 /Users/shares
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001183s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001326s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003408s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003339s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000334s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000200s ]
+SQL: UPDATE `vii_visit` SET `counts`=2142 WHERE ( `title` = 'visit' ) [ RunTime:0.000313s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003680s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `uid` = 52 ) ORDER BY id DESC  [ RunTime:0.000438s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000267s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 173 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015338s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015462s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000772s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000722s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000562s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003151s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000894s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2014-11-20T21:12:53+08:00 ] 127.0.0.1 /Users/shares
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001238s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001375s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001118s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003254s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003733s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000347s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000273s ]
+SQL: UPDATE `vii_visit` SET `counts`=2143 WHERE ( `title` = 'visit' ) [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003651s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `uid` = 52 ) ORDER BY id DESC  [ RunTime:0.000461s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 125 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018854s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000895s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000837s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000642s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001649s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004335s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001358s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001529s ]
+
+[ 2014-11-20T21:13:06+08:00 ] 127.0.0.1 /Uenter/logout.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001092s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001227s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001100s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.010769s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003642s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000404s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000206s ]
+SQL: UPDATE `vii_visit` SET `counts`=2144 WHERE ( `title` = 'visit' ) [ RunTime:0.000269s ]
+
+[ 2014-11-20T21:13:06+08:00 ] 127.0.0.1 /Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001010s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001163s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001685s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003364s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.004117s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000357s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000363s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000186s ]
+SQL: UPDATE `vii_visit` SET `counts`=2145 WHERE ( `title` = 'visit' ) [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.004668s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003390s ]
+SQL: SHOW COLUMNS FROM `vii_user_share` [ RunTime:0.003347s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_top DESC,click DESC  [ RunTime:0.000388s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000251s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000217s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 19 ) LIMIT 1   [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.003224s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 52 ) LIMIT 1   [ RunTime:0.000323s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000530s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000448s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000217s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000236s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_article` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000218s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_user_share` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000205s ]
+SQL: SELECT `pic` FROM `vii_users` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000200s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: users_id D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2b16bc0b8666b35ab6874c3acd09d7db.php 第 121 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022282s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022402s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000928s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000701s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000632s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001037s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003706s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000910s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001030s ]
+
+[ 2014-11-20T21:13:10+08:00 ] 127.0.0.1 /Users/notice.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001710s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001964s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002209s ]
+
+[ 2014-11-20T21:13:10+08:00 ] 127.0.0.1 /Uenter/login.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001628s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001836s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001067s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003359s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.004852s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000319s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000399s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000229s ]
+SQL: UPDATE `vii_visit` SET `counts`=2146 WHERE ( `title` = 'visit' ) [ RunTime:0.000268s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009961s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010131s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001012s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000774s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000535s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000889s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003588s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000911s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001031s ]
+
+[ 2014-11-20T21:13:21+08:00 ] 127.0.0.1 /Uenter/loginAction
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001732s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001921s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001173s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001289s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003657s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003754s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT * FROM `vii_share` ORDER BY is_tj DESC,click DESC LIMIT 0,4   [ RunTime:0.000411s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000228s ]
+SQL: UPDATE `vii_visit` SET `counts`=2147 WHERE ( `title` = 'visit' ) [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `vii_users` [ RunTime:0.003369s ]
+SQL: SELECT * FROM `vii_users` WHERE ( `nickname` = 'Donkey' ) AND ( `lock` = 0 ) LIMIT 1   [ RunTime:0.000406s ]
+
+[ 2014-11-20T21:13:22+08:00 ] 127.0.0.1 /Users/index
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001124s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001266s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003756s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003657s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000208s ]
+SQL: UPDATE `vii_visit` SET `counts`=2148 WHERE ( `title` = 'visit' ) [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `vii_member` [ RunTime:0.003454s ]
+ERR: 1146:Table 'vii_zone.vii_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `vii_member`
+NOTIC: [8] Undefined index: member_id D:\wamp\www\viiz\viizone\Lib\Action\Home\UsersAction.class.php 第 24 行.
+SQL: SELECT * FROM `vii_member` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000549s ]
+ERR: 1146:Table 'vii_zone.vii_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `vii_member` WHERE ( `id` = null ) LIMIT 1  
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\e34f5f45943d598f2e78afec65a30220.php 第 107 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014825s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001304s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000913s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000946s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004923s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001174s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001284s ]
+
+[ 2014-11-20T21:13:25+08:00 ] 127.0.0.1 /Users/shares.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001149s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001289s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003359s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003548s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000377s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000210s ]
+SQL: UPDATE `vii_visit` SET `counts`=2149 WHERE ( `title` = 'visit' ) [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003484s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `uid` = 55 ) ORDER BY id DESC  [ RunTime:0.000454s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000261s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000256s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 125 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016872s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016999s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000820s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001100s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000635s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000940s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003876s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000943s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001060s ]
+
+[ 2014-11-20T21:14:15+08:00 ] 127.0.0.1 /Users/notice.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001394s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001542s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003269s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.004079s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000363s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000233s ]
+SQL: UPDATE `vii_visit` SET `counts`=2150 WHERE ( `title` = 'visit' ) [ RunTime:0.000263s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\c1bec488186faba49ae9e968f6338201.php 第 131 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015338s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015466s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000815s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000714s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000570s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000848s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003260s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000956s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001079s ]
+
+[ 2014-11-20T21:14:20+08:00 ] 127.0.0.1 /Users/shares.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001790s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001956s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001213s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003585s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.004058s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000203s ]
+SQL: UPDATE `vii_visit` SET `counts`=2151 WHERE ( `title` = 'visit' ) [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003721s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `uid` = 55 ) ORDER BY id DESC  [ RunTime:0.000469s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000272s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000248s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 125 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018512s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018683s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000904s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000711s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000627s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000931s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003489s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000896s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001005s ]
+
+[ 2014-11-20T22:46:48+08:00 ] 127.0.0.1 /Users/shares.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001554s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001731s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003831s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003788s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000215s ]
+SQL: UPDATE `vii_visit` SET `counts`=2152 WHERE ( `title` = 'visit' ) [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.004761s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `uid` = 55 ) ORDER BY id DESC  [ RunTime:0.000469s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000239s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 125 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016811s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000800s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000722s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000657s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000836s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003342s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000919s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001028s ]
+
+[ 2014-11-20T22:51:40+08:00 ] 127.0.0.1 /Users/shares.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002179s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002350s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001629s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003914s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.004225s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000447s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000375s ]
+SQL: UPDATE `vii_visit` SET `counts`=2153 WHERE ( `title` = 'visit' ) [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.004419s ]
+SQL: SELECT * FROM `vii_share` WHERE ( `uid` = 55 ) ORDER BY id DESC  [ RunTime:0.000600s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 21 ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 20 ) LIMIT 1   [ RunTime:0.000326s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\2f117defbc2c7ec7085c26e001b6217b.php 第 125 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022540s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001535s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001260s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001171s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005732s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001552s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001672s ]
+
+[ 2014-11-20T22:51:43+08:00 ] 127.0.0.1 /Users/articles.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001312s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001452s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001304s ]
+SQL: SHOW COLUMNS FROM `vii_visit` [ RunTime:0.003738s ]
+SQL: SHOW COLUMNS FROM `vii_share` [ RunTime:0.003357s ]
+SQL: SELECT `counts` FROM `vii_visit` WHERE ( `title` = 'visit' ) LIMIT 1   [ RunTime:0.000325s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_share` LIMIT 1   [ RunTime:0.000190s ]
+SQL: UPDATE `vii_visit` SET `counts`=2154 WHERE ( `title` = 'visit' ) [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `vii_article` [ RunTime:0.004317s ]
+SQL: SHOW COLUMNS FROM `vii_comment` [ RunTime:0.003220s ]
+SQL: SELECT * FROM `vii_article` WHERE ( `uid` = 55 ) ORDER BY id DESC  [ RunTime:0.000799s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 28 ) LIMIT 1   [ RunTime:0.000410s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 27 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 26 ) LIMIT 1   [ RunTime:0.000259s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `vii_comment` WHERE ( `sid` = 25 ) LIMIT 1   [ RunTime:0.000262s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: faces D:\wamp\www\viiz\viizone\Runtime\Cache\Home\d1f2e928b1c64a19fdae32890d4a080f.php 第 125 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017873s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018009s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000813s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000686s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000614s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000837s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003267s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000911s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001019s ]
+

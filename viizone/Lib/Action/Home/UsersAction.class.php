@@ -26,12 +26,32 @@ class UsersAction extends UcommAction {
         $this->infos=$mem_info;
         $this->display('profile');
     }
-    //我的分享圈 羁绊浅尝辄止污染
+    //我的分享圈
     public function shares(){
+        $Model=M('share');
+        $comment=M('comment');
+        $where['uid']=$_SESSION['users_id'];
+        $shares=$Model->where($where)->order('id DESC')->select();
+        foreach($shares as $s){
+            $where_comm['sid']=$s['id'];
+            $s['comments']=$comment->where($where_comm)->count();
+            $allshares[]=$s;
+        }
+        $this->shares=$allshares;
         $this->display();
     }
     //我的帖子
     public function articles(){
+        $Model=M('article');
+        $comment=M('comment');
+        $where['uid']=$_SESSION['users_id'];
+        $shares=$Model->where($where)->order('id DESC')->select();
+        foreach($shares as $s){
+            $where_comm['sid']=$s['id'];
+            $s['comments']=$comment->where($where_comm)->count();
+            $allshares[]=$s;
+        }
+        $this->articles=$allshares;
         $this->display();
     }
     //我的通知

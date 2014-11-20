@@ -45,77 +45,29 @@
         <div class="col-md-12 content content-d" url=""  >
             <h1 class="h1-top"><span class="glyphicon glyphicon-share"></span>  我的帖子</h1>
         </div>
-        <div class="col-md-12 content content-d" url="" >
+        <?php if(is_array($articles)): $i = 0; $__LIST__ = $articles;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$articles): $mod = ($i % 2 );++$i;?><div class="col-md-12 content content-d" url="" >
             <div class="col-md-12 content-user" >
                 <a class="user-pic delete">删除</a>
                 <span class="infos">
-                    <label><b>微商的做法</b></label>
-                    <label style="font-size: 10px;">2014-10-21 14:28:36</label>
+                    <label><b><?php echo ($articles["title"]); ?></b></label>
+                    <label style="font-size: 10px;"><?php echo (date('Y-m-d H:i:s',$articles["addtime"])); ?></label>
                 </span>
                 <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
             </div>
             <div class="col-md-12 content-content" url="">
                 <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
+                   <p><?php echo ($articles["content"]); ?></p>
                    <p class="action-list">
                        <label>
-                           <a  class="zan">10</a>
+                           <a  class="zan"><?php echo ($articles["like"]); ?></a>
                            <a  class="share shareTo"></a>
-                           <a  class="comment">110</a>
+                           <a  class="comment"><?php echo ($articles["comments"]); ?></a>
                        </label>
                    </p>
                 </span>
 
             </div>
-        </div>
-        <div class="col-md-12 content content-d" url="" >
-            <div class="col-md-12 content-user" >
-                <a class="user-pic delete">删除</a>
-                <a class="set-top">置顶</a>
-                <span class="infos">
-                    <label><b>微商的做法</b></label>
-                    <label style="font-size: 10px;">2014-10-21 14:28:36</label>
-                </span>
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <p class="action-list">
-                       <label>
-                           <a  class="zan">10</a>
-                           <a  class="share shareTo"></a>
-                           <a  class="comment">110</a>
-                       </label>
-                   </p>
-                </span>
-
-            </div>
-        </div>
-        <div class="col-md-12 content content-d"  url="">
-            <div class="col-md-12 content-user" >
-                <a class="user-pic delete">删除</a>
-                <a class="set-top">置顶</a>
-                <span class="infos">
-                    <label><b>微商的做法</b></label>
-                    <label style="font-size: 10px;">2014-10-21 14:28:36</label>
-                </span>
-            </div>
-            <div class="col-md-12 content-content">
-                <span class="col-md-12" >
-                   <p>微商的做法：1、坚持。2、不要脸。3、坚持不要脸。</p>
-                   <p class="action-list">
-                       <label>
-                           <label>
-                               <a  class="zan">10</a>
-                               <a  class="share shareTo"></a>
-                               <a  class="comment">110</a>
-                           </label>
-                       </label>
-                   </p>
-                </span>
-
-            </div>
-        </div>
+        </div><?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
     <div class="row" style="padding-bottom: 60px;">
         <div class="col-md-12">
