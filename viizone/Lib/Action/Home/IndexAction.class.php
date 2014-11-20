@@ -336,7 +336,52 @@ class IndexAction extends IndexcomAction {
         }
        exit;
     }
+    //赞
+    public function like(){
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
+        if(isset($_SESSION['time'])&& (time()-$_SESSION['time'])<60){
+            $res['message']='wait';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+        }
+        if(!isset($_SESSION['failtime'])){
+            $_SESSION['failtime']=1;
+        }else{
+            $_SESSION['failtime']=$_SESSION['failtime']+1;
+        }
+        if($_SESSION['failtime']>5){
+            $_SESSION['time']=time();
+            $_SESSION['failtime']=0;
+        }
+        $id=$_POST['id'];
+        $act=$_POST['act'];
+        if($act=='share'){
+            $Model=M('share');
+        }else if($act=='article'){
+            $Model=M('article');
+        }else{
+            $Model=M('comment');
+        }
+        $where['id']=$id;
+        $now_like=$Model->where($where)->getField('like');
+        $like=$now_like+1;
+        $data['like']=$like;
+        if($Model->where($where)->data($data)->save()){
+            $res['message']='success';
+            $res['rid']=$like;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            $res['message']='fail';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }
 
+    }
     public function test(){
         $cont="<emt>3.gif</emt><emt>4.gif</emt>";
         echo faceToimg($cont);

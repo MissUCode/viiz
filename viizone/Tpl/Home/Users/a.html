@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>微商助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
+</head>
+<body>
+<script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
+<script src="__PUBLIC__/js/layer/layer.m.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        layer.open({
+            content: '你是想确认呢，还是想取消呢？',
+            btn: ['确认', '取消'],
+            shadeClose: false,
+            yes: function(){
+                layer.open({content: '你点了确认', time: 1});
+            }, no: function(){
+                layer.open({content: '你选择了取消', time: 1});
+            }
+        });
+    })
+</script>
+</body>
+</html>

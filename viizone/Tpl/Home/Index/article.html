@@ -34,7 +34,7 @@
                      </if>
                    <p class="action-list">
                        <label>
-                           <a  class="zan">{$articleinfo.like}</a>
+                           <a  class="zan share-like" id="share-{$articleinfo.id}" alt="{$articleinfo.id}" title="article">{$articleinfo.like}</a>
                            <a  class="share shareTo"></a>
                            <a  class="comment comment-to" alt="0">{$commentCounts}</a>
                        </label>
@@ -68,7 +68,7 @@
                            <img src="__ROOT__/{$comments.pics}" class="img-responsive" style="margin-top: 5px;" >
                        </if>
                      <p class="c-action">
-                        <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment comment-to1" alt="{$comments.id}" title="0">&nbsp;评论</a></label>
+                        <label><a class="glyphicon glyphicon-hand-right share-like" id="share-{$comments.id}" alt="{$comments.id}" title="comment">&nbsp;{$comments.like}</a> <a class="glyphicon glyphicon-comment comment-to1" alt="{$comments.id}" title="0">&nbsp;评论</a></label>
                      </p>
                     <if condition="$comments['child']">
                     <p class="comment-in-comment">
@@ -142,6 +142,22 @@
                     mobile_tip('error','请填写评论内容！',1000);
                 }
             })
+        })
+        $('.share-like').click(function(){
+            var id=$(this).attr('alt');
+            var act=$(this).attr('title');
+            $.post('__ROOT__/Index/like',{id:id,act:act},function(data){
+                var m=data.message;
+                var rid=data.rid;
+                if(m=='wait'){
+                    mobile_tip('waiting','先休息一下嘛！',1000);
+                }else if(m=='success'){
+                    html='&nbsp;'+rid;
+                    $('#share-'+id).html(html);
+                }else{
+                }
+            })
+            return false;
         })
 
     })

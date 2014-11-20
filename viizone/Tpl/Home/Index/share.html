@@ -59,7 +59,7 @@
                     </if>
                    <p class="action-list">
                        <label>
-                           <a  class="zan">{$art.like}</a>
+                           <a  class="zan share-like" id="share-{$art.id}" alt="{$art.id}" title="article">{$art.like}</a>
                            <a  class="share shareTo"></a>
                            <a  class="comment">{$art.comment}</a>
                        </label>
@@ -143,6 +143,21 @@
                     mobile_tip('error','系统繁忙！',1000);
                 }
             })
+        })
+        $('.share-like').click(function(){
+            var id=$(this).attr('alt');
+            var act=$(this).attr('title');
+            $.post('__ROOT__/Index/like',{id:id,act:act},function(data){
+                var m=data.message;
+                var rid=data.rid;
+                if(m=='wait'){
+                    mobile_tip('waiting','先休息一下嘛！',1000);
+                }else if(m=='success'){
+                    $('#share-'+id).html(rid);
+                }else{
+                }
+            })
+            return false;
         })
     })
 </script>

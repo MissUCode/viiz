@@ -6,7 +6,7 @@
 <div class="menu">
     <h2 class="center-head"><i class="glyphicon glyphicon-user"></i> 个人中心</h2>
     <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
-        <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
                 <span class="infos" style="top:8px;left: 45px;">
                    <label><b>{$Think.session.users_name}</b><img src="__PUBLIC__/images/l1.jpg"></label>
                 </span>
@@ -17,7 +17,11 @@
         <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
         <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+        <if condition="$_SESSION['users_id']">
+            <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+            <else />
+            <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li>
+        </if>
     </ul>
 </div>
 <div class="add-content">

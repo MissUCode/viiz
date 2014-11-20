@@ -52,7 +52,7 @@
                                  case 'ok':
                                      mobile_tip('success','登陆成功！',1000);
                                      setTimeout(function(){
-                                         location.href='__ROOT__/Index/index'
+                                         location.href='__ROOT__/Users/index'
                                      },1500);
                                      break;
                                  case '110':

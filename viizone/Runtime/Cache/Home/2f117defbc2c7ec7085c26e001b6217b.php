@@ -47,11 +47,12 @@
         </div>
         <div class="col-md-12 content content-d" url="" >
             <div class="col-md-12 content-user" >
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+                <a class="user-pic delete">删除</a>
                 <span class="infos">
                     <label><b>微商的做法</b></label>
                     <label style="font-size: 10px;">2014-10-21 14:28:36</label>
                 </span>
+                <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
             </div>
             <div class="col-md-12 content-content" url="">
                 <span class="col-md-12" >
@@ -69,7 +70,8 @@
     </div>
         <div class="col-md-12 content content-d" url="" >
             <div class="col-md-12 content-user" >
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+                <a class="user-pic delete">删除</a>
+                <a class="set-top">置顶</a>
                 <span class="infos">
                     <label><b>微商的做法</b></label>
                     <label style="font-size: 10px;">2014-10-21 14:28:36</label>
@@ -91,7 +93,8 @@
         </div>
         <div class="col-md-12 content content-d"  url="">
             <div class="col-md-12 content-user" >
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+                <a class="user-pic delete">删除</a>
+                <a class="set-top">置顶</a>
                 <span class="infos">
                     <label><b>微商的做法</b></label>
                     <label style="font-size: 10px;">2014-10-21 14:28:36</label>
@@ -141,8 +144,10 @@
         <li><a href="__ROOT__/Users/articles.html">我的帖子</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
-        <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+        <li><a href="#">反馈建议</a><i class="go">></i></li>
+        <?php if($_SESSION['users_id']): ?><li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+          <?php else: ?>
+            <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li><?php endif; ?>
     </ul>
 </div>
 <div class="add-content">

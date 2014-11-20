@@ -80,7 +80,7 @@
                         <?php if($shares['pic'] != ''): ?><img src="__ROOT__/<?php echo ($shares["pic"]); ?>" class="img-responsive" ><?php endif; ?>
                        <p class="action-list">
                            <label>
-                               <a  class="zan"><?php echo ($shares["like"]); ?></a>
+                               <a  class="zan share-like" id="share-<?php echo ($shares["id"]); ?>" alt="<?php echo ($shares["id"]); ?>" title="share"><?php echo ($shares["like"]); ?></a>
                                <a  class="share shareTo"></a>
                                <a  class="comment"><?php echo ($shares["comment"]); ?></a>
                            </label>
@@ -117,8 +117,10 @@
         <li><a href="__ROOT__/Users/articles.html">我的帖子</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
-        <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+        <li><a href="#">反馈建议</a><i class="go">></i></li>
+        <?php if($_SESSION['users_id']): ?><li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+          <?php else: ?>
+            <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li><?php endif; ?>
     </ul>
 </div>
 <div class="add-content">
@@ -192,6 +194,21 @@
                     mobile_tip('error','请填写完整的信息！',1000);
                 }
             })
+        })
+        $('.share-like').click(function(){
+            var id=$(this).attr('alt');
+            var act=$(this).attr('title');
+            $.post('__ROOT__/Index/like',{id:id,act:act},function(data){
+                var m=data.message;
+                var rid=data.rid;
+                if(m=='wait'){
+                    mobile_tip('waiting','先休息一下嘛！',1000);
+                }else if(m=='success'){
+                    $('#share-'+id).html(rid);
+                }else{
+                }
+            })
+            return false;
         })
     })
 </script>

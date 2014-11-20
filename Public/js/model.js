@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 14-10-24.
  */
-function model(title,content,img,ok,cancel){
+function model(title,content,img,ok,cancel,url){
 
     var title=title;
     var content=content;
@@ -10,7 +10,7 @@ function model(title,content,img,ok,cancel){
     var cancel = arguments[4] ? arguments[4] : '取消';
     var model='<div class="blue"></div><div class="model"><div class="model-header"><h2 class="model-title">';
         model+=title;
-        model+='<b class="model-close">X</b></h2></div><div class="model-center"><img src="images/sure.gif" class="model-img"><label class="model-content">';
+        model+='<b class="model-close">X</b></h2></div><div class="model-center"><img src="'+url+'images/sure.gif" class="model-img"><label class="model-content">';
         model+=content;
         model+='</label></div><div class="model-bottom"><button class="model-cancel">';
         model+=cancel;

@@ -835,8 +835,35 @@ label{
     top: 15px;
     right: 30px;
 }
-
-
+.delete{
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    top:0px;
+    left: 0px;
+    background: #ff6347;
+    cursor: pointer;
+    color: #fff;
+}
+.delete:hover,.set-top:hover{
+    color: #fff;
+}
+.set-top{
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    top:0px;
+    right: 20px;
+    background: #42ab35;
+    cursor: pointer;
+    color: #fff;
+}
 
 
 

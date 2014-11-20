@@ -77,7 +77,7 @@
                     <?php if($art['pics']): ?><img src="__ROOT__/<?php echo ($art["pics"]); ?>" class="img-responsive" width="40%" height="40%"><?php endif; ?>
                    <p class="action-list">
                        <label>
-                           <a  class="zan"><?php echo ($art["like"]); ?></a>
+                           <a  class="zan share-like" id="share-<?php echo ($art["id"]); ?>" alt="<?php echo ($art["id"]); ?>" title="article"><?php echo ($art["like"]); ?></a>
                            <a  class="share shareTo"></a>
                            <a  class="comment"><?php echo ($art["comment"]); ?></a>
                        </label>
@@ -105,7 +105,7 @@
 <div class="menu">
     <h2 class="center-head"><i class="glyphicon glyphicon-user"></i> 个人中心</h2>
     <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
-        <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
                 <span class="infos" style="top:8px;left: 45px;">
                    <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/l1.jpg"></label>
                 </span>
@@ -116,7 +116,9 @@
         <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
         <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+        <?php if($_SESSION['users_id']): ?><li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+            <?php else: ?>
+            <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li><?php endif; ?>
     </ul>
 </div>
 <div class="add-content">
@@ -216,6 +218,21 @@
                     mobile_tip('error','系统繁忙！',1000);
                 }
             })
+        })
+        $('.share-like').click(function(){
+            var id=$(this).attr('alt');
+            var act=$(this).attr('title');
+            $.post('__ROOT__/Index/like',{id:id,act:act},function(data){
+                var m=data.message;
+                var rid=data.rid;
+                if(m=='wait'){
+                    mobile_tip('waiting','先休息一下嘛！',1000);
+                }else if(m=='success'){
+                    $('#share-'+id).html(rid);
+                }else{
+                }
+            })
+            return false;
         })
     })
 </script>

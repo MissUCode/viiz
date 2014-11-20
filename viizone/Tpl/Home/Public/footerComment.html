@@ -17,7 +17,11 @@
         <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
         <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+        <if condition="$_SESSION['users_id']">
+            <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+            <else />
+            <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li>
+        </if>
     </ul>
 </div>
 <div class="add-content" >

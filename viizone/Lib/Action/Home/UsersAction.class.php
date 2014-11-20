@@ -24,7 +24,7 @@ class UsersAction extends UcommAction {
         $where['id']=$_SESSION['member_id'];
         $mem_info=$modle->where($where)->find();
         $this->infos=$mem_info;
-        $this->display();
+        $this->display('profile');
     }
     //我的分享圈 羁绊浅尝辄止污染
     public function shares(){
@@ -32,6 +32,13 @@ class UsersAction extends UcommAction {
     }
     //我的帖子
     public function articles(){
+        $this->display();
+    }
+    //我的通知
+    public function notice(){
+        $this->display();
+    }
+    public function a(){
         $this->display();
     }
 

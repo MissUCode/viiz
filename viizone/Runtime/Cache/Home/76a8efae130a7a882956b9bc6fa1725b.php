@@ -61,7 +61,7 @@
                      <?php if($articleinfo['pics'] != ''): ?><img src="__ROOT__/<?php echo ($articleinfo["pics"]); ?>" class="img-responsive"><?php endif; ?>
                    <p class="action-list">
                        <label>
-                           <a  class="zan"><?php echo ($articleinfo["like"]); ?></a>
+                           <a  class="zan share-like" id="share-<?php echo ($articleinfo["id"]); ?>" alt="<?php echo ($articleinfo["id"]); ?>" title="article"><?php echo ($articleinfo["like"]); ?></a>
                            <a  class="share shareTo"></a>
                            <a  class="comment comment-to" alt="0"><?php echo ($commentCounts); ?></a>
                        </label>
@@ -88,7 +88,7 @@
                        <?php echo ($comments["content"]); ?>
                        <?php if($comments['pics']): ?><img src="__ROOT__/<?php echo ($comments["pics"]); ?>" class="img-responsive" style="margin-top: 5px;" ><?php endif; ?>
                      <p class="c-action">
-                        <label><a class="glyphicon glyphicon-hand-right">&nbsp;赞</a> <a class="glyphicon glyphicon-comment comment-to1" alt="<?php echo ($comments["id"]); ?>" title="0">&nbsp;评论</a></label>
+                        <label><a class="glyphicon glyphicon-hand-right share-like" id="share-<?php echo ($comments["id"]); ?>" alt="<?php echo ($comments["id"]); ?>" title="comment">&nbsp;<?php echo ($comments["like"]); ?></a> <a class="glyphicon glyphicon-comment comment-to1" alt="<?php echo ($comments["id"]); ?>" title="0">&nbsp;评论</a></label>
                      </p>
                     <?php if($comments['child']): ?><p class="comment-in-comment">
                         <i class="san"></i>
@@ -131,7 +131,9 @@
         <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
         <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
         <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+        <?php if($_SESSION['users_id']): ?><li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+            <?php else: ?>
+            <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li><?php endif; ?>
     </ul>
 </div>
 <div class="add-content" >
@@ -199,6 +201,22 @@
                     mobile_tip('error','请填写评论内容！',1000);
                 }
             })
+        })
+        $('.share-like').click(function(){
+            var id=$(this).attr('alt');
+            var act=$(this).attr('title');
+            $.post('__ROOT__/Index/like',{id:id,act:act},function(data){
+                var m=data.message;
+                var rid=data.rid;
+                if(m=='wait'){
+                    mobile_tip('waiting','先休息一下嘛！',1000);
+                }else if(m=='success'){
+                    html='&nbsp;'+rid;
+                    $('#share-'+id).html(html);
+                }else{
+                }
+            })
+            return false;
         })
 
     })
