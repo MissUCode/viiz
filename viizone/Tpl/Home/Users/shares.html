@@ -7,6 +7,7 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
     <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 </head>
 <body>
@@ -19,7 +20,7 @@
         <volist name="shares" id="shares">
         <div class="col-md-12 content content-d" url="">
             <div class="col-md-12 content-user" >
-                <a class="user-pic delete">删除</a>
+                <a class="user-pic delete" alt="{$shares.id}" title="share">删除</a>
                 <span class="infos">
                     <label><b>{$shares.title}</b></label>
                     <label style="font-size: 10px;">{$shares.ctime|date='Y-m-d H:i:s',###}</label>
@@ -51,9 +52,50 @@
         </div>
     </div>
 </div>
-<include file="Public/footer" />
+<include file="Public/footerusers" />
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
+<script src="__PUBLIC__/js/layer/layer.m.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.delete').click(function(){
+            var id=$(this).attr('alt');
+            var act=$(this).attr('title');
+            layer.open({
+                content: '你确认要删除该帖子吗？',
+                btn: ['确定', '取消'],
+                shadeClose: false,
+                yes: function(){
+                    $.post('__ROOT__/Users/delete',{id:id,act:act},function(data){
+                        var m=data.message;
+                        var rid=data.rid;
+                        if(m=='fail'){
+                            layer.open({
+                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除失败!',
+                                style: 'background-color:#42ab35; color:red; border:none;',
+                                time: 2
+                            });
+                        }else if(m=='success'){
+                            layer.open({
+                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除成功!',
+                                style: 'background-color:#42ab35; color:#fff; border:none;',
+                                time: 2
+                            });
+                            setTimeout(function(){
+                                location.reload();
+                            },1000);
+
+                        }else{
+                        }
+                    })
+                }, no: function(){
+                    return false;
+                }
+            });
+        })
+    })
+</script>
 </body>
 </html>

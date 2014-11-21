@@ -58,6 +58,42 @@ class UsersAction extends UcommAction {
     public function notice(){
         $this->display();
     }
+
+    public function delete(){
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
+        $id=$_POST['id'];
+        $act=$_POST['act'];
+        if($act=='share'){
+            $Model=M('share');
+        }else if($act=='article'){
+            $Model=M('article');
+        }else{
+            $Model=M('comment');
+        }
+        $where['id']=$id;
+        $where['uid']=$_SESSION['users_id'];
+        $nowinfos=$Model->where($where)->find();
+        if($Model->where($where)->delete()){
+            if($act=='share'){
+                @unlink('./'.$nowinfos['pic']);
+            }else{
+                @unlink('./'.$nowinfos['pics']);
+            }
+            $res['message']='success';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            $res['message']='fail';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }
+
+    }
     public function a(){
         $this->display();
     }

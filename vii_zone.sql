@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 11 月 20 日 08:59
+-- 生成日期: 2014 年 11 月 21 日 06:46
 -- 服务器版本: 5.5.20
 -- PHP 版本: 5.3.10
 
@@ -73,16 +73,14 @@ CREATE TABLE IF NOT EXISTS `vii_article` (
   `content` varchar(600) NOT NULL,
   `addtime` varchar(13) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- 转存表中的数据 `vii_article`
 --
 
 INSERT INTO `vii_article` (`id`, `title`, `uid`, `sid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `pics`, `click`, `like`, `lock`, `content`, `addtime`) VALUES
-(28, '青椒梦想家分享圈说明', 55, 21, 0, 0, 0, 1, 1, 'Public/Uploads/20141119/546bf63976ae5.jpg', 0, 0, 0, '有梦的人都是很可爱的，你觉得吗？星爷说过：做人没有梦想，那跟咸鱼有什么差别！', '1416361531'),
-(27, '大家注意，这是骗人的，不要相信！！', 55, 20, 0, 0, 0, 1, 1, 'Public/Uploads/20141118/546b013408eab.jpg', 0, 0, 0, '大家注意，这是骗人的，不要相信，有图有真相，不要被骗了！！', '1416298807'),
-(26, '请你们出一个使用手册呗？', 55, 19, 0, 0, 0, 1, 1, 'Public/Uploads/20141118/546afb97ae2f4.jpg', 0, 4, 0, '请你们出一个使用手册呗？我都不知道怎么操作，体验好差的哟，请出帮助文档，好吗？亲爱的微商助手？', '1416297370'),
+(33, '测试一下，总是可以吧！？', 55, 28, 0, 0, 0, 0, 1, '', 0, 0, 0, '测试一下，总是可以吧！？测试一下，总是可以吧！？测试一下，总是可以吧！？<emt>2.gif</emt><emt>2.gif</emt><emt>2.gif</emt><emt>2.gif</emt><emt>2.gif</emt>', '1416537504'),
 (25, 'Donkey正品面膜，欢迎订购', 55, 20, 0, 0, 0, 1, 1, 'Public/Uploads/20141118/546af1bd454ac.jpg', 0, 0, 0, 'Donkey正品面膜，欢迎订购，正品保证，无理由七天退还货，真的很给力！', '1416294847'),
 (24, '用户中心“我的帖子”的问题反馈', 0, 19, 0, 0, 1, 1, 1, 'Public/Uploads/20141118/546a97b4b8d39.jpg', 0, 15, 0, '我的帖子不显示图片，点击浏览也无效，希望微商助手官方技术人员解决这个问题，或者这是有意而为之，请给一个满意的解释，谢谢！', '1416271796');
 
@@ -107,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `vii_comment` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `addtime` varchar(13) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
 
 --
 -- 转存表中的数据 `vii_comment`
@@ -135,7 +133,9 @@ INSERT INTO `vii_comment` (`id`, `uid`, `sid`, `aid`, `pid`, `toid`, `is_good`, 
 (49, 55, 19, 26, 0, 0, 0, 1, 0, '', '我来试试吧！！', 1, '1416383097'),
 (48, 55, 19, 24, 30, 0, 0, 1, 0, '', '自己回复自己，可以吧？<emt>3.gif</emt>', 1, '1416382966'),
 (47, 55, 19, 24, 0, 0, 1, 1, 8, '', '有时候真的是无奈啊，我不做的事情总有人去做，所以你做好人，别人却去做坏事！<emt>5.gif</emt><emt>5.gif</emt>', 1, '1416382910'),
-(46, 55, 19, 24, 33, 56, 0, 1, 0, '', '没什么吧？', 1, '1416382802');
+(46, 55, 19, 24, 33, 56, 0, 1, 0, '', '没什么吧？', 1, '1416382802'),
+(52, 55, 28, 33, 0, 0, 0, 0, 0, '', '说点什么吧？<emt>2.gif</emt>', 1, '1416538140'),
+(53, 55, 28, 33, 52, 0, 0, 0, 0, '', '回复？', 1, '1416538153');
 
 -- --------------------------------------------------------
 
@@ -200,16 +200,17 @@ CREATE TABLE IF NOT EXISTS `vii_share` (
   `remark` varchar(30) NOT NULL,
   `ctime` varchar(13) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
 -- 转存表中的数据 `vii_share`
 --
 
 INSERT INTO `vii_share` (`id`, `title`, `uid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `member`, `click`, `like`, `pic`, `lock`, `desc`, `remark`, `ctime`) VALUES
-(21, '青椒梦想家分享圈', 55, 0, 0, 0, 0, 1, '55', 4, 0, 'Public/Uploads/20141119/546bf5bd760d9.jpg', 0, '青椒梦想家分享圈，有梦就有可能，我们都是爱做梦的人，只要有梦，前方的路就会充满希望和挑战，我爱这样的人生！', '', '1416361410'),
-(20, 'Donkey正品面膜微商分享圈', 55, 0, 0, 0, 0, 1, '55', 26, 0, 'Public/Uploads/20141118/546af1038398c.jpg', 0, 'Donkey正品面膜微商分享圈，欢迎大家加圈积极发言，有惊喜哦？不信你点击我试试！！\n<a href=''http://www.viisou.com''>惊喜领取</a>', '', '1416294663'),
-(19, '微商助手官方分享圈', 52, 0, 0, 1, 1, 1, '52', 161, 3, 'Public/Uploads/20141117/5469bb2286c9f.jpg', 0, '这是微商助手官方分享圈，希望大家能够积极发言，您有什么建议或者发现什么问题都可以发帖反映，我们将以最快的速度为大家解决，非常感谢您的支持与帮助！', '', '1416271593');
+(28, '测试一下，总是可以吧！？', 55, 0, 0, 0, 0, 1, '55', 3, 0, 'Public/Uploads/20141121/546ea5871cf8a.jpg', 0, '测试一下，总是可以吧！？', '', '1416537481'),
+(27, '分享圈中圈', 55, 0, 0, 0, 0, 1, '55', 1, 0, 'Public/Uploads/20141121/546ea39ad9b01.jpg', 0, '分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈分享圈中圈', '', '1416536988'),
+(20, 'Donkey正品面膜微商分享圈', 55, 0, 0, 0, 0, 1, '55', 27, 1, 'Public/Uploads/20141118/546af1038398c.jpg', 0, 'Donkey正品面膜微商分享圈，欢迎大家加圈积极发言，有惊喜哦？不信你点击我试试！！\n<a href=''http://www.viisou.com''>惊喜领取</a>', '', '1416294663'),
+(19, '微商助手官方分享圈', 52, 0, 0, 1, 1, 1, '52', 168, 8, 'Public/Uploads/20141117/5469bb2286c9f.jpg', 0, '这是微商助手官方分享圈，希望大家能够积极发言，您有什么建议或者发现什么问题都可以发帖反映，我们将以最快的速度为大家解决，非常感谢您的支持与帮助！', '', '1416271593');
 
 -- --------------------------------------------------------
 
@@ -258,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `vii_user_share` (
   `sid` int(13) NOT NULL,
   `score` int(13) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `vii_user_share`
@@ -270,7 +271,14 @@ INSERT INTO `vii_user_share` (`id`, `uid`, `sid`, `score`) VALUES
 (3, 52, 19, 3),
 (6, 55, 19, 0),
 (7, 55, 21, 3),
-(8, 56, 19, 0);
+(8, 56, 19, 0),
+(9, 55, 22, 3),
+(10, 55, 23, 3),
+(11, 55, 24, 3),
+(12, 55, 25, 3),
+(13, 55, 26, 3),
+(14, 55, 27, 3),
+(15, 55, 28, 3);
 
 -- --------------------------------------------------------
 
@@ -290,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `vii_visit` (
 --
 
 INSERT INTO `vii_visit` (`id`, `title`, `counts`) VALUES
-(1, 'visit', 2128);
+(1, 'visit', 2327);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

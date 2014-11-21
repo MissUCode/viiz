@@ -90,8 +90,16 @@
             </div><?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
     <div class="row" style="padding-bottom: 60px;">
-        <div class="col-md-12">
-            <p style="text-align: center;line-height: 30px;color: #666;">已显示全部</p>
+        <div class="col-md-12" style="text-align: center;">
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
         </div>
         <div class="col-md-12">
             <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>

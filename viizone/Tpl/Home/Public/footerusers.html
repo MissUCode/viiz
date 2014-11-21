@@ -1,0 +1,40 @@
+<div class="banner">
+    <span class="banner-left"><a href="javascript:history.go(-1);"> < </a></span>
+    <span class="banner-center"></span>
+    <span class="banner-right"><a >...</a></span>
+</div>
+<div class="menu">
+    <h2 class="center-head"><i class="glyphicon glyphicon-user"></i> 个人中心</h2>
+    <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
+        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
+                <span class="infos" style="top:8px;left: 45px;">
+                   <label><b>{$Think.session.users_name}</b><img src="__PUBLIC__/images/l1.jpg"></label>
+                </span>
+    </div>
+    <ul class="menu-list">
+        <li><a href="__ROOT__/Users/shares.html">我的分享圈</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/articles.html">我的帖子</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
+        <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
+        <if condition="$_SESSION['users_id']">
+            <li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
+            <else />
+            <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li>
+        </if>
+    </ul>
+</div>
+<div class="add-content">
+  <span class="bottom-content" style="display:block;width:100%;background: #fff;float: left;border-top:#eee 1px solid;">
+      <div class="row" style="padding:20px 0px 60px 0px;">
+          <div class="col-md-12">
+              <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
+          </div>
+      </div>
+  </span>
+</div>
+<div class="addshare"></div>
+<div class="bu"></div>
+<script type="text/javascript">
+    delurl="__ROOT__/Index/delPic";
+</script>
