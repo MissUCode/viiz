@@ -13,7 +13,12 @@ class IndexAction extends IndexcomAction {
         $aModel=M('article');
         $cModel=M('comment');
         $uModel=M('user_share');
-        $share=$shareModel->order('is_top DESC,click DESC')->select();
+        import('ORG.Util.Page');// 导入分页类
+        $count= $shareModel->count();// 查询满足要求的总记录数
+        $Page = new  Page($count, 30);// 实例化分页类 传入总记录数和每页显示的记录数
+        $show = $Page->vip_show();// 分页显示输出
+        //进行分页数据查询 注意limit方法的参数要使用Page类的属性
+        $share=$shareModel->order("is_top DESC,click DESC")->limit($Page->firstRow.','.$Page->listRows)->select();
         foreach($share as $s){
             $where['sid']=$s['id'];
             $where_user['id']=$s['uid'];
@@ -25,12 +30,16 @@ class IndexAction extends IndexcomAction {
             $shares[]=$s;
         }
         $this->shares=$shares;
+        $this->page=$show;
 	    $this->display();
     }
     //分享圈详情
     public function share(){
-        $where['id']=$_GET['share_id'];
-        $where_a['sid']=$_GET['share_id'];
+        if(isset($_GET['share_id'])){
+            $_SESSION['share_id']=$_GET['share_id'];
+        }
+        $where['id']=$_SESSION['share_id'];
+        $where_a['sid']=$_SESSION['share_id'];
         $where_a['status']=1;
         $shareModel=M('share');
         $articleModel=M('article');
@@ -46,7 +55,11 @@ class IndexAction extends IndexcomAction {
         $shareinfo=$shareModel->where($where)->find();
         $data_update['click']=$shareinfo['click']+1;
         $shareModel->where($where)->data($data_update)->save();
-        $article=$articleModel->where($where_a)->order('is_top DESC,click DESC')->select();
+        import('ORG.Util.Page');// 导入分页类
+        $count= $articleModel->where($where_a)->count();// 查询满足要求的总记录数
+        $Page = new  Page($count, 30);// 实例化分页类 传入总记录数和每页显示的记录数
+        $show = $Page->vip_show();// 分页显示输出
+        $article=$articleModel->where($where_a)->order('is_top DESC,click DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
         foreach($article as $a){
             $where_user['id']=$a['uid'];
             $where_comm['aid']=$a['id'];
@@ -62,6 +75,7 @@ class IndexAction extends IndexcomAction {
         $this->shareinfo=$shareinfo;
         $this->articles=$articles;
         $this->hot_users=$hot_users;
+        $this->page=$show;
         $this->display();
     }
     //帖子详情
