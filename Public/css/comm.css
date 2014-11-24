@@ -204,8 +204,8 @@ label{
     float: left;
 }
 .infos label img{
-    width: 16px;
-    height: 16px;
+    /*width: 16px;*/
+    /*height: 16px;*/
     margin-left: 10px;
 }
 .content-content{
@@ -848,6 +848,7 @@ label{
     cursor: pointer;
     color: #fff;
 }
+
 .delete:hover,.set-top:hover{
     color: #fff;
 }
@@ -862,7 +863,12 @@ label{
     right: 20px;
     background: #42ab35;
     cursor: pointer;
+    z-index: 1;
     color: #fff;
+}
+.manager{
+    top:0px;
+    right:80px;
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     background-color: #42ab35;

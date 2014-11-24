@@ -73,6 +73,8 @@ class UenterAction extends IndexcomAction {
         }else{
            if($memberinfo['password']==md5($password)){
                $_SESSION['users_id']=$memberinfo['id'];
+               $_SESSION['users_lev']=$memberinfo['lev']+1;
+               $_SESSION['users_pic']=$memberinfo['pic'];
                if($memberinfo['nickname']!=""){
                    $_SESSION['users_name']=$memberinfo['nickname'];
                }else if($is_tel){

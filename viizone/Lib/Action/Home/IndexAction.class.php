@@ -25,7 +25,11 @@ class IndexAction extends IndexcomAction {
             $s['comment']=$cModel->where($where)->count();
             $s['article']=$aModel->where($where)->count();
             $s['members']=$uModel->where($where)->count();
-            $s['userpic']=M('users')->where($where_user)->getField('pic');
+           // $s['userpic']=M('users')->where($where_user)->getField('pic');
+            $userinfo=M('users')->where($where_user)->field('nickname,pic,lev')->find();
+            $s['userpic']=$userinfo['pic'];
+            $s['username']=$userinfo['nickname'];
+            $s['lev']=$userinfo['lev']+1;
             $s['desc']=faceToimg($s['desc']);
             $shares[]=$s;
         }
@@ -63,8 +67,10 @@ class IndexAction extends IndexcomAction {
         foreach($article as $a){
             $where_user['id']=$a['uid'];
             $where_comm['aid']=$a['id'];
-            $a['userpic']=$userModel->where($where_user)->getField('pic');
-            $a['username']=$userModel->where($where_user)->getField('nickname');
+            $userinfo=$userModel->where($where_user)->field('nickname,pic,lev')->find();
+            $a['userpic']=$userinfo['pic'];
+            $a['username']=$userinfo['nickname'];
+            $a['lev']=$userinfo['lev']+1;
             if($a['username']==''){
                 $a['username']='weizhu_editer';
             }
@@ -86,6 +92,11 @@ class IndexAction extends IndexcomAction {
         $cModel=D('Comment');
         $articleinfo=$aModel->where($where)->find();
         $articleinfo['content']=faceToimg($articleinfo['content']);
+        $where_user['id']=$articleinfo['uid'];
+        $userinfo=M('users')->where($where_user)->field('nickname,pic,lev')->find();
+        $articleinfo['userpic']=$userinfo['pic'];
+        $articleinfo['username']=$userinfo['nickname'];
+        $articleinfo['lev']=$userinfo['lev']+1;
         $where_share['id']=$articleinfo['sid'];
         $where_comm['aid']=$_GET['article_id'];
         $shareinfo=$sModel->where($where_share)->find();
@@ -93,6 +104,7 @@ class IndexAction extends IndexcomAction {
         $commentCounts=$cModel->where($where_comm)->count();
         foreach($comments as $cc){
             $cc['content']=faceToimg($cc['content']);
+            $cc['lev']=$cc['lev']+1;
             $comments_alls[]=$cc;
         }
         $comments_alls=to_tree($comments_alls);
@@ -397,8 +409,9 @@ class IndexAction extends IndexcomAction {
 
     }
     public function test(){
-        $cont="<emt>3.gif</emt><emt>4.gif</emt>";
-        echo faceToimg($cont);
+        $articleModel=M('article');
+        $com=$articleModel->where(1)->field('id,title')->find();
+        print_r($com);
         exit;
     }
 }

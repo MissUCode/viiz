@@ -19,12 +19,20 @@
         </div>
         <div class="col-md-12 content content-d" url="" >
             <div class="col-md-12 content-user" >
-                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic">
+
+                <if condition="$articleinfo['pic']">
+                    <img src="__ROOT__/{$articleinfo.pic}" class="img-responsive img-circle user-pic">
+                    <else />
+                    <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic">
+                </if>
+
                 <span class="infos">
-                    <label><b>{$articleinfo.title|msubstr=0,15}</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">{$articleinfo.addtime|date='Y-m-d H:i:s',###}</label>
+                    <label><b>{$articleinfo.title|msubstr=0,12}</b><img src="__PUBLIC__/images/v{$articleinfo.lev}.png"></label>
+                    <label style="font-size: 10px;">{$articleinfo.addtime|date='Y-m-d H:i:s',###}&nbsp; By <font style="color: #42ab35;">{$articleinfo.username|msubstr=0,8}</font></label>
                 </span>
-                <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
+                <if condition="$articleinfo['is_top']">
+                    <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
+                </if>
             </div>
             <div class="col-md-12 content-content">
                 <span class="col-md-12" >
@@ -56,12 +64,12 @@
                        <if condition="$comments['pic']">
                            <img src="__ROOT__/{$comments.pic}" class="img-responsive img-circle user-pic2">
                            <else />
-                           <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic2">
+                           <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic2">
                        </if>
                    </p>
                    <p class="the-right">
                        <font style="color: #42ab35;">{$comments.nickname|default="该用户隐藏昵称"}
-                           <img src="__PUBLIC__/images/l1.jpg" width="15" height="15"> :
+                           <img src="__PUBLIC__/images/v{$comments.lev}.png"> :
                        </font>
                        {$comments.content}
                        <if condition="$comments['pics']">

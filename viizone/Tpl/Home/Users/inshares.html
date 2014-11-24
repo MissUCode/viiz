@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>我加入的分享圈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
+    <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
+</head>
+<body>
+<div class="container-fluid">
+    <include file="Public/header" />
+    <div class="row" >
+        <div class="col-md-12 content content-d" url=""  >
+            <h1 class="h1-top"><span class="glyphicon glyphicon-share"></span>  我加入的分享圈</h1>
+        </div>
+        <volist name="shares" id="shares">
+        <div class="col-md-12 content content-d" url="">
+            <div class="col-md-12 content-user" >
+                <a class="user-pic delete" alt="{$shares.id}" title="share">退出</a>
+                <span class="infos">
+                    <label><b>{$shares.title}</b></label>
+                    <label style="font-size: 10px;">{$shares.ctime|date='Y-m-d H:i:s',###}</label>
+                </span>
+            </div>
+            <div class="col-md-12 content-content" url="">
+                <span class="col-md-12" >
+                   <p>{$shares.desc}</p>
+                   <p class="action-list">
+                       <label>
+                           <a  class="zan">{$shares.like}</a>
+                           <a  class="share shareTo"></a>
+                           <a  class="comment">{$shares.comments}</a>
+                       </label>
+                   </p>
+                </span>
+
+            </div>
+    </div>
+        </volist>
+        <if condition="!$shares">
+            <div class="col-md-12 content content-d" url="" style="height: 100px;margin-top: 15px;">
+              <span class="the-comment" >
+                   <p class="no-comment">您还没有创建分享圈呢~~！</p>
+             </span>
+            </div>
+        </if>
+    </div>
+    <div class="row" style="padding-bottom: 60px;">
+        <div class="col-md-12">
+            <p style="text-align: center;line-height: 30px;color: #666;">已显示全部</p>
+        </div>
+        <div class="col-md-12">
+            <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
+        </div>
+    </div>
+</div>
+<include file="Public/footerusers" />
+<script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/basic.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
+<script src="__PUBLIC__/js/layer/layer.m.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.delete').click(function(){
+            var id=$(this).attr('alt');
+            var act=$(this).attr('title');
+            layer.open({
+                content: '你确认要删除该圈子吗？',
+                btn: ['确定', '取消'],
+                shadeClose: false,
+                yes: function(){
+                    $.post('__ROOT__/Users/delete',{id:id,act:act},function(data){
+                        var m=data.message;
+                        var rid=data.rid;
+                        if(m=='fail'){
+                            layer.open({
+                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除失败!',
+                                style: 'background-color:#42ab35; color:red; border:none;',
+                                time: 2
+                            });
+                        }else if(m=='success'){
+                            layer.open({
+                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除成功!',
+                                style: 'background-color:#42ab35; color:#fff; border:none;',
+                                time: 2
+                            });
+                            setTimeout(function(){
+                                location.reload();
+                            },1000);
+
+                        }else{
+                        }
+                    })
+                }, no: function(){
+                    return false;
+                }
+            });
+        })
+    })
+</script>
+</body>
+</html>

@@ -16,8 +16,8 @@ class CommentModel extends RelationModel{
             'foreign_key'=>'uid',
             'parent_key'=>'id',
             'mapping_name' => 'comment',
-            'mapping_fields'=>'nickname,pic',
-            'as_fields'=>'nickname:nickname,pic:pic'
+            'mapping_fields'=>'nickname,pic,lev',
+            'as_fields'=>'nickname:nickname,pic:pic,lev:lev'
         ),
         'tousers'=>array(
             'mapping_type' => BELONGS_TO,

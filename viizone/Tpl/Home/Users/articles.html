@@ -25,7 +25,9 @@
                     <label><b>{$articles.title}</b></label>
                     <label style="font-size: 10px;">{$articles.addtime|date='Y-m-d H:i:s',###}</label>
                 </span>
-                <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
+                <if condition="$articles['is_top']">
+                    <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
+                </if>
             </div>
             <div class="col-md-12 content-content" url="">
                 <span class="col-md-12" >
@@ -42,6 +44,13 @@
             </div>
         </div>
         </volist>
+        <if condition="!$shares">
+            <div class="col-md-12 content content-d" url="" style="height: 100px;margin-top: 15px;">
+              <span class="the-comment" >
+                   <p class="no-comment">您还没有发布帖子呢~~！</p>
+             </span>
+            </div>
+        </if>
     </div>
     <div class="row" style="padding-bottom: 60px;">
         <div class="col-md-12">

@@ -42,13 +42,16 @@
                     <if condition="$shares['userpic']">
                      <img src="__ROOT__/{$shares.userpic}" class="img-responsive img-circle user-pic">
                         <else />
-                        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
+                        <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic">
                     </if>
                     <span class="infos">
-                        <label><b>{$shares.title}</b>
-                            <img src="__PUBLIC__/images/l1.jpg">
+                        <label><b>{$shares.title|msubstr=0,12}...</b>
+                            <img src="__PUBLIC__/images/v{$shares.lev}.png">
                         </label>
-                        <label style="font-size: 10px;">会员：<font style="color: #42ab35;">{$shares.members}</font>　帖子：<font style="color: #42ab35;">{$shares.article}</font></label>
+                        <label style="font-size: 10px;">
+                            会员：<font style="color: #42ab35;">{$shares.members}</font>　帖子：<font style="color: #42ab35;">{$shares.article} </font>
+                             &nbsp;圈主：<font style="color: #42ab35;">{$shares.username|msubstr=0,8}</font>
+                        </label>
                     </span>
                     <if condition="$shares['is_top'] eq 1">
                         <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">

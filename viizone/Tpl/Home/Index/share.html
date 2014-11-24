@@ -26,7 +26,7 @@
                          <if condition="$hot['pic'] neq ''">
                              <img src="__ROOT__/{$hot.pic}" class="img-circle">
                              <else />
-                             <img src="__PUBLIC__/images/vii.png" class="img-circle">
+                             <img src="__PUBLIC__/images/v_user.png" class="img-circle">
                          </if>
                      </a>
                      <label>{$hot.nickname|msubstr=0,5}</label>
@@ -41,11 +41,11 @@
                 <if condition="$art['userpic'] neq ''">
                   <img src="__ROOT__/{$art.userpic}" class="img-responsive img-circle user-pic">
                     <else />
-                    <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
+                    <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic">
                 </if>
                 <span class="infos">
-                    <label><b>{$art.title|msubstr=0,15}...</b><img src="__PUBLIC__/images/l1.jpg"></label>
-                    <label style="font-size: 10px;">{$art.addtime|date='Y-m-d H:i:s',###}</label>
+                    <label><b>{$art.title|msubstr=0,12}...</b><img src="__PUBLIC__/images/v{$art.lev}.png"></label>
+                    <label style="font-size: 10px;">{$art.addtime|date='Y-m-d H:i:s',###} &nbsp; By <font style="color: #42ab35;">{$art.username|msubstr=0,8}</font></label>
                 </span>
                 <if condition="$art['is_top']">
                  <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
@@ -69,6 +69,13 @@
             </div>
         </div>
         </volist>
+        <if condition="!$articles">
+            <div class="col-md-12 content" url="" style="height: 100px;">
+              <span class="the-comment" >
+                   <p class="no-comment">本分享圈暂无帖子~~！</p>
+             </span>
+            </div>
+        </if>
     </div>
     <div class="row" style="padding-bottom: 60px;">
         <div class="col-md-12" style="text-align: center;">

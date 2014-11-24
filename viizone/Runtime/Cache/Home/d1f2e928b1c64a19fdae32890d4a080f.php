@@ -69,6 +69,11 @@
 
             </div>
         </div><?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php if(!$shares): ?><div class="col-md-12 content content-d" url="" style="height: 100px;margin-top: 15px;">
+              <span class="the-comment" >
+                   <p class="no-comment">您还没有发布帖子呢~~！</p>
+             </span>
+            </div><?php endif; ?>
     </div>
     <div class="row" style="padding-bottom: 60px;">
         <div class="col-md-12">
@@ -87,17 +92,20 @@
 <div class="menu">
     <h2 class="center-head"><i class="glyphicon glyphicon-user"></i> 个人中心</h2>
     <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
-        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
+        <?php if($_SESSION['users_pic']): ?><img src="__ROOT__/<?php echo (session('users_pic')); ?>" class="img-responsive img-circle user-pic">
+            <?php else: ?>
+            <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic"><?php endif; ?>
                 <span class="infos" style="top:8px;left: 45px;">
-                   <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/l1.jpg"></label>
+                   <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/v<?php echo (session('users_lev')); ?>.png"></label>
                 </span>
     </div>
     <ul class="menu-list">
-        <li><a href="__ROOT__/Users/shares.html">我的分享圈</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Users/articles.html">我的帖子</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
-        <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/shares.html">我创建的分享圈</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/inShares.html">我加入的分享圈</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/articles.html">我发布的帖子</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/profile.html">我的个人资料</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/notice.html">我的系统通知</a><i class="go">></i><i class="notice">15</i></li>
+        <li><a href="#">我要反馈建议</a><i class="go">></i></li>
         <?php if($_SESSION['users_id']): ?><li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
             <?php else: ?>
             <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li><?php endif; ?>

@@ -92,9 +92,11 @@
 <div class="menu">
     <h2 class="center-head"><i class="glyphicon glyphicon-user"></i> 个人中心</h2>
     <div class="col-md-12 content-user" style="margin:15px 0px 0px 15px;">
-        <img src="__PUBLIC__/images/vii.png" class="img-responsive img-circle user-pic">
+        <?php if($_SESSION['users_pic']): ?><img src="__ROOT__/<?php echo (session('users_pic')); ?>" class="img-responsive img-circle user-pic">
+            <?php else: ?>
+            <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic"><?php endif; ?>
                 <span class="infos" style="top:8px;left: 45px;">
-                   <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/l1.jpg"></label>
+                   <label><b><?php echo (session('users_name')); ?></b><img src="__PUBLIC__/images/v<?php echo (session('users_lev')); ?>.png"></label>
                 </span>
     </div>
     <ul class="menu-list">

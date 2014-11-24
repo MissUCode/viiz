@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>微商助手</title>
+    <title>我创建的分享圈</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
@@ -15,17 +15,21 @@
     <include file="Public/header" />
     <div class="row" >
         <div class="col-md-12 content content-d" url=""  >
-            <h1 class="h1-top"><span class="glyphicon glyphicon-share"></span>  我的分享圈</h1>
+            <h1 class="h1-top"><span class="glyphicon glyphicon-share"></span>  我创建的分享圈</h1>
         </div>
         <volist name="shares" id="shares">
         <div class="col-md-12 content content-d" url="">
             <div class="col-md-12 content-user" >
                 <a class="user-pic delete" alt="{$shares.id}" title="share">删除</a>
+                <a class="set-top manager" href="__ROOT__/Users/article/sid/{$shares.id}/uid/{$Think.session.users_id}" alt="{$shares.id}" title="article">帖子</a>
+                <a class="set-top" href="__ROOT__/Users/members/sid/{$shares.id}/uid/{$Think.session.users_name}" alt="{$shares.id}" title="member">会员</a>
                 <span class="infos">
                     <label><b>{$shares.title}</b></label>
                     <label style="font-size: 10px;">{$shares.ctime|date='Y-m-d H:i:s',###}</label>
                 </span>
+                <if condition="$shares['is_top']">
                 <img src="__PUBLIC__/images/hot.gif" class="hot-best-top">
+                </if>
             </div>
             <div class="col-md-12 content-content" url="">
                 <span class="col-md-12" >
@@ -42,6 +46,13 @@
             </div>
     </div>
         </volist>
+        <if condition="!$shares">
+            <div class="col-md-12 content content-d" url="" style="height: 100px;margin-top: 15px;">
+              <span class="the-comment" >
+                   <p class="no-comment">您还没有创建分享圈呢~~！</p>
+             </span>
+            </div>
+        </if>
     </div>
     <div class="row" style="padding-bottom: 60px;">
         <div class="col-md-12">
@@ -64,7 +75,7 @@
             var id=$(this).attr('alt');
             var act=$(this).attr('title');
             layer.open({
-                content: '你确认要删除该帖子吗？',
+                content: '你确认要删除该圈子吗？',
                 btn: ['确定', '取消'],
                 shadeClose: false,
                 yes: function(){
