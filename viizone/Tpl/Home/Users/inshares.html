@@ -20,7 +20,7 @@
         <volist name="shares" id="shares">
         <div class="col-md-12 content content-d" url="">
             <div class="col-md-12 content-user" >
-                <a class="user-pic delete" alt="{$shares.id}" title="share">退出</a>
+                <a class="user-pic delete" alt="{$shares.id}" title="{$Think.session.users_id}">退出</a>
                 <span class="infos">
                     <label><b>{$shares.title}</b></label>
                     <label style="font-size: 10px;">{$shares.ctime|date='Y-m-d H:i:s',###}</label>
@@ -67,25 +67,24 @@
 <script type="text/javascript">
     $(function(){
         $('.delete').click(function(){
-            var id=$(this).attr('alt');
-            var act=$(this).attr('title');
+            var sid=$(this).attr('alt');
+            var uid=$(this).attr('title');
             layer.open({
-                content: '你确认要删除该圈子吗？',
+                content: '你确认要退出该圈子吗？',
                 btn: ['确定', '取消'],
                 shadeClose: false,
                 yes: function(){
-                    $.post('__ROOT__/Users/delete',{id:id,act:act},function(data){
+                    $.post('__ROOT__/Users/out',{sid:sid,uid:uid},function(data){
                         var m=data.message;
-                        var rid=data.rid;
                         if(m=='fail'){
                             layer.open({
-                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除失败!',
+                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出失败!',
                                 style: 'background-color:#42ab35; color:red; border:none;',
                                 time: 2
                             });
                         }else if(m=='success'){
                             layer.open({
-                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除成功!',
+                                content: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出成功!',
                                 style: 'background-color:#42ab35; color:#fff; border:none;',
                                 time: 2
                             });
@@ -93,7 +92,12 @@
                                 location.reload();
                             },1000);
 
-                        }else{
+                        }else if(m=='can-not'){
+                            layer.open({
+                                content: '&nbsp;你不能退出自己的圈子!',
+                                style: 'background-color:#42ab35; color:#fff; border:none;',
+                                time: 2
+                            });
                         }
                     })
                 }, no: function(){

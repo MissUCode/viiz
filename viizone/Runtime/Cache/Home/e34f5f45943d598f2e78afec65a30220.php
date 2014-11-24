@@ -76,11 +76,12 @@
                 </span>
     </div>
     <ul class="menu-list">
-        <li><a href="__ROOT__/Users/shares.html">我的分享圈</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Users/articles.html">我的帖子</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Users/profile.html">我的资料</a><i class="go">></i></li>
-        <li><a href="__ROOT__/Users/notice.html">我的通知</a><i class="go">></i><i class="notice">15</i></li>
-        <li><a href="__ROOT__/Users/feedback.html">反馈建议</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/shares.html">我创建的分享圈</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/inShares.html">我加入的分享圈</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/articles.html">我发布的帖子</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/profile.html">我的个人资料</a><i class="go">></i></li>
+        <li><a href="__ROOT__/Users/notice.html">我的系统通知</a><i class="go">></i><i class="notice">15</i></li>
+        <li><a href="#">我要反馈建议</a><i class="go">></i></li>
         <?php if($_SESSION['users_id']): ?><li><a href="__ROOT__/Uenter/logout.html">退出登录</a><i class="go">></i></li>
             <?php else: ?>
             <li><a href="__ROOT__/Uenter/login.html">我要登录</a><i class="go">></i></li><?php endif; ?>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 11 月 24 日 08:56
--- 服务器版本: 5.5.20
--- PHP 版本: 5.3.10
+-- 生成日期: 2014 年 11 月 24 日 15:42
+-- 服务器版本: 5.5.24-log
+-- PHP 版本: 5.4.3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -80,11 +80,11 @@ CREATE TABLE IF NOT EXISTS `vii_article` (
 --
 
 INSERT INTO `vii_article` (`id`, `title`, `uid`, `sid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `pics`, `click`, `like`, `lock`, `content`, `addtime`) VALUES
-(36, '美女化妆品分享圈-第一帖', 56, 29, 0, 0, 0, 0, 1, 'Public/Uploads/20141124/5472a34826d6e.jpg', 0, 4, 0, '美女化妆品分享圈-第一帖，我先来，你跟上，大家共分享，同进步！<emt>2.gif</emt><emt>2.gif</emt>', '1416799049'),
+(36, '美女化妆品分享圈-第一帖', 56, 29, 0, 0, 1, 0, 1, 'Public/Uploads/20141124/5472a34826d6e.jpg', 0, 4, 0, '美女化妆品分享圈-第一帖，我先来，你跟上，大家共分享，同进步！<emt>2.gif</emt><emt>2.gif</emt>', '1416799049'),
 (33, '测试一下，总是可以吧！？', 55, 28, 0, 0, 0, 0, 1, '', 0, 0, 0, '测试一下，总是可以吧！？测试一下，总是可以吧！？测试一下，总是可以吧！？<emt>2.gif</emt><emt>2.gif</emt><emt>2.gif</emt><emt>2.gif</emt><emt>2.gif</emt>', '1416537504'),
 (25, 'Donkey正品面膜，欢迎订购', 55, 20, 0, 0, 0, 1, 1, 'Public/Uploads/20141118/546af1bd454ac.jpg', 0, 0, 0, 'Donkey正品面膜，欢迎订购，正品保证，无理由七天退还货，真的很给力！', '1416294847'),
 (24, '用户中心“我的帖子”的问题反馈', 55, 19, 0, 0, 1, 1, 1, 'Public/Uploads/20141118/546a97b4b8d39.jpg', 0, 20, 0, '我的帖子不显示图片，点击浏览也无效，希望微商助手官方技术人员解决这个问题，或者这是有意而为之，请给一个满意的解释，谢谢！', '1416271796'),
-(40, '发一个帖子先', 55, 28, 0, 0, 0, 0, 1, 'Public/Uploads/20141124/5472ee36bcb69.jpg', 0, 0, 0, '发一个帖子先<emt>2.gif</emt><emt>2.gif</emt>', '1416818233');
+(40, '发一个帖子先', 55, 28, 0, 0, 1, 0, 1, 'Public/Uploads/20141124/5472ee36bcb69.jpg', 0, 0, 0, '发一个帖子先<emt>2.gif</emt><emt>2.gif</emt>', '1416818233');
 
 -- --------------------------------------------------------
 
@@ -215,8 +215,8 @@ CREATE TABLE IF NOT EXISTS `vii_share` (
 INSERT INTO `vii_share` (`id`, `title`, `uid`, `is_hot`, `is_tj`, `is_top`, `is_check`, `status`, `member`, `click`, `like`, `pic`, `lock`, `desc`, `remark`, `ctime`) VALUES
 (28, '测试一下，总是可以吧！？', 55, 0, 0, 0, 0, 1, '55', 11, 4, 'Public/Uploads/20141121/546ea5871cf8a.jpg', 0, '测试一下，总是可以吧！？', '', '1416537481'),
 (29, '美女化妆品分享圈', 56, 0, 0, 0, 0, 1, '56', 2, 1, 'Public/Uploads/20141124/5472a2fee6037.jpg', 0, '美女化妆品分享圈，欢迎入驻，共享知识与技巧，助你进步，助你成功！<emt>30.gif</emt><emt>30.gif</emt>', '', '1416798978'),
-(20, 'Donkey正品面膜微商分享圈', 55, 0, 0, 0, 0, 1, '55', 32, 1, 'Public/Uploads/20141118/546af1038398c.jpg', 0, 'Donkey正品面膜微商分享圈，欢迎大家加圈积极发言，有惊喜哦？不信你点击我试试！！\n<a href=''http://www.viisou.com''>惊喜领取</a>', '', '1416294663'),
-(19, '微商助手官方分享圈', 52, 0, 0, 1, 1, 1, '52', 206, 8, 'Public/Uploads/20141117/5469bb2286c9f.jpg', 0, '这是微商助手官方分享圈，希望大家能够积极发言，您有什么建议或者发现什么问题都可以发帖反映，我们将以最快的速度为大家解决，非常感谢您的支持与帮助！', '', '1416271593');
+(20, 'Donkey正品面膜微商分享圈', 55, 0, 0, 0, 0, 1, '55', 33, 1, 'Public/Uploads/20141118/546af1038398c.jpg', 0, 'Donkey正品面膜微商分享圈，欢迎大家加圈积极发言，有惊喜哦？不信你点击我试试！！\n<a href=''http://www.viisou.com''>惊喜领取</a>', '', '1416294663'),
+(19, '微商助手官方分享圈', 52, 0, 0, 1, 1, 1, '52', 208, 8, 'Public/Uploads/20141117/5469bb2286c9f.jpg', 0, '这是微商助手官方分享圈，希望大家能够积极发言，您有什么建议或者发现什么问题都可以发帖反映，我们将以最快的速度为大家解决，非常感谢您的支持与帮助！', '', '1416271593');
 
 -- --------------------------------------------------------
 
@@ -266,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `vii_user_share` (
   `sid` int(13) NOT NULL,
   `score` int(13) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- 转存表中的数据 `vii_user_share`
@@ -278,7 +278,7 @@ INSERT INTO `vii_user_share` (`id`, `uid`, `sid`, `score`) VALUES
 (3, 52, 19, 3),
 (6, 55, 19, 0),
 (7, 55, 21, 3),
-(8, 56, 19, 0),
+(21, 56, 19, 0),
 (9, 55, 22, 3),
 (10, 55, 23, 3),
 (11, 55, 24, 3),
@@ -286,8 +286,7 @@ INSERT INTO `vii_user_share` (`id`, `uid`, `sid`, `score`) VALUES
 (13, 55, 26, 3),
 (14, 55, 27, 3),
 (15, 55, 28, 3),
-(16, 56, 20, 0),
-(17, 56, 28, 0),
+(22, 56, 20, 0),
 (18, 56, 29, 3),
 (19, 55, 30, 3),
 (20, 55, 31, 3);
@@ -310,7 +309,7 @@ CREATE TABLE IF NOT EXISTS `vii_visit` (
 --
 
 INSERT INTO `vii_visit` (`id`, `title`, `counts`) VALUES
-(1, 'visit', 2812);
+(1, 'visit', 3086);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

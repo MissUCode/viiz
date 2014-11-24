@@ -849,7 +849,7 @@ label{
     color: #fff;
 }
 
-.delete:hover,.set-top:hover{
+.delete:hover,.set-top:hover,.out:hover{
     color: #fff;
 }
 .set-top{
@@ -869,6 +869,19 @@ label{
 .manager{
     top:0px;
     right:80px;
+}
+.out{
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    background: #ff6347;
+    cursor: pointer;
+    color: #fff;
+    top:0px;
+    right:20px;
 }
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     background-color: #42ab35;

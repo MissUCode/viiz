@@ -51,7 +51,12 @@ class UsersAction extends UcommAction {
         foreach($shares_ids as $id){
             $ids[]=$id['sid'];
         }
-        $where_share['sid']=array('in',$ids);
+        $ids=implode(',',$ids);
+//        echo $ids;
+//        exit;
+        $where_share['uid']=$_SESSION['users_id'];
+        $where_share['sid']=array("IN","$ids");
+        $where_share['_logic']='and';
         $shares=$Model->where($where_share)->order('id DESC')->select();
         foreach($shares as $s){
             $where_comm['sid']=$s['id'];
@@ -59,6 +64,8 @@ class UsersAction extends UcommAction {
             $s['desc']=faceToimg($s['desc']);
             $allshares[]=$s;
         }
+//        print_r($allshares);
+//        exit;
         $this->shares=$allshares;
         $this->display('inshares');
     }
@@ -83,10 +90,47 @@ class UsersAction extends UcommAction {
     }
     //置顶
     public function setTop(){
-        $this->display();
+        $model=M('article');
+        $where['id']=$_POST['aid'];
+        $data['is_top']=1;
+        if($model->where($where)->data($data)->save()){
+            $where=array();
+            $where['sid']=$_POST['sid'];
+            $where['id']=array('neq',$_POST['aid']);
+            $data['is_top']=0;
+            $model->where($where)->data($data)->save();
+            $res['message']='success';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            $res['message']='fail';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }
     }
     //会员
     public function members(){
+        $share=M('share');
+        $share_user=M('user_share');
+        $users=M('users');
+        $where_share['id']=$_GET['sid'];
+        $where['sid']=$_GET['sid'];
+        $share_info=$share->where($where_share)->find();
+        if($share_info['uid']!=$_GET['uid']){
+            echo 'Oh,NO,Fuck You!';
+            exit;
+        }
+        $user_ids=$share_user->where($where)->field('uid')->select();
+
+        foreach($user_ids as $id){
+            $ids[]=$id['uid'];
+        }
+        $where_users['id']=array('in',$ids);
+        $members=$users->where($where_users)->select();
+        $this->members=$members;
+        $this->infos=$share_info;
         $this->display();
     }
     //帖子
@@ -163,12 +207,42 @@ class UsersAction extends UcommAction {
         }
 
     }
+    //踢人
+    public function out(){
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
+        $sid=$_POST['sid'];
+        $uid=$_POST['uid'];
+        $Model=M('user_share');
+        $share=M('share');
+        $where_share['id']=$sid;
+        $where_share['uid']=$uid;
+        $share_info=$share->where($where_share)->find();
+        if(!empty($share_info)){
+            $res['message']='can-not';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }
+        $where['uid']=$uid;
+        $where['sid']=$sid;
+        if($Model->where($where)->delete()){
+            $res['message']='success';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }else{
+            $res['message']='fail';
+            $res['rid']=0;
+            $this->ajaxReturn($res,'JSON');
+            exit;
+        }
+    }
     public function a(){
         $this->display();
     }
-
-
-
 
 
 }
