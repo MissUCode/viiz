@@ -51,11 +51,8 @@ class UsersAction extends UcommAction {
         foreach($shares_ids as $id){
             $ids[]=$id['sid'];
         }
-        $ids=implode(',',$ids);
-//        echo $ids;
-//        exit;
-        $where_share['uid']=$_SESSION['users_id'];
-        $where_share['sid']=array("IN","$ids");
+        //$where_share['uid']=$_SESSION['users_id'];
+        $where_share['id']=array("IN",$ids);
         $where_share['_logic']='and';
         $shares=$Model->where($where_share)->order('id DESC')->select();
         foreach($shares as $s){
@@ -123,7 +120,6 @@ class UsersAction extends UcommAction {
             exit;
         }
         $user_ids=$share_user->where($where)->field('uid')->select();
-
         foreach($user_ids as $id){
             $ids[]=$id['uid'];
         }
@@ -180,9 +176,11 @@ class UsersAction extends UcommAction {
                 $where_del['sid']=$id;
                 $where_com['uid']=$_SESSION['users_id'];
                 $where_com['sid']=$id;
-                $del_arts=M('article')->where($where_del)->select();
-                M('article')->where($where_del)->delete();
-                M('comment')->where($where_com)->delete();
+                $where_user_share['sid']=$id;
+                M('user_share')->where($where_user_share)->delete();//删除分享圈的会员记录
+                $del_arts=M('article')->where($where_del)->select();//查询要删除的文章
+                M('article')->where($where_del)->delete();//删除文章
+                M('comment')->where($where_com)->delete();//删除评论
                 @unlink('./'.$nowinfos['pic']);
                 foreach($del_arts as $del){
                     @unlink('./'.$del['pics']);

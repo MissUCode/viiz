@@ -184,6 +184,7 @@
             }
             $.post('__ROOT__/Index/addshare',{title:title,desc:desc,pic:pic},function(data){
                    var m=data.message;
+                   var rid=data.id;
                 if(m=='110'){
                     mobile_tip('error','您还没登录！',1000);
                     setTimeout(function(){
@@ -192,7 +193,7 @@
                  }else if(m=='success'){
                     mobile_tip('success','添加成功！',1000);
                         setTimeout(function(){
-                            location.href='__ROOT__/Users/shares';
+                            location.href='__ROOT__/Index/share/share_id/'+rid;
                         },1000);
                 }else if(m=='fail'){
                     mobile_tip('error','建圈失败！',1000);

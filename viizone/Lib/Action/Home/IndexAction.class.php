@@ -145,10 +145,16 @@ class IndexAction extends IndexcomAction {
         $data['member']=$_SESSION['users_id'];
         $data['ctime']=time();
         if($id=$model->data($data)->add()){
+           // 分享圈热度+3
             $datas['uid']=$_SESSION['users_id'];
             $datas['sid']=$id;
             $datas['score']=3;
             $user_share->data($datas)->add();
+            //个人积分+5
+            $user_infos=M('users')->where("id=".$_SESSION['users_id'])->find();
+            $data_users['score']=$user_infos['score']+5;
+            $data_users['totalScore']=$user_infos['totalScore']+5;
+            M('users')->where("id=".$_SESSION['users_id'])->data($data_users)->save();
             $res['message']='success';
             $res['id']=$id;
             $this->ajaxReturn($res,'JSON');
@@ -205,10 +211,17 @@ class IndexAction extends IndexcomAction {
         $data['addtime']=time();
         if($id=$model->data($data)->add()){
             //预留发帖奖励积分入口
-//            $datas['uid']=$_SESSION['users_id'];
-//            $datas['sid']=$id;
-//            $datas['score']=3;
-//            $user_share->data($datas)->add();
+            // 分享圈热度+2
+            $where_us['uid']=$_SESSION['users_id'];
+            $where_us['sid']=$id;
+            $us_infos=$user_share->where($where_us)->find();
+            $datas['score']=$us_infos['score']+2;
+            $user_share->where($where_us)->data($datas)->save();
+            //个人积分+5
+            $user_infos=M('users')->where("id=".$_SESSION['users_id'])->find();
+            $data_users['score']=$user_infos['score']+3;
+            $data_users['totalScore']=$user_infos['totalScore']+3;
+            M('users')->where("id=".$_SESSION['users_id'])->data($data_users)->save();
             $res['message']='success';
             $res['id']=$id;
             $this->ajaxReturn($res,'JSON');
@@ -303,6 +316,11 @@ class IndexAction extends IndexcomAction {
         $data['content']=$content;
         $data['addtime']=time();
         if($id=$model->data($data)->add()){
+            //个人积分+5
+            $user_infos=M('users')->where("id=".$_SESSION['users_id'])->find();
+            $data_users['score']=$user_infos['score']+1;
+            $data_users['totalScore']=$user_infos['totalScore']+1;
+            M('users')->where("id=".$_SESSION['users_id'])->data($data_users)->save();
             $res['message']='success';
             $res['id']=$id;
             $this->ajaxReturn($res,'JSON');
@@ -315,6 +333,7 @@ class IndexAction extends IndexcomAction {
         }
     }
     //异步上传图片
+    /*
     public function upImg(){
         $setting = array(
             'mimes' => '', //允许上传的文件MiMe类型
@@ -324,6 +343,7 @@ class IndexAction extends IndexcomAction {
             'subName' => array('date', 'Ymd'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
             'rootPath' => './Public/Uploads/', //保存根路径
             'savePath' => '', //保存路径
+            'zipImages'         =>  true,
         );
         import('ORG.Util.Upload');
         if($_FILES['pic']['error']!=4 && $_FILES['pic']['error']!=4){
@@ -345,6 +365,7 @@ class IndexAction extends IndexcomAction {
             }
         }
     }
+    */
     //异步删除图片
     public function  delPic(){
         if(!IS_POST){
@@ -412,6 +433,57 @@ class IndexAction extends IndexcomAction {
         $articleModel=M('article');
         $com=$articleModel->where(1)->field('id,title')->find();
         print_r($com);
+        exit;
+    }
+    //异步上传图片
+    public function upImg() {
+        if (!empty($_FILES)) {
+            //如果有文件上传 上传附件
+            $this->_upload();
+        }
+    }
+    // 文件上传
+    protected function _upload() {
+        import('@.ORG.UploadFile');
+        //导入上传类
+        $upload = new UploadFile();
+        //设置上传文件大小
+        $upload->maxSize            = 4194304;
+        //设置上传文件类型
+        $upload->allowExts          = explode(',', 'jpg,gif,png,jpeg');
+        //设置附件上传目录
+        $upload->savePath           = './Public/Uploads/';
+        //设置需要生成缩略图，仅对图像文件有效
+        $upload->thumb              = true;
+        // 设置引用图片类库包路径
+        $upload->imageClassPath     = '@.ORG.Image';
+        //设置需要生成缩略图的文件后缀
+        $upload->thumbPrefix        = 'vii_';  //生产2张缩略图
+        //设置缩略图最大宽度
+        $upload->thumbMaxWidth      = '1024';
+        //设置缩略图最大高度
+        $upload->thumbMaxHeight     = '500';
+        //设置上传文件规则
+        $upload->saveRule           = 'uniqid';
+        //删除原图
+        $upload->thumbRemoveOrigin  = true;
+        if (!$upload->upload()) {
+            //捕获上传异常
+            //$this->error($upload->getErrorMsg());
+            $result['message']='wrong';
+            $this->ajaxReturn($result,'JSON');
+            exit;
+        } else {
+            //取得成功上传的文件信息
+            $uploadList = $upload->getUploadFileInfo();
+            import('@.ORG.Image');
+            //给m_缩略图添加水印, Image::water('原文件名','水印图片地址')
+            Image::water($uploadList[0]['savepath'] . 'vii_' . $uploadList[0]['savename'],'./Public/images/water.png');
+            $_POST['image'] ='./Public/Uploads/vii_'.$uploadList[0]['savename'];
+        }
+        $result['message']='ok';
+        $result['name']=$_POST['image'];
+        $this->ajaxReturn($result,'JSON');
         exit;
     }
 }

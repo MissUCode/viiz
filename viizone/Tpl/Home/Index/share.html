@@ -109,6 +109,7 @@
             }
             $.post('__ROOT__/Index/addArticle',{title:title,desc:desc,pic:pic,sid:sid},function(data){
                 var m=data.message;
+                var rid=data.id;
                 if(m=='no-in'){
                     mobile_tip('waiting','请先加入分享圈！',1000);
                     setTimeout(function(){
@@ -122,7 +123,7 @@
                 }else if(m=='success'){
                     mobile_tip('success','发布成功！',1000);
                     setTimeout(function(){
-                        location.href='__ROOT__/Users/shares';
+                        location.href='__ROOT__/Index/article/article_id/'+rid;
                     },1000);
                 }else if(m=='fail'){
                     mobile_tip('error','发布帖子失败！',1000);
