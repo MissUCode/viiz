@@ -19,12 +19,77 @@ class UsersAction extends UcommAction {
     }
     //修改个人信息
     public function profile(){
-        $this->position="profile";
-        $modle=M("member");
-        $where['id']=$_SESSION['member_id'];
+        $modle=M("users");
+        $where['id']=$_SESSION['users_id'];
         $mem_info=$modle->where($where)->find();
+        if(checkEmail($mem_info['email'])){
+            $mem_info['username']=$mem_info['email'];
+        }else if(checkTel($mem_info['phone'])){
+            $mem_info['username']=$mem_info['phone'];
+        }else{
+            $mem_info['username']='';
+        }
         $this->infos=$mem_info;
         $this->display('profile');
+    }
+    //profileAction
+    public function profileAction(){
+        if(!IS_POST){
+            echo '您无操作权限！';
+            exit;
+        }
+        if(isset($_SESSION['time'])&& (time()-$_SESSION['time'])<60){
+            echo 'wait';
+            exit;
+        }
+        if(!isset($_SESSION['failtime'])){
+            $_SESSION['failtime']=1;
+        }else{
+            $_SESSION['failtime']=$_SESSION['failtime']+1;
+        }
+        if($_SESSION['failtime']>2){
+            $_SESSION['time']=time();
+            $_SESSION['failtime']=0;
+        }
+        $nickname=$_POST['nickname'];
+        $username=$_POST['username'];
+        $sex=$_POST['sex'];
+        $password=$_POST['password'];
+        $model=M('users');
+        $where['id']=$_SESSION['users_id'];
+        $where_in['nickname']=$nickname;
+        $where_in['email']=$username;
+        $where_in['phone']=$username;
+        $where_in['_logic']='or';
+        $ins=$model->where($where_in)->find();
+        if(!empty($ins)){
+            echo 'had-in';
+            exit;
+        }
+        if($nickname!=''){
+            $data['nickname']=$nickname;
+        }
+        if($sex!=''){
+            $data['sex']=$sex;
+        }
+        if($username!=''){
+            if(checkEmail($username)){
+                $data['email']=$username;
+            }else if(checkTel($username)){
+                $data['phone']=$username;
+            }
+        }
+        if($password!=''){
+            $data['password']=md5($password);
+        }
+        if($model->where($where)->data($data)->save()){
+            echo 'success';
+            exit;
+        }else{
+            echo 'fail';
+            exit;
+        }
+
     }
     //我的分享圈
     public function shares(){

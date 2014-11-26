@@ -69,7 +69,7 @@
 
             </div>
         </div><?php endforeach; endif; else: echo "" ;endif; ?>
-        <?php if(!$shares): ?><div class="col-md-12 content content-d" url="" style="height: 100px;margin-top: 15px;">
+        <?php if(!$articles): ?><div class="col-md-12 content content-d" url="" style="height: 100px;margin-top: 15px;">
               <span class="the-comment" >
                    <p class="no-comment">您还没有发布帖子呢~~！</p>
              </span>

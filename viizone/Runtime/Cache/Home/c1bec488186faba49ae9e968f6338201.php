@@ -1,13 +1,12 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>微商助手-我的资料</title>
+    <title>微商助手</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
     <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 </head>
 <body>
@@ -42,27 +41,43 @@
         </a>
     </div>
 </div>
-    <div class="row">
-        <div class="profile">
-         <span class="top-pic" style="margin-bottom:30px; ">
-             <?php if($_SESSION['users_pic']): ?><img src="__ROOT__/<?php echo (session('users_pic')); ?>" class="img-responsive img-circle user-pic-p">
-                 <?php else: ?>
-                 <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic-p"><?php endif; ?>
-             <p style="margin-top:40px;text-align: center;color: #666;">修改头像</p>
-         </span>
-         <span class="profile-form">
-             <label>我的昵称：<input type="text" class="tt" value="<?php echo ($infos["nickname"]); ?>" id="nickname"></label>
-             <label style="height: 30px;">
-                 <input type="radio" id="sex" name="sex" <?php if($infos['sex'] == 1): ?>checked="checked"<?php endif; ?> value="1" > 我是男生
-                 <input type="radio" name="sex" <?php if($infos['sex'] == 0): ?>checked="checked"<?php endif; ?> value="0"> 我是女生
-             </label>
-             <label>我的账号：<input type="text" class="tt" value="<?php echo ($infos["username"]); ?>" id="username"></label>
-             <label>我的密码：<input type="password" class="tt" id="password"></label>
-             <label ><input type="button" value="保存" class="saved tt" id="profile"></label>
-         </span>
+    <div class="row u-notice">
+        <div class="an-notice">
+           <p class="notice-time">2014-10-28 14:30:33</p>
+           <p class="notice-content">
+              <label class="notice-desc"><img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2" style="margin:0px 15px 0px 0px;">
+                  <font style="color:#42ab35; font-weight: bold;">杨哲：</font>你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你
+                  真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！
+                  你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！
+              </label>
+              <label class="notice-from"><a href="#">回复：微商是怎么练成的？？</a></label>
+           </p>
+        </div>
+        <div class="an-notice">
+            <p class="notice-time">2014-10-28 14:30:33</p>
+            <p class="notice-content">
+                <label class="notice-desc">
+                    <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2" style="margin:0px 15px 0px 0px;">
+                    <font style="color:#42ab35; font-weight: bold;">杨哲：</font>你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！
+                    你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！
+
+                </label>
+                <label class="notice-from"><a href="#">回复：微商是怎么练成的？？</a></label>
+            </p>
+        </div>
+        <div class="an-notice">
+            <p class="notice-time">2014-10-28 14:30:33</p>
+            <p class="notice-content">
+                <label class="notice-desc">
+                <img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic2" style="margin:0px 15px 0px 0px;">
+                <font style="color:#42ab35; font-weight: bold;">杨哲：</font>你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！
+                你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！你真的好2啊！
+               </label>
+               <label class="notice-from"><a href="#">回复：微商是怎么练成的？？</a></label>
+            </p>
         </div>
     </div>
-    <div class="row" style="padding-bottom: 60px;margin-top: 15px;">
+    <div class="row" style="padding:15px 0px 60px 0px;margin-top: 15px;">
         <div class="col-md-12">
             <span style="display: block;width: 150px;margin:0 auto;"><label style="color:#666;font-weight: bold;">微商助手</label><img src="__PUBLIC__/images/logo-f.png"></span>
         </div>
@@ -112,81 +127,6 @@
 </script>
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
-<script src="__PUBLIC__/js/upload.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>
-<script src="__PUBLIC__/js/tip.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $('#profile').click(function(){
-            var nickname=$('#nickname').val();
-            var username=$('#username').val();
-            var password=$('#password').val();
-            var sex= $('input[name="sex"]:checked').val();
-            $.post('__ROOT__/Users/profileAction',{nickname:nickname,username:username,password:password,sex:sex},function(data){
-               if(data=='success'){
-                   mobile_tip('success','资料修改成功！');
-                   setTimeout(function(){
-                       location.reload();
-                   },1000);
-               }else if(data=='fail'){
-                   mobile_tip('error','资料修改失败！');
-               }else if(data=='had-in'){
-                   mobile_tip('error','账号或昵称已被注册！');
-               }else{
-                   mobile_tip('waiting','请休息一下！');
-               }
-            })
-        })
-        $('#nickname').blur(function(){
-            var keys=$(this).val();
-            if(keys==''){
-                return false;
-            }
-            $.post(
-                    '__ROOT__/Uenter/checkUser',
-                    {
-                        keys:keys,type:'nickname'
-                    },
-                    function(data){
-                        //alert(data);
-                        switch (data){
-                            case '0':
-                                mobile_tip('error','该昵称已被注册！',1000);
-                                break;
-                            case '1':
-                                mobile_tip('success','该昵称可以注册！',1000);
-                                break;
-                        }
-                    }
-            )
-        })
-        $('#username').blur(function(){
-            var keys=$(this).val();
-            if(keys==''){
-                return false;
-            }
-            $.post(
-                    '__ROOT__/Uenter/checkUser',
-                    {
-                        keys:keys,type:'account'
-                    },
-                    function(data){
-                        //alert(data);
-                        switch (data){
-                            case '0':
-                                mobile_tip('error','该账号已被注册！',1000);
-                                break;
-                            case '1':
-                                mobile_tip('success','该账号可以注册！',1000);
-                                break;
-                            case '2':
-                                mobile_tip('error','账号格式不正确！',1000);
-                                break;
-                        }
-                    }
-            )
-        })
-    })
-</script>
 </body>
 </html>

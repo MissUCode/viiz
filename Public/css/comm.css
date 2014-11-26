@@ -186,7 +186,15 @@ label{
     top:0px;
     left: 0px;
 }
-
+.user-pic-p{
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    top:0px;
+    left: 0px;
+    cursor: pointer;
+}
 .infos{
     display: block;
     position: absolute;
@@ -727,7 +735,7 @@ label{
     font-size: 12px;
     display: block;
     width: 100%;
-    height: 62px;
+    height: 75px;
     line-height: 30px;
     float: left;
 }
@@ -740,9 +748,9 @@ label{
 }
 .profile-form label input.tt{
     border: #eee 1px solid;
-    height: 30px;
+    height: 40px;
     width: 100%;
-    line-height: 30px;
+    line-height: 40px;
     text-indent: 8px;
     float: left;
 }

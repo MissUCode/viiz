@@ -18,8 +18,8 @@
          <span class="profile-form">
                  <label><i >登陆账号：</i><input type="text" class="tt"  id="username" placeholder="您的账号或昵称"></label>
                  <label><i>登陆密码：</i><input type="password" class="tt" id="password" placeholder="输入您的密码"></label>
-                 <label style="height: 30px;"><input type="button" value="马上登陆"  class="saved tt" id="login"></label>
-                 <label style="height: 30px;"><i>还没账号？<a href="__ROOT__/Uenter/reg.html">马上去注册！</a></i></label>
+                 <label style="height: 50px;"><input type="button" value="马上登陆"  class="saved tt" id="login"></label>
+                 <label style="height: 50px;"><i>还没账号？<a href="__ROOT__/Uenter/reg.html">马上去注册！</a></i></label>
          </span>
         </div>
     </div>

@@ -7,6 +7,7 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap_home.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/comm.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/tip.css">
     <link rel="icon" href="__PUBLIC__/images/logo.png"  type="image/x-icon" />
 </head>
 <body>
@@ -14,13 +15,23 @@
     <include file="Public/header" />
     <div class="row">
         <div class="profile">
-         <span class="top-pic"><img src="__PUBLIC__/images/u.jpg" class="img-responsive img-circle user-pic"></span>
+         <span class="top-pic" style="margin-bottom:30px; ">
+             <if condition="$_SESSION['users_pic']">
+                 <img src="__ROOT__/{$Think.session.users_pic}" class="img-responsive img-circle user-pic-p">
+                 <else />
+                 <img src="__PUBLIC__/images/v_user.png" class="img-responsive img-circle user-pic-p">
+             </if>
+             <p style="margin-top:40px;text-align: center;color: #666;">修改头像</p>
+         </span>
          <span class="profile-form">
-             <label>我的昵称：<input type="text" class="tt"></label>
-             <label style="height: 30px;"><input type="radio" name="sex" checked="checked"> 我是男生 <input type="radio" name="sex"> 我是女生</label>
-             <label>我的账号：<input type="text" class="tt"></label>
-             <label>我的密码：<input type="password" class="tt"></label>
-              <label ><input type="submit" value="保存" class="saved tt"></label>
+             <label>我的昵称：<input type="text" class="tt" value="{$infos.nickname}" id="nickname"></label>
+             <label style="height: 30px;">
+                 <input type="radio" id="sex" name="sex" <if condition="$infos['sex'] eq 1" > checked="checked"</if> value="1" > 我是男生
+                 <input type="radio" name="sex" <if condition="$infos['sex'] eq 0"> checked="checked"</if> value="0"> 我是女生
+             </label>
+             <label>我的账号：<input type="text" class="tt" value="{$infos.username}" id="username"></label>
+             <label>我的密码：<input type="password" class="tt" id="password"></label>
+             <label ><input type="button" value="保存" class="saved tt" id="profile"></label>
          </span>
         </div>
     </div>
@@ -34,6 +45,81 @@
 <include file="Public/footerusers" />
 <script src="__PUBLIC__/js/jquery-1.11.0.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/upload.js"></script>
 <script src="__PUBLIC__/js/basic.js"></script>
+<script src="__PUBLIC__/js/tip.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#profile').click(function(){
+            var nickname=$('#nickname').val();
+            var username=$('#username').val();
+            var password=$('#password').val();
+            var sex= $('input[name="sex"]:checked').val();
+            $.post('__ROOT__/Users/profileAction',{nickname:nickname,username:username,password:password,sex:sex},function(data){
+               if(data=='success'){
+                   mobile_tip('success','资料修改成功！');
+                   setTimeout(function(){
+                       location.reload();
+                   },1000);
+               }else if(data=='fail'){
+                   mobile_tip('error','资料修改失败！');
+               }else if(data=='had-in'){
+                   mobile_tip('error','账号或昵称已被注册！');
+               }else{
+                   mobile_tip('waiting','请休息一下！');
+               }
+            })
+        })
+        $('#nickname').blur(function(){
+            var keys=$(this).val();
+            if(keys==''){
+                return false;
+            }
+            $.post(
+                    '__ROOT__/Uenter/checkUser',
+                    {
+                        keys:keys,type:'nickname'
+                    },
+                    function(data){
+                        //alert(data);
+                        switch (data){
+                            case '0':
+                                mobile_tip('error','该昵称已被注册！',1000);
+                                break;
+                            case '1':
+                                mobile_tip('success','该昵称可以注册！',1000);
+                                break;
+                        }
+                    }
+            )
+        })
+        $('#username').blur(function(){
+            var keys=$(this).val();
+            if(keys==''){
+                return false;
+            }
+            $.post(
+                    '__ROOT__/Uenter/checkUser',
+                    {
+                        keys:keys,type:'account'
+                    },
+                    function(data){
+                        //alert(data);
+                        switch (data){
+                            case '0':
+                                mobile_tip('error','该账号已被注册！',1000);
+                                break;
+                            case '1':
+                                mobile_tip('success','该账号可以注册！',1000);
+                                break;
+                            case '2':
+                                mobile_tip('error','账号格式不正确！',1000);
+                                break;
+                        }
+                    }
+            )
+        })
+    })
+</script>
 </body>
 </html>
